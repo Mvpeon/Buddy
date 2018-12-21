@@ -36,106 +36,66 @@ class StartPage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
+        labelTittel = tk.Label(self, text="Meny", font=LARGE_FONT)
+        buttonKom = tk.Button(self, text="Kommuniser", command=lambda: controller.show_frame(PageTwo))
+        buttonLær = tk.Button(self, text="Lær deg", command=lambda: controller.show_frame(StartPage))
+        buttonSpill = tk.Button(self, text="Spill", command=lambda: controller.show_frame(PageOne))
 
-        label = tk.Label(self, text="Meny", font=LARGE_FONT)
-        label.pack(pady=10, padx=10)
+        buttonKom.configure(background='purple', height=2, width=20, fg='white')
+        buttonLær.configure(background='purple', height=2, width=20, fg='white')
+        buttonSpill.configure(background='purple', height=2, width=20, fg='white')
 
-        button1 = tk.Button(self, text="Back to Home",
-                            command=lambda: controller.show_frame(PageOne))
-
-        button2 = tk.Button(self, text="Kommuniser",
-                            command=lambda: controller.show_frame(PageTwo))
-
-        button3 = tk.Button(self, text="Lær deg",
-                            command=lambda: controller.show_frame(StartPage))
-
-        button4 = tk.Button(self, text="Spill",
-                            command=lambda: controller.show_frame(PageOne))
-
-        button1.configure(background='orange', height = 2, width = 20, fg='white')
-        button2.configure(background='purple', height = 2, width = 20, fg='white')
-        button3.configure(background='purple', height = 2, width = 20, fg='white')
-        button4.configure(background='purple', height = 2, width = 20, fg='white')
-
-        #button1.pack(padx=5, pady=5)
-        button2.pack(padx=5, pady=5)
-        button3.pack(padx=5, pady=5)
-        button4.pack(padx=5, pady=5)
-
+        labelTittel.pack(pady=10, padx=10)
+        buttonKom.pack(padx=5, pady=5)
+        buttonLær.pack(padx=5, pady=5)
+        buttonSpill.pack(padx=5, pady=5)
+        
 
 class PageOne(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-        label = tk.Label(self, text="Spill", font=LARGE_FONT)
-        label.pack(pady=10, padx=10)
+        labelTittel = tk.Label(self, text="Spill", font=LARGE_FONT)
 
-        photo = tk.PhotoImage(file="mario.png")
-        photo2 = tk.PhotoImage(file="luigi.png")
-        photo3 = tk.PhotoImage(file="toad.png")
-        labelimg = tk.Label(self, anchor="s", image=photo)
-        labelimg.image = photo  # keep a reference!
-        buttonimg = tk.Label(self, anchor="w", image=photo2)
-        buttonimg.image = photo2
-        buttonimg2 = tk.Label(self, anchor="w", image=photo3)
-        buttonimg2.image = photo3
+        photoMario = tk.PhotoImage(file="mario.png")
+        photoLuigi = tk.PhotoImage(file="luigi.png")
+        photoToad = tk.PhotoImage(file="toad.png")
 
-        button = tk.Button(self,
-                           command=lambda: controller.show_frame(StartPage))
+        imgMario = tk.Label(self, anchor="s", image=photoMario)
+        imgLuigi = tk.Label(self, anchor="w", image=photoLuigi)
+        imgToad = tk.Label(self, anchor="w", image=photoToad)
 
-        button2 = tk.Button(self,
-                            command=lambda: controller.show_frame(PageTwo))
-        button.configure(background='orange', height=2, width=20, fg='white', text="Meny")
-        button2.configure(background='purple', padx=20, pady=5, fg='white', text="Visit Page 2")
-        button.pack(padx=5, pady=5)
-        #button2.pack(padx=5, pady=5)
+        imgMario.image = photoMario  # keep a reference!
+        imgLuigi.image = photoLuigi
+        imgToad.image = photoToad
 
-        luigi = tk.Button(self,
-                          command=lambda: controller.show_frame(PageCommunicate))
-        luigi.config(image=photo2)
+        buttonMeny = tk.Button(self, command=lambda: controller.show_frame(StartPage))
+        luigi = tk.Button(self, command=lambda: controller.show_frame(PageOne))
+        toad = tk.Button(self, command=lambda: controller.show_frame(PageOne))
+
+        buttonMeny.configure(background='orange', height=2, width=20, fg='white', text="Meny")
+        luigi.config(image=photoLuigi)
+        toad.config(image=photoToad)
+
+        labelTittel.pack(pady=10, padx=5)
+        buttonMeny.pack(padx=5, pady=5)
         luigi.place(x=100, y=160, width=128, height=128)
-
-        toad = tk.Button(self,
-                         command=lambda: controller.show_frame(PageOne))
-        toad.config(image=photo3)
         toad.place(x=600, y=160, width=128, height=128)
-
-        labelimg.pack()
+        imgMario.place(x=300, y=120)
 
 
 class PageTwo(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="Kommuniser", font=LARGE_FONT)
-        label.pack(pady=10, padx=10)
 
-        button1 = tk.Button(self, text="Back to Home",
-                            command=lambda: controller.show_frame(StartPage))
+        labelTittel = tk.Label(self, text="Kommuniser", font=LARGE_FONT)
+        labelTittel.pack(pady=10, padx=10)
+
+        button1 = tk.Button(self, text="Meny", command=lambda: controller.show_frame(StartPage))
         button1.configure(background='orange', height=2, width=20, fg='white')
         button1.pack()
-
-
-class PageCommunicate(tk.Frame):
-
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        label = tk.Label(self, text="", font=LARGE_FONT)
-        label.pack(pady=10, padx=10)
-
-        button1 = tk.Button(self, text="Kommuniser",
-                            command=lambda: controller.show_frame(StartPage))
-        button1.configure(background='orange', height=2, width=20, fg='white')
-        button1.pack()
-
-        button2 = tk.Button(self, text="Lær deg",
-                            command=lambda: controller.show_frame(StartPage))
-        button2.pack()
-
-        button3 = tk.Button(self, text="Spill",
-                            command=lambda: controller.show_frame(StartPage))
-        button3.pack()
 
 
 app = SeaofBTCapp()
