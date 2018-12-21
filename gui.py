@@ -26,6 +26,7 @@ class SeaofBTCapp(tk.Tk):
         self.geometry("800x480")
         self.show_frame(StartPage)
 
+
     def show_frame(self, cont):
         frame = self.frames[cont]
         frame.tkraise()
@@ -41,6 +42,7 @@ class StartPage(tk.Frame):
         buttonLær = tk.Button(self, text="Lær deg", command=lambda: controller.show_frame(StartPage))
         buttonSpill = tk.Button(self, text="Spill", command=lambda: controller.show_frame(PageOne))
 
+        labelTittel.configure(background="white")
         buttonKom.configure(background='purple', height=2, width=20, fg='white')
         buttonLær.configure(background='purple', height=2, width=20, fg='white')
         buttonSpill.configure(background='purple', height=2, width=20, fg='white')
@@ -49,7 +51,9 @@ class StartPage(tk.Frame):
         buttonKom.pack(padx=5, pady=5)
         buttonLær.pack(padx=5, pady=5)
         buttonSpill.pack(padx=5, pady=5)
-        
+
+        self.configure(background="white")
+
 
 class PageOne(tk.Frame):
 
@@ -74,15 +78,19 @@ class PageOne(tk.Frame):
         luigi = tk.Button(self, command=lambda: controller.show_frame(PageOne))
         toad = tk.Button(self, command=lambda: controller.show_frame(PageOne))
 
+        labelTittel.configure(background="white")
         buttonMeny.configure(background='orange', height=2, width=20, fg='white', text="Meny")
         luigi.config(image=photoLuigi)
         toad.config(image=photoToad)
+        imgMario.config(background="white")
 
         labelTittel.pack(pady=10, padx=5)
         buttonMeny.pack(padx=5, pady=5)
         luigi.place(x=100, y=160, width=128, height=128)
         toad.place(x=600, y=160, width=128, height=128)
         imgMario.place(x=300, y=120)
+
+        self.configure(background="white")
 
 
 class PageTwo(tk.Frame):
@@ -94,8 +102,13 @@ class PageTwo(tk.Frame):
         labelTittel.pack(pady=10, padx=10)
 
         button1 = tk.Button(self, text="Meny", command=lambda: controller.show_frame(StartPage))
+
+        labelTittel.configure(background="white")
         button1.configure(background='orange', height=2, width=20, fg='white')
+
         button1.pack()
+
+        self.configure(background="white")
 
 
 app = SeaofBTCapp()
