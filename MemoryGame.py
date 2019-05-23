@@ -68,9 +68,9 @@ class Tile(object):
 class MemGame(tk.Frame):
     def __init__(self, master):
         super(MemGame, self).__init__(master)
-        self.configure(width=500, height=500)
-        self.canvas = tk.Canvas(self, width=400, height=350, bg="white")
-        self.canvas.place(x=50, y=150)
+        self.configure(width=500, height=500, bg="white")
+        self.canvas = tk.Canvas(self, width=500, height=480, bg="white", highlightthickness=0, borderwidth=0)
+        self.canvas.place(x=50, y=50)
         self.tiles = []
         self.colors = [
             "Eple",
@@ -106,19 +106,7 @@ class MemGame(tk.Frame):
         for i in range(len(self.tiles)):
             self.tiles[i].drawFaceDown()
         self.flippedThisTurn = 0
-        self.bind("<Button-1>", self.mouseClicked)
-
-    # def mouseClicked(self):
-    #     for i in range(len(self.tiles)):
-    #         if self.tiles[i].isUnderMouse(self):
-    #             if (len(self.flippedTiles) < 2 and not(self.tiles[i].isFaceUp)) :
-    #                 self.tiles[i].drawFaceUp()
-    #                 self.flippedTiles.append(self.tiles[i])
-    #             if (len(self.flippedTiles) == 2):
-    #                 if not(self.flippedTiles[0].text == self.flippedTiles[1].text):
-    #                     time.sleep(1)
-    #                     self.flippedTiles[0].drawFaceDown()
-    #                     self.flippedTiles[1].drawFaceDown()
+        self.canvas.bind("<Button-1>", self.mouseClicked)
 
     def mouseClicked(self, event):
         for tile in self.tiles:
