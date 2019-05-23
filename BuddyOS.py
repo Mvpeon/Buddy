@@ -97,25 +97,19 @@ class SpillMeny(tk.Frame):
         labelTittel.configure(background="white")
         labelTittel.pack(pady=10, padx=5)
 
-        #photoMario = tk.PhotoImage(file="mario.png")
-        #imgMario = tk.Label(self, anchor="s", image=photoMario)
-        #imgMario.image = photoMario  # keep a reference!
-        #imgMario.config(background="white")
-        #imgMario.place(x=300, y=160)
-
         photoMemory = tk.PhotoImage(file="memorytile.png")
         imgMemory = tk.Label(self, anchor="w", image=photoMemory)
         imgMemory.image = photoMemory
         buttonMemory = tk.Button(self, command=lambda: controller.show_frame(MemorySpill))
         buttonMemory.config(image=photoMemory)
-        buttonMemory.place(x=70, y=140, width=300, height=300)
+        buttonMemory.place(x=70, y=120, width=300, height=300)
 
         photoQuiz = tk.PhotoImage(file="quiz.png")
         imgQuiz = tk.Label(self, anchor="w", image=photoQuiz)
         imgQuiz.image = photoQuiz
         buttonQuiz = tk.Button(self, command=lambda: controller.show_frame(Quiz))
         buttonQuiz.config(image=photoQuiz)
-        buttonQuiz.place(x=430, y=140, width=300, height=300)
+        buttonQuiz.place(x=430, y=120, width=300, height=300)
 
         photoReturn = tk.PhotoImage(file="returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
