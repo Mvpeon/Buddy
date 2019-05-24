@@ -1,7 +1,8 @@
+import sys
+import os
 import tkinter as tk
 import pygame
 pygame.init()
-#import os
 
 LARGE_FONT = ("Verdana", 22)
 MEDIUM_FONT = ("Verdana", 14)
@@ -32,6 +33,10 @@ class BuddyOS(tk.Tk):
     def show_frame(self, cont):
         frame = self.frames[cont]
         frame.tkraise()
+
+    def quit(self):
+        exit()
+
 
 class LoadingScreen(tk.Frame):
 
@@ -84,6 +89,13 @@ class Meny(tk.Frame):
         imgWifi.image = photoWifi  # keep a reference!
         imgWifi.config(background="white")
         imgWifi.place(x=740, y=5)
+
+        photoReturn = tk.PhotoImage(file="returnknapp.png")
+        imgReturn = tk.Label(self, anchor="s", image=photoReturn)
+        imgReturn.image = photoReturn
+        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0,
+                                 command=lambda: quit())
+        buttonReturn.place(x=10, y=10)
 
 
 class SpillMeny(tk.Frame):
@@ -145,6 +157,13 @@ class MemorySpill(tk.Frame):
         from MemGameImg import MemGame
         x = MemGame(self)
         x.pack()
+
+        #photoReturn = tk.PhotoImage(file="restartikon.png")
+        #imgReturn = tk.Label(self, anchor="s", image=photoReturn)
+        #imgReturn.image = photoReturn
+        #buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0,
+        #                         command=lambda: c.mainloop())
+        #buttonReturn.place(x=720, y=400)
 
 class Quiz(tk.Frame):
 
