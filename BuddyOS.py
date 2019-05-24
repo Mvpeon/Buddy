@@ -114,7 +114,7 @@ class SpillMeny(tk.Frame):
         photoReturn = tk.PhotoImage(file="returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
-        buttonReturn = tk.Button(self, image=photoReturn, command=lambda: controller.show_frame(Meny))
+        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, command=lambda: controller.show_frame(Meny))
         buttonReturn.place(x=10, y=10)
 
         photoWifi = tk.PhotoImage(file="wifi.png")
@@ -133,7 +133,7 @@ class MemorySpill(tk.Frame):
         photoReturn = tk.PhotoImage(file="returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
-        buttonReturn = tk.Button(self, image=photoReturn, command=lambda: controller.show_frame(SpillMeny))
+        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, command=lambda: controller.show_frame(SpillMeny))
         buttonReturn.place(x=10, y=10)
 
         photoWifi = tk.PhotoImage(file="wifi.png")
@@ -142,7 +142,7 @@ class MemorySpill(tk.Frame):
         imgWifi.config(background="white")
         imgWifi.place(x=740, y=5)
 
-        from MemoryGame import MemGame
+        from MemGameImg import MemGame
         x = MemGame(self)
         x.pack()
 
@@ -154,7 +154,7 @@ class Quiz(tk.Frame):
         photoReturn = tk.PhotoImage(file="returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
-        buttonReturn = tk.Button(self, image=photoReturn, command=lambda: controller.show_frame(SpillMeny))
+        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, command=lambda: controller.show_frame(SpillMeny))
         buttonReturn.place(x=10, y=10)
 
         photoWifi = tk.PhotoImage(file="wifi.png")
@@ -166,6 +166,8 @@ class Quiz(tk.Frame):
         self.configure(background="white")
 
         # quiz spill
+
+
 
 class Kommuniser(tk.Frame):
 
@@ -181,7 +183,7 @@ class Kommuniser(tk.Frame):
         photoReturn = tk.PhotoImage(file="returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
-        buttonReturn = tk.Button(self, image=photoReturn, command=lambda: controller.show_frame(Meny))
+        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, command=lambda: controller.show_frame(Meny))
         buttonReturn.place(x=10, y=10)
 
         hei_sound = pygame.mixer.Sound("hei.wav")
