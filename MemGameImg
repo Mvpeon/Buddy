@@ -1,7 +1,7 @@
 import tkinter as tk
 from random import randint
 from random import shuffle
-#import time
+import time
 
 class Controller(tk.Tk):
     def __init__(self, *args, **kwargs):
@@ -69,6 +69,14 @@ class MemGame(tk.Frame):
     def __init__(self, master):
         super(MemGame, self).__init__(master)
 
+        photoRestart = tk.PhotoImage(file="restart.png")
+        imgRestart = tk.Label(self, anchor="s", image=photoRestart)
+        imgRestart.image = photoRestart
+        buttonRestart = tk.Button(self, activebackground="white",
+                                  image=photoRestart, highlightthickness=0, borderwidth=0,
+                                  command=lambda: self.restart())
+        buttonRestart.place(x=175, y=325)
+
         photoDog = tk.PhotoImage(file="Dyr/dog.png")
         photoElefant = tk.PhotoImage(file="Dyr/elefant.png")
         photoFlamingo = tk.PhotoImage(file="Dyr/flamingo.png")
@@ -85,9 +93,9 @@ class MemGame(tk.Frame):
         #imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         #imgReturn.image = photoReturn
 
-        self.configure(width=500, height=500, bg="white")
-        self.canvas = tk.Canvas(self, width=500, height=480, bg="white", highlightthickness=0, borderwidth=0)
-        self.canvas.place(x=50, y=50)
+        self.configure(width=400, height=380, bg="white")
+        self.canvas = tk.Canvas(self, bg="white", width=400, height=350, highlightthickness=0, borderwidth=0)
+        self.canvas.place(x=0, y=-30)
         self.tiles = []
         self.colors = [
             photoDog,
@@ -127,21 +135,26 @@ class MemGame(tk.Frame):
 
     def mouseClicked(self, event):
         for tile in self.tiles:
-            if tile.isUnderMouse(event):
-                if (not(tile.isFaceUp)) :
+            if tile.isUnderMouse(event) and (self.flippedThisTurn < 2):
+                if (not(tile.isFaceUp)):
                     tile.drawFaceUp()
                     self.flippedTiles.append(tile)
                     self.flippedThisTurn += 1
 
                 if (self.flippedThisTurn == 2):
                     self.after(1000, self.checkTiles)
-                    self.flippedThisTurn = 0
 
     def checkTiles(self):
+        self.flippedThisTurn = 0
+
         if not(self.flippedTiles[-1].image == self.flippedTiles[-2].image): #check last two elements
             self.flippedTiles[-1].drawFaceDown()
             self.flippedTiles[-2].drawFaceDown()
             del self.flippedTiles[-2:]
+
+    def restart(self):
+        for i in range(len(self.tiles)):
+            self.tiles[i].drawFaceDown()
 
 
 if __name__ == '__main__':
