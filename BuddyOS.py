@@ -1,5 +1,3 @@
-import sys
-import os
 import tkinter as tk
 import pygame
 pygame.init()
@@ -90,12 +88,12 @@ class Meny(tk.Frame):
         imgWifi.config(background="white")
         imgWifi.place(x=740, y=5)
 
-        photoReturn = tk.PhotoImage(file="returnknapp.png")
-        imgReturn = tk.Label(self, anchor="s", image=photoReturn)
-        imgReturn.image = photoReturn
-        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0,
+        photoExit = tk.PhotoImage(file="exit.png")
+        imgExit = tk.Label(self, anchor="s", image=photoExit)
+        imgExit.image = photoExit
+        buttonExit = tk.Button(self, image=photoExit, highlightthickness=0, borderwidth=0, activebackground="white",
                                  command=lambda: quit())
-        buttonReturn.place(x=10, y=10)
+        buttonExit.place(x=10, y=10)
 
 
 class SpillMeny(tk.Frame):
@@ -126,7 +124,8 @@ class SpillMeny(tk.Frame):
         photoReturn = tk.PhotoImage(file="returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
-        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, command=lambda: controller.show_frame(Meny))
+        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0,  activebackground="white",
+                                 command=lambda: controller.show_frame(Meny))
         buttonReturn.place(x=10, y=10)
 
         photoWifi = tk.PhotoImage(file="wifi.png")
@@ -145,7 +144,8 @@ class MemorySpill(tk.Frame):
         photoReturn = tk.PhotoImage(file="returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
-        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, command=lambda: controller.show_frame(SpillMeny))
+        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, activebackground="white",
+                                 borderwidth=0, command=lambda: controller.show_frame(SpillMeny))
         buttonReturn.place(x=10, y=10)
 
         photoWifi = tk.PhotoImage(file="wifi.png")
@@ -156,7 +156,7 @@ class MemorySpill(tk.Frame):
 
         from MemGameImg import MemGame
         x = MemGame(self)
-        x.pack()
+        x.place(x=200, y=70)
 
         #photoReturn = tk.PhotoImage(file="restartikon.png")
         #imgReturn = tk.Label(self, anchor="s", image=photoReturn)
@@ -173,7 +173,8 @@ class Quiz(tk.Frame):
         photoReturn = tk.PhotoImage(file="returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
-        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, command=lambda: controller.show_frame(SpillMeny))
+        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
+                                 command=lambda: controller.show_frame(SpillMeny))
         buttonReturn.place(x=10, y=10)
 
         photoWifi = tk.PhotoImage(file="wifi.png")
@@ -202,7 +203,8 @@ class Kommuniser(tk.Frame):
         photoReturn = tk.PhotoImage(file="returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
-        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, command=lambda: controller.show_frame(Meny))
+        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
+                                 command=lambda: controller.show_frame(Meny))
         buttonReturn.place(x=10, y=10)
 
         hei_sound = pygame.mixer.Sound("hei.wav")
