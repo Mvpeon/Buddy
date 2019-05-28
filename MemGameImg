@@ -1,6 +1,8 @@
 import tkinter as tk
 from random import randint
 from random import shuffle
+import pygame
+pygame.init()
 import time
 
 class Controller(tk.Tk):
@@ -90,8 +92,7 @@ class MemGame(tk.Frame):
         photoZebra = tk.PhotoImage(file="Dyr/zebra.png")
         photoLove = tk.PhotoImage(file="Dyr/love.png")
 
-        #imgReturn = tk.Label(self, anchor="s", image=photoReturn)
-        #imgReturn.image = photoReturn
+        self.riktig_sound = pygame.mixer.Sound("riktig.wav")
 
         self.configure(width=400, height=380, bg="white")
         self.canvas = tk.Canvas(self, bg="white", width=400, height=350, highlightthickness=0, borderwidth=0)
@@ -147,6 +148,9 @@ class MemGame(tk.Frame):
     def checkTiles(self):
         self.flippedThisTurn = 0
 
+        if (self.flippedTiles[-1].image == self.flippedTiles[-2].image):
+            self.riktig()
+
         if not(self.flippedTiles[-1].image == self.flippedTiles[-2].image): #check last two elements
             self.flippedTiles[-1].drawFaceDown()
             self.flippedTiles[-2].drawFaceDown()
@@ -155,6 +159,10 @@ class MemGame(tk.Frame):
     def restart(self):
         for i in range(len(self.tiles)):
             self.tiles[i].drawFaceDown()
+
+    def riktig(self):
+        pygame.mixer.Sound.play(self.riktig_sound)
+        pygame.mixer.music.stop()
 
 
 if __name__ == '__main__':
