@@ -3,7 +3,6 @@ from random import randint
 from random import shuffle
 import pygame
 pygame.init()
-import time
 
 class Controller(tk.Tk):
     def __init__(self, *args, **kwargs):
@@ -30,7 +29,7 @@ class Controller(tk.Tk):
                 frame.grid(row=0, column=0, sticky="nsew")
 
             self.show_frame("PageMG")
-        self.geometry("500x400")
+        self.geometry("800x480")
 
     def show_frame(self, page_name):
         '''Show a frame for the given page name'''
@@ -46,24 +45,26 @@ class PageMG(tk.Frame):
 
 
 class Tile(object):
-    def __init__(self, canvas, x, y, image):
+    def __init__(self, canvas, x, y, image, cardback):
+        self.cardback = cardback
         self.canvas = canvas
         self.y = y
         self.x = x
         self.image = image
 
     def drawFaceDown(self):
-        self.canvas.create_rectangle(self.x, self.y, self.x + 70, self.y + 70, fill = "blue")
+        self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill = "white")
+        self.canvas.create_image(self.x + 50, self.y + 50, image=self.cardback)
         self.isFaceUp = False
 
     def drawFaceUp(self):
-        self.canvas.create_rectangle(self.x, self.y, self.x + 70, self.y + 70, fill = "white")
-        self.canvas.create_image(self.x + 35, self.y + 35, image = self.image)
+        self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill = "white")
+        self.canvas.create_image(self.x + 50, self.y + 50, image=self.image)
         self.isFaceUp = True
 
     def isUnderMouse(self, event):
-        if(event.x > self.x and event.x < self.x + 70):
-            if(event.y > self.y and event.y < self.y + 70):
+        if(event.x > self.x and event.x < self.x + 100):
+            if(event.y > self.y and event.y < self.y + 100):
                 return True
 
 
@@ -92,13 +93,15 @@ class MemGame(tk.Frame):
         photoZebra = tk.PhotoImage(file="Dyr/zebra.png")
         photoLove = tk.PhotoImage(file="Dyr/love.png")
 
+        photoCardback = tk.PhotoImage(file="cardback.png")
+
         self.riktig_sound = pygame.mixer.Sound("riktig.wav")
 
-        self.configure(width=400, height=380, bg="white")
-        self.canvas = tk.Canvas(self, bg="white", width=400, height=350, highlightthickness=0, borderwidth=0)
+        self.configure(width=600, height=480, bg="white")
+        self.canvas = tk.Canvas(self, bg="white", width=600, height=480, highlightthickness=0, borderwidth=0)
         self.canvas.place(x=0, y=-30)
         self.tiles = []
-        self.colors = [
+        self.images = [
             photoDog,
             photoElefant,
             photoFlamingo,
@@ -113,13 +116,32 @@ class MemGame(tk.Frame):
             photoLove
         ]
 
+        self.cardback = photoCardback
+
+        self.texts = {
+            "Dog",
+            "Elephant",
+            "Flamingo",
+            "Hippopotamus",
+            "Camel",
+            "Cat",
+            "Crocodile",
+            "Rhinoceros",
+            "Turtle",
+            "Ostrich",
+            "Zebra",
+            "Lion"
+        }
+
         selected = []
         for i in range(10):
-            randomInd = randint(0, len(self.colors) - 1)
-            color = self.colors[randomInd]
-            selected.append(color)
-            selected.append(color)
-            del self.colors[randomInd]
+            randomInd = randint(0, len(self.images) - 1)
+            animalImg = self.images[randomInd]
+            animalText = self.images[randomInd]
+            selected.append(animalImg)
+            selected.append(animalText)
+            del self.images[randomInd]
+            #del self.texts[randomInd]
         shuffle(selected)
         self.flippedTiles = []
         NUM_COLS = 5
@@ -127,7 +149,7 @@ class MemGame(tk.Frame):
 
         for x in range(0, NUM_COLS):
             for y in range(0, NUM_ROWS):
-                self.tiles.append(Tile(self.canvas, x * 78 + 10, y * 78 + 40, selected.pop()))
+                self.tiles.append(Tile(self.canvas, x * 108 + 10, y * 108 + 40, selected.pop(), photoCardback))
 
         for i in range(len(self.tiles)):
             self.tiles[i].drawFaceDown()
@@ -145,7 +167,6 @@ class MemGame(tk.Frame):
                 if (self.flippedThisTurn == 2):
                     if (self.flippedTiles[-1].image == self.flippedTiles[-2].image):
                         self.riktig()
-
                     self.after(1000, self.checkTiles)
 
     def checkTiles(self):
