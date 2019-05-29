@@ -277,7 +277,7 @@ class Norsk(tk.Frame):
         labelVanskelighetsgrad.place(x=320, y=380)
         labelVanskelighetsgrad.config(bg="white")
 
-        labelHi = tk.Label(self, text="English: Hi, my name is buddy. What is your name? \nNorwegian: Hei, jeg heter Buddy. Hva heter du?", font=MEDIUM_FONT)
+        labelHi = tk.Label(self, text="English: Hi, my name is buddy and this is my friend. \nNorwegian: Hei, jeg heter Buddy og dette er min venn.", font=MEDIUM_FONT)
         labelHi.place(x=180, y=50)
         labelHi.config(bg="white")
 
