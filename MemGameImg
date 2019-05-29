@@ -143,13 +143,13 @@ class MemGame(tk.Frame):
                     self.flippedThisTurn += 1
 
                 if (self.flippedThisTurn == 2):
+                    if (self.flippedTiles[-1].image == self.flippedTiles[-2].image):
+                        self.riktig()
+
                     self.after(1000, self.checkTiles)
 
     def checkTiles(self):
         self.flippedThisTurn = 0
-
-        if (self.flippedTiles[-1].image == self.flippedTiles[-2].image):
-            self.riktig()
 
         if not(self.flippedTiles[-1].image == self.flippedTiles[-2].image): #check last two elements
             self.flippedTiles[-1].drawFaceDown()
