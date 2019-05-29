@@ -17,7 +17,7 @@ class BuddyOS(tk.Tk):
 
         self.frames = {}
 
-        for F in (Meny, SpillMeny, Snakk, MemorySpill, LoadingScreen, Quiz, SnakkNybegynner):
+        for F in (Meny, SpillMeny, Snakk, MemorySpill, LoadingScreen, Quiz, Norsk, Fagvelger):
             frame = F(container, self)
 
             self.frames[F] = frame
@@ -72,7 +72,7 @@ class Meny(tk.Frame):
 
         labelTittel = tk.Label(self, text="MENY", font=LARGE_FONT)
         buttonKom = tk.Button(self, image=photoKom, command=lambda: controller.show_frame(Snakk))
-        buttonLær = tk.Button(self, image=photoLaer, command=lambda: controller.show_frame(Meny))
+        buttonLær = tk.Button(self, image=photoLaer, command=lambda: controller.show_frame(Fagvelger))
         buttonSpill = tk.Button(self, image=photoSpill, command=lambda: controller.show_frame(SpillMeny))
 
         labelTittel.configure(background="white")
@@ -102,29 +102,25 @@ class Fagvelger(tk.Frame):
 
         self.configure(background="white")
 
-        photoNorsk = tk.PhotoImage(file="toad.png")
+        photoNorsk = tk.PhotoImage(file="norsk.png")
         photoSamfunnsfag = tk.PhotoImage(file="toad.png")
         photoNaturfag = tk.PhotoImage(file="toad.png")
 
-        imgLaer = tk.Label(self, anchor="s", image=photoNorsk)
-        imgSpill = tk.Label(self, anchor="s", image=photoSamfunnsfag)
-        imgKom = tk.Label(self, anchor="s", image=photoNaturfag)
+        imgNorsk = tk.Label(self, anchor="s", image=photoNorsk)
+        imgNaturfag = tk.Label(self, anchor="s", image=photoNaturfag)
 
-        imgKom.image = photoNorsk
-        imgLaer.image = photoSamfunnsfag
-        imgSpill.image = photoNaturfag
+        imgNorsk.image = photoNorsk
+        imgNaturfag.image = photoNaturfag
 
         labelTittel = tk.Label(self, text="VELG FAG", font=LARGE_FONT)
-        buttonNorsk = tk.Button(self, image=photoNaturfag, command=lambda: controller.show_frame(Fagvelger))
-        buttonSamfunnsfag = tk.Button(self, image=photoNaturfag, command=lambda: controller.show_frame(Fagvelger))
+        buttonNorsk = tk.Button(self, image=photoNorsk, command=lambda: controller.show_frame(Norsk))
         buttonNaturfag = tk.Button(self, image=photoNaturfag, command=lambda: controller.show_frame(Fagvelger))
 
         labelTittel.configure(background="white")
         labelTittel.pack(pady=10, padx=10)
 
-        buttonNorsk.place(x=110, y=150)
-        buttonSamfunnsfag.place(x=310, y=150)
-        buttonNaturfag.place(x=510, y=150)
+        buttonNorsk.place(x=120, y=150)
+        buttonNaturfag.place(x=450, y=150)
 
         photoWifi = tk.PhotoImage(file="wifi.png")
         imgWifi = tk.Label(self, anchor="s", image=photoWifi)
@@ -135,7 +131,7 @@ class Fagvelger(tk.Frame):
         photoReturn = tk.PhotoImage(file="returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
-        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0,
+        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
                                  command=lambda: controller.show_frame(Meny))
         buttonReturn.place(x=10, y=10)
 
@@ -201,12 +197,103 @@ class MemorySpill(tk.Frame):
         x = MemGame(self)
         x.place(x=200, y=70)
 
-        #photoReturn = tk.PhotoImage(file="restartikon.png")
-        #imgReturn = tk.Label(self, anchor="s", image=photoReturn)
-        #imgReturn.image = photoReturn
-        #buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0,
-        #                         command=lambda: c.mainloop())
-        #buttonReturn.place(x=720, y=400)
+class Snakk(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        self.configure(background="white")
+
+        labelTittel = tk.Label(self, text="SNAKK", font=LARGE_FONT)
+        labelTittel.pack(pady=10, padx=10)
+        labelTittel.configure(background="white")
+
+        photoReturn = tk.PhotoImage(file="returnknapp.png")
+        imgReturn = tk.Label(self, anchor="s", image=photoReturn)
+        imgReturn.image = photoReturn
+        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
+                                 command=lambda: controller.show_frame(Meny))
+        buttonReturn.place(x=10, y=10)
+
+        heter_sound = pygame.mixer.Sound("heter.wav")
+        spille_sound = pygame.mixer.Sound("spille.wav")
+        hei_sound = pygame.mixer.Sound("hei.wav")
+
+        buttonA = tk.Button(self, text="Hva heter du?", command=lambda: heter())
+        buttonB = tk.Button(self, text="Hei, jeg heter buddy!", command=lambda: hei())
+        buttonC = tk.Button(self, text="Vil du spille et spill?", command=lambda: spille())
+
+        buttonA.configure(background='purple', font=MEDIUM_FONT, height=2, width=20, fg='white')
+        buttonB.configure(background='purple', font=MEDIUM_FONT, height=2, width=20, fg='white')
+        buttonC.configure(background='purple', font=MEDIUM_FONT, height=2, width=20, fg='white')
+
+        buttonA.place(x=275, y=150)
+        buttonB.place(x=275, y=230)
+        buttonC.place(x=275, y=310)
+
+        photoWifi = tk.PhotoImage(file="wifi.png")
+        imgWifi = tk.Label(self, anchor="s", image=photoWifi)
+        imgWifi.image = photoWifi  # keep a reference!
+        imgWifi.config(background="white")
+        imgWifi.place(x=740, y=5)
+
+        def heter():
+            pygame.mixer.Sound.play(heter_sound)
+            pygame.mixer.music.stop()
+
+        def spille():
+            pygame.mixer.Sound.play(spille_sound)
+            pygame.mixer.music.stop()
+
+        def hei():
+            pygame.mixer.Sound.play(hei_sound)
+            pygame.mixer.music.stop()
+
+class Norsk(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        self.configure(background="white")
+
+        photoReturn = tk.PhotoImage(file="returnknapp.png")
+        imgReturn = tk.Label(self, anchor="s", image=photoReturn)
+        imgReturn.image = photoReturn
+        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
+                                 command=lambda: controller.show_frame(Fagvelger))
+        buttonReturn.place(x=10, y=10)
+
+        photoWifi = tk.PhotoImage(file="wifi.png")
+        imgWifi = tk.Label(self, anchor="s", image=photoWifi)
+        imgWifi.image = photoWifi  # keep a reference!
+        imgWifi.config(background="white")
+        imgWifi.place(x=740, y=5)
+
+        labelTittel = tk.Label(self, text="SNAKK", font=LARGE_FONT)
+        labelTittel.pack(pady=10, padx=10)
+        labelTittel.configure(background="white")
+
+        labelVanskelighetsgrad = tk.Label(self, text="Repeat after me.", font=MEDIUM_FONT)
+        labelVanskelighetsgrad.place(x=320, y=380)
+        labelVanskelighetsgrad.config(bg="white")
+
+        labelHi = tk.Label(self, text="English: Hi, my name is buddy. What is your name? \nNorwegian: Hei, jeg heter Buddy. Hva heter du?", font=MEDIUM_FONT)
+        labelHi.place(x=180, y=50)
+        labelHi.config(bg="white")
+
+        photoIllustrasjon = tk.PhotoImage(file="greeting.png")
+        imgIllustrasjon = tk.Label(self, anchor="s", image=photoIllustrasjon)
+        imgIllustrasjon.image = photoIllustrasjon
+        imgIllustrasjon.place(x=273, y=120)
+
+        hei_sound = pygame.mixer.Sound("hei.wav")
+        buttonHei = tk.Button(self, text="Hei", command=lambda: hei())
+        buttonHei.configure(background='purple', font=MEDIUM_FONT, height=2, width=20, fg='white')
+        buttonHei.place(x=275, y=410)
+
+        def hei():
+            pygame.mixer.Sound.play(hei_sound)
+            pygame.mixer.music.stop()
 
 class Quiz(tk.Frame):
 
@@ -229,115 +316,6 @@ class Quiz(tk.Frame):
         self.configure(background="white")
 
         # quiz spill
-
-
-
-class Snakk(tk.Frame):
-
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-
-        self.configure(background="white")
-
-        labelTittel = tk.Label(self, text="SNAKK", font=LARGE_FONT)
-        labelTittel.pack(pady=10, padx=10)
-        labelTittel.configure(background="white")
-
-        labelVanskelighetsgrad = tk.Label(self, text="How good is your Norwegian?", font=MEDIUM_FONT)
-        labelVanskelighetsgrad.place(x=250, y=100)
-        labelVanskelighetsgrad.config(bg="white")
-
-        photoReturn = tk.PhotoImage(file="returnknapp.png")
-        imgReturn = tk.Label(self, anchor="s", image=photoReturn)
-        imgReturn.image = photoReturn
-        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
-                                 command=lambda: controller.show_frame(Meny))
-        buttonReturn.place(x=10, y=10)
-
-        heter_sound = pygame.mixer.Sound("heter.wav")
-        spille_sound = pygame.mixer.Sound("spille.wav")
-
-        photoNorsk = tk.PhotoImage(file="toad.png")
-        photoSamfunnsfag = tk.PhotoImage(file="toad.png")
-        photoNaturfag = tk.PhotoImage(file="toad.png")
-
-        imgLaer = tk.Label(self, anchor="s", image=photoNorsk)
-        imgSpill = tk.Label(self, anchor="s", image=photoSamfunnsfag)
-        imgKom = tk.Label(self, anchor="s", image=photoNaturfag)
-
-        imgKom.image = photoNorsk
-        imgLaer.image = photoSamfunnsfag
-        imgSpill.image = photoNaturfag
-
-        buttonA = tk.Button(self, text="Not good", command=lambda: controller.show_frame(SnakkNybegynner))
-        buttonB = tk.Button(self, text="Okay", command=lambda: controller.show_frame(SnakkNybegynner))
-        buttonC = tk.Button(self, text="Good", command=lambda: controller.show_frame(SnakkNybegynner))
-
-        buttonA.configure(background='purple', font=MEDIUM_FONT, height=2, width=20, fg='white')
-        buttonB.configure(background='purple', font=MEDIUM_FONT, height=2, width=20, fg='white')
-        buttonC.configure(background='purple', font=MEDIUM_FONT, height=2, width=20, fg='white')
-
-        buttonA.place(x=275, y=150)
-        buttonB.place(x=275, y=230)
-        buttonC.place(x=275, y=310)
-
-        photoWifi = tk.PhotoImage(file="wifi.png")
-        imgWifi = tk.Label(self, anchor="s", image=photoWifi)
-        imgWifi.image = photoWifi  # keep a reference!
-        imgWifi.config(background="white")
-        imgWifi.place(x=740, y=5)
-
-
-
-        def heter():
-            pygame.mixer.Sound.play(heter_sound)
-            pygame.mixer.music.stop()
-
-        def spille():
-            pygame.mixer.Sound.play(spille_sound)
-            pygame.mixer.music.stop()
-
-class SnakkNybegynner(tk.Frame):
-
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-
-        self.configure(background="white")
-
-        photoReturn = tk.PhotoImage(file="returnknapp.png")
-        imgReturn = tk.Label(self, anchor="s", image=photoReturn)
-        imgReturn.image = photoReturn
-        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
-                                 command=lambda: controller.show_frame(Snakk))
-        buttonReturn.place(x=10, y=10)
-
-        photoWifi = tk.PhotoImage(file="wifi.png")
-        imgWifi = tk.Label(self, anchor="s", image=photoWifi)
-        imgWifi.image = photoWifi  # keep a reference!
-        imgWifi.config(background="white")
-        imgWifi.place(x=740, y=5)
-
-        labelTittel = tk.Label(self, text="SNAKK", font=LARGE_FONT)
-        labelTittel.pack(pady=10, padx=10)
-        labelTittel.configure(background="white")
-
-        labelVanskelighetsgrad = tk.Label(self, text="Repeat after me.", font=MEDIUM_FONT)
-        labelVanskelighetsgrad.place(x=320, y=100)
-        labelVanskelighetsgrad.config(bg="white")
-
-        photoIllustrasjon = tk.PhotoImage(file="toad.png")
-        imgIllustrasjon = tk.Label(self, anchor="s", image=photoIllustrasjon)
-        imgIllustrasjon.image = photoIllustrasjon
-        imgIllustrasjon.place(x=330, y=150)
-
-        hei_sound = pygame.mixer.Sound("hei.wav")
-        buttonHei = tk.Button(self, text="Hei", command=lambda: hei())
-        buttonHei.configure(background='purple', font=MEDIUM_FONT, height=2, width=20, fg='white')
-        buttonHei.place(x=275, y=350)
-
-        def hei():
-            pygame.mixer.Sound.play(hei_sound)
-            pygame.mixer.music.stop()
 
 app = BuddyOS()
 app.mainloop()
