@@ -193,7 +193,7 @@ class MemorySpill(tk.Frame):
         imgWifi.config(background="white")
         imgWifi.place(x=740, y=5)
 
-        from MemGameImg import MemGame
+        from MemoryGameBackup import MemGame
         x = MemGame(self)
         x.place(x=125, y=40)
 
@@ -277,7 +277,7 @@ class Norsk(tk.Frame):
         labelVanskelighetsgrad.place(x=320, y=380)
         labelVanskelighetsgrad.config(bg="white")
 
-        labelHi = tk.Label(self, text="English: Hi, my name is buddy and this is my friend. \nNorwegian: Hei, jeg heter Buddy og dette er min venn.", font=MEDIUM_FONT)
+        labelHi = tk.Label(self, text="English: Hi, my name is Buddy and this is my friend. \nNorwegian: Hei, jeg heter Buddy og dette er min venn.", font=MEDIUM_FONT)
         labelHi.place(x=180, y=50)
         labelHi.config(bg="white")
 
