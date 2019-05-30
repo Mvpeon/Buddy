@@ -52,11 +52,13 @@ class Tile(object):
         self.x = x
         self.image = image
 
+    # flips tile down
     def drawFaceDown(self):
         self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill = "white")
         self.canvas.create_image(self.x + 50, self.y + 50, image=self.cardback)
         self.isFaceUp = False
 
+    # flips tile up
     def drawFaceUp(self):
         self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill = "white")
         self.canvas.create_image(self.x + 50, self.y + 50, image=self.image)
@@ -72,6 +74,7 @@ class MemGame(tk.Frame):
     def __init__(self, master):
         super(MemGame, self).__init__(master)
 
+        # restart button
         photoRestart = tk.PhotoImage(file="restart.png")
         imgRestart = tk.Label(self, anchor="s", image=photoRestart)
         imgRestart.image = photoRestart
@@ -80,24 +83,28 @@ class MemGame(tk.Frame):
                                   command=lambda: self.restart())
         buttonRestart.place(x=560, y=200)
 
+        # animals
         photoDog = tk.PhotoImage(file="Dyr/dog.png")
         photoElefant = tk.PhotoImage(file="Dyr/elefant.png")
         photoFlamingo = tk.PhotoImage(file="Dyr/flamingo.png")
         photoFlodhest = tk.PhotoImage(file="Dyr/flodhest.png")
         photoKamel = tk.PhotoImage(file="Dyr/kamel.png")
         photoKatt = tk.PhotoImage(file="Dyr/katt.png")
-        photoKroko = tk.PhotoImage(file="Dyr/krokodille.png")
+        photoKrokodille = tk.PhotoImage(file="Dyr/krokodille.png")
         photoNeshorn = tk.PhotoImage(file="Dyr/neshorn.png")
         photoSkilpadde = tk.PhotoImage(file="Dyr/skilpadde.png")
         photoStruts = tk.PhotoImage(file="Dyr/struts.png")
         photoZebra = tk.PhotoImage(file="Dyr/zebra.png")
         photoLove = tk.PhotoImage(file="Dyr/love.png")
 
+        # cardback
         photoCardback = tk.PhotoImage(file="cardback.png")
         self.cardback = photoCardback
 
+        # sound effects
         self.riktig_sound = pygame.mixer.Sound("riktig.wav")
         self.click_sound = pygame.mixer.Sound("camerashutter.wav")
+        self.gratulerer_sound = pygame.mixer.Sound("cheer.wav")
 
         self.configure(width=650, height=480, bg="white")
         self.canvas = tk.Canvas(self, bg="white", width=550, height=480, highlightthickness=0, borderwidth=0)
@@ -110,7 +117,7 @@ class MemGame(tk.Frame):
             photoFlodhest,
             photoKamel,
             photoKatt,
-            photoKroko,
+            photoKrokodille,
             photoNeshorn,
             photoSkilpadde,
             photoStruts,
@@ -147,6 +154,8 @@ class MemGame(tk.Frame):
         NUM_COLS = 5
         NUM_ROWS = 4
 
+        self.score = 0
+
         for x in range(0, NUM_COLS):
             for y in range(0, NUM_ROWS):
                 self.tiles.append(Tile(self.canvas, x * 108 + 10, y * 108 + 40, selected.pop(), photoCardback))
@@ -156,6 +165,7 @@ class MemGame(tk.Frame):
         self.flippedThisTurn = 0
         self.canvas.bind("<Button-1>", self.mouseClicked)
 
+    # event for clicking on a tile
     def mouseClicked(self, event):
         for tile in self.tiles:
             if tile.isUnderMouse(event) and (self.flippedThisTurn < 2):
@@ -165,31 +175,46 @@ class MemGame(tk.Frame):
                     self.flippedTiles.append(tile)
                     self.flippedThisTurn += 1
 
+                # when two new tiles are flipped, checks if they match
                 if (self.flippedThisTurn == 2):
-                    if (self.flippedTiles[-1].image == self.flippedTiles[-2].image): #check last two elements
+                    if (self.flippedTiles[-1].image == self.flippedTiles[-2].image):
                         self.riktig()
+                        self.score += 1
                     self.after(1000, self.checkTiles)
 
+    # checks the last two flipped tiles and flips them back down if they don't match
     def checkTiles(self):
         self.flippedThisTurn = 0
-
-        if not(self.flippedTiles[-1].image == self.flippedTiles[-2].image):
+        if not(self.flippedTiles[-1].image == self.flippedTiles[-2].image): #check last two elements
             self.flippedTiles[-1].drawFaceDown()
             self.flippedTiles[-2].drawFaceDown()
             del self.flippedTiles[-2:]
 
+        # plays sound effect when completing the game
+        if (self.score == 10):
+            self.after(100, self.gratulerer)
+
+    # flips all the tiles face down
     def restart(self):
         for i in range(len(self.tiles)):
             self.tiles[i].drawFaceDown()
+            self.score = 0
+            self.clickSound()
 
+    # sound effect for finding two matching tiles
     def riktig(self):
         pygame.mixer.Sound.play(self.riktig_sound)
         pygame.mixer.music.stop()
 
+    # sound effect for completing the game
+    def gratulerer(self):
+        pygame.mixer.Sound.play(self.gratulerer_sound)
+        pygame.mixer.music.stop()
+
+    # button click sound effect
     def clickSound(self):
         pygame.mixer.Sound.play(self.click_sound)
         pygame.mixer.music.stop()
-
 
 if __name__ == '__main__':
     c = Controller()
