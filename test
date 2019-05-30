@@ -46,14 +46,14 @@ class PageMG(tk.Frame):
 
 class Tile(object):
     def __init__(self, canvas, x, y, image, cardback):
+        self.cardback = cardback
         self.canvas = canvas
         self.y = y
         self.x = x
         self.image = image
-        self.cardback = image
 
     def drawFaceDown(self):
-        self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill = "blue")
+        self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill = "white")
         self.canvas.create_image(self.x + 50, self.y + 50, image=self.cardback)
         self.isFaceUp = False
 
@@ -96,6 +96,7 @@ class MemGame(tk.Frame):
         photoCardback = tk.PhotoImage(file="cardback.png")
 
         self.riktig_sound = pygame.mixer.Sound("riktig.wav")
+        self.gratulerer_sound = pygame.mixer.Sound("cheer.wav")
 
         self.configure(width=600, height=480, bg="white")
         self.canvas = tk.Canvas(self, bg="white", width=600, height=480, highlightthickness=0, borderwidth=0)
@@ -147,9 +148,11 @@ class MemGame(tk.Frame):
         NUM_COLS = 5
         NUM_ROWS = 4
 
+        self.score = 0
+
         for x in range(0, NUM_COLS):
             for y in range(0, NUM_ROWS):
-                self.tiles.append(Tile(self.canvas, x * 108 + 10, y * 108 + 40, selected.pop()))
+                self.tiles.append(Tile(self.canvas, x * 108 + 10, y * 108 + 40, selected.pop(), photoCardback))
 
         for i in range(len(self.tiles)):
             self.tiles[i].drawFaceDown()
@@ -165,10 +168,10 @@ class MemGame(tk.Frame):
                     self.flippedThisTurn += 1
 
                 if (self.flippedThisTurn == 2):
+                    if (self.flippedTiles[-1].image == self.flippedTiles[-2].image):
+                        self.riktig()
+                        self.score += 1
                     self.after(1000, self.checkTiles)
-
-                if (self.flippedTiles[-1].image == self.flippedTiles[-2].image):
-                    self.riktig()
 
     def checkTiles(self):
         self.flippedThisTurn = 0
@@ -178,12 +181,19 @@ class MemGame(tk.Frame):
             self.flippedTiles[-2].drawFaceDown()
             del self.flippedTiles[-2:]
 
+        if (self.score == 10):
+            self.after(500, self.gratulerer)
+
     def restart(self):
         for i in range(len(self.tiles)):
             self.tiles[i].drawFaceDown()
 
     def riktig(self):
         pygame.mixer.Sound.play(self.riktig_sound)
+        pygame.mixer.music.stop()
+
+    def gratulerer(self):
+        pygame.mixer.Sound.play(self.gratulerer_sound)
         pygame.mixer.music.stop()
 
 
