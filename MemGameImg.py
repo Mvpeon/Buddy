@@ -83,6 +83,8 @@ class MemGame(tk.Frame):
                                   command=lambda: self.restart())
         buttonRestart.place(x=560, y=200)
 
+        self.score = 0
+
         # animals
         photoDog = tk.PhotoImage(file="Dyr/dog.png")
         photoElefant = tk.PhotoImage(file="Dyr/elefant.png")
@@ -140,6 +142,7 @@ class MemGame(tk.Frame):
             "Lion"
         }
 
+        # assigns pairs of images to random tiles
         selected = []
         for i in range(10):
             randomInd = randint(0, len(self.images) - 1)
@@ -151,8 +154,6 @@ class MemGame(tk.Frame):
         self.flippedTiles = []
         NUM_COLS = 5
         NUM_ROWS = 4
-
-        self.score = 0
 
         for x in range(0, NUM_COLS):
             for y in range(0, NUM_ROWS):
@@ -173,17 +174,17 @@ class MemGame(tk.Frame):
                     self.flippedTiles.append(tile)
                     self.flippedThisTurn += 1
 
-                # when two new tiles are flipped, checks if they match
+                # when two new tiles are flipped, plays sound effect and increases score if they match
                 if (self.flippedThisTurn == 2):
-                    if (self.flippedTiles[-1].image == self.flippedTiles[-2].image):
+                    if (self.flippedTiles[-1].image == self.flippedTiles[-2].image): #check last two elements
                         self.riktig()
                         self.score += 1
-                    self.after(1000, self.checkTiles)
+                    self.after(1000, self.checkTiles) # then performs another check
 
     # checks the last two flipped tiles and flips them back down if they don't match
     def checkTiles(self):
         self.flippedThisTurn = 0
-        if not(self.flippedTiles[-1].image == self.flippedTiles[-2].image): #check last two elements
+        if not(self.flippedTiles[-1].image == self.flippedTiles[-2].image):
             self.flippedTiles[-1].drawFaceDown()
             self.flippedTiles[-2].drawFaceDown()
             del self.flippedTiles[-2:]
@@ -192,7 +193,7 @@ class MemGame(tk.Frame):
         if (self.score == 10):
             self.after(100, self.gratulerer)
 
-    # flips all the tiles face down
+    # flips all the tiles face down and resets score
     def restart(self):
         for i in range(len(self.tiles)):
             self.tiles[i].drawFaceDown()
