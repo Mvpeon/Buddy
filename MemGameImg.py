@@ -44,7 +44,7 @@ class PageMG(tk.Frame):
         x.pack()
 
 
-class Tile(object):
+class Tile(object): # this class is used for creating the tiles
     def __init__(self, canvas, x, y, image, cardback):
         self.cardback = cardback
         self.canvas = canvas
@@ -140,6 +140,8 @@ class MemGame(tk.Frame):
         self.canvas = tk.Canvas(self, bg="white", width=550, height=480, highlightthickness=0, borderwidth=0)
         self.canvas.place(x=0, y=-30)
         self.tiles = []
+
+        # plain image PNGs
         self.images = [
             photoDog,
             photoElephant,
@@ -155,21 +157,7 @@ class MemGame(tk.Frame):
             photoLion
         ]
 
-        self.tagImages = [
-            photoDogTag,
-            photoElephantTag,
-            photoFlamingoTag,
-            photoHippopotamusTag,
-            photoCamelTag,
-            photoCatTag,
-            photoCrocodileTag,
-            photoRhinocerosTag,
-            photoTurtleTag,
-            photoOstrichTag,
-            photoZebraTag,
-            photoLionTag
-        ]
-
+        # plain text PNGs
         self.textImages = [
             photoDogText,
             photoElephantText,
@@ -185,13 +173,28 @@ class MemGame(tk.Frame):
             photoLionText
         ]
 
-        self.all_tiles = self.images + self.tagImages
+        # image + text PNGs
+        self.tagImages = [
+            photoDogTag,
+            photoElephantTag,
+            photoFlamingoTag,
+            photoHippopotamusTag,
+            photoCamelTag,
+            photoCatTag,
+            photoCrocodileTag,
+            photoRhinocerosTag,
+            photoTurtleTag,
+            photoOstrichTag,
+            photoZebraTag,
+            photoLionTag
+        ]
 
+        # creating a dictionary that will be used for matching different plain images with text images of same animals
+        self.all_tiles = self.images + self.textImages
         matches = {
-            k: v for (k, v) in zip(self.images, self.tagImages)
+            k: v for (k, v) in zip(self.images, self.textImages)
         }
-
-        matches.update([(k, v) for (k, v) in zip(self.tagImages, self.images)])
+        matches.update([(k, v) for (k, v) in zip(self.textImages, self.images)])
 
         # assigns pairs of images to random tiles
         selected = []
