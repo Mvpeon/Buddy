@@ -81,23 +81,51 @@ class MemGame(tk.Frame):
         buttonRestart = tk.Button(self, activebackground="white",
                                   image=photoRestart, highlightthickness=0, borderwidth=0,
                                   command=lambda: self.restart())
-        buttonRestart.place(x=560, y=200)
+        buttonRestart.place(x=560, y=197)
 
         self.score = 0
 
         # animals
         photoDog = tk.PhotoImage(file="Dyr/dog.png")
-        photoElefant = tk.PhotoImage(file="Dyr/elefant.png")
+        photoElephant = tk.PhotoImage(file="Dyr/elephant.png")
         photoFlamingo = tk.PhotoImage(file="Dyr/flamingo.png")
-        photoFlodhest = tk.PhotoImage(file="Dyr/flodhest.png")
-        photoKamel = tk.PhotoImage(file="Dyr/kamel.png")
-        photoKatt = tk.PhotoImage(file="Dyr/katt.png")
-        photoKrokodille = tk.PhotoImage(file="Dyr/krokodille.png")
-        photoNeshorn = tk.PhotoImage(file="Dyr/neshorn.png")
-        photoSkilpadde = tk.PhotoImage(file="Dyr/skilpadde.png")
-        photoStruts = tk.PhotoImage(file="Dyr/struts.png")
+        photoHippo = tk.PhotoImage(file="Dyr/hippo.png")
+        photoCamel = tk.PhotoImage(file="Dyr/camel.png")
+        photoCat = tk.PhotoImage(file="Dyr/cat.png")
+        photoCrocodile = tk.PhotoImage(file="Dyr/crocodile.png")
+        photoRhinoceros = tk.PhotoImage(file="Dyr/rhinoceros.png")
+        photoTurtle = tk.PhotoImage(file="Dyr/turtle.png")
+        photoOstrich = tk.PhotoImage(file="Dyr/ostrich.png")
         photoZebra = tk.PhotoImage(file="Dyr/zebra.png")
-        photoLove = tk.PhotoImage(file="Dyr/love.png")
+        photoLion = tk.PhotoImage(file="Dyr/lion.png")
+
+        # tagged animals
+        photoDogTag = tk.PhotoImage(file="Dyr/dogtag.png")
+        photoElephantTag = tk.PhotoImage(file="Dyr/elephanttag.png")
+        photoFlamingoTag = tk.PhotoImage(file="Dyr/flamingotag.png")
+        photoHippopotamusTag = tk.PhotoImage(file="Dyr/hippopotamustag.png")
+        photoCamelTag = tk.PhotoImage(file="Dyr/cameltag.png")
+        photoCatTag = tk.PhotoImage(file="Dyr/cattag.png")
+        photoCrocodileTag = tk.PhotoImage(file="Dyr/crocodiletag.png")
+        photoRhinocerosTag = tk.PhotoImage(file="Dyr/rhinocerostag.png")
+        photoTurtleTag = tk.PhotoImage(file="Dyr/turtletag.png")
+        photoOstrichTag = tk.PhotoImage(file="Dyr/ostrichtag.png")
+        photoZebraTag = tk.PhotoImage(file="Dyr/zebratag.png")
+        photoLionTag = tk.PhotoImage(file="Dyr/liontag.png")
+
+        # animal texts
+        photoDogText = tk.PhotoImage(file="Dyr/dogtext.png")
+        photoElephantText = tk.PhotoImage(file="Dyr/elephanttext.png")
+        photoFlamingoText = tk.PhotoImage(file="Dyr/flamingotext.png")
+        photoHippoText = tk.PhotoImage(file="Dyr/hippotext.png")
+        photoCamelText = tk.PhotoImage(file="Dyr/cameltext.png")
+        photoCatText = tk.PhotoImage(file="Dyr/cattext.png")
+        photoCrocodileText = tk.PhotoImage(file="Dyr/crocodiletext.png")
+        photoRhinocerosText = tk.PhotoImage(file="Dyr/rhinocerostext.png")
+        photoTurtleText = tk.PhotoImage(file="Dyr/turtletext.png")
+        photoOstrichText = tk.PhotoImage(file="Dyr/ostrichtext.png")
+        photoZebraText = tk.PhotoImage(file="Dyr/zebratext.png")
+        photoLionText = tk.PhotoImage(file="Dyr/liontext.png")
 
         # cardback
         photoCardback = tk.PhotoImage(file="cardback.png")
@@ -114,42 +142,67 @@ class MemGame(tk.Frame):
         self.tiles = []
         self.images = [
             photoDog,
-            photoElefant,
+            photoElephant,
             photoFlamingo,
-            photoFlodhest,
-            photoKamel,
-            photoKatt,
-            photoKrokodille,
-            photoNeshorn,
-            photoSkilpadde,
-            photoStruts,
+            photoHippo,
+            photoCamel,
+            photoCat,
+            photoCrocodile,
+            photoRhinoceros,
+            photoTurtle,
+            photoOstrich,
             photoZebra,
-            photoLove
+            photoLion
         ]
 
-        self.texts = {
-            "Dog",
-            "Elephant",
-            "Flamingo",
-            "Hippopotamus",
-            "Camel",
-            "Cat",
-            "Crocodile",
-            "Rhinoceros",
-            "Turtle",
-            "Ostrich",
-            "Zebra",
-            "Lion"
+        self.tagImages = [
+            photoDogTag,
+            photoElephantTag,
+            photoFlamingoTag,
+            photoHippopotamusTag,
+            photoCamelTag,
+            photoCatTag,
+            photoCrocodileTag,
+            photoRhinocerosTag,
+            photoTurtleTag,
+            photoOstrichTag,
+            photoZebraTag,
+            photoLionTag
+        ]
+
+        self.textImages = [
+            photoDogText,
+            photoElephantText,
+            photoFlamingoText,
+            photoHippoText,
+            photoCamelText,
+            photoCatText,
+            photoCrocodileText,
+            photoRhinocerosText,
+            photoTurtleText,
+            photoOstrichText,
+            photoZebraText,
+            photoLionText
+        ]
+
+        self.all_tiles = self.images + self.tagImages
+
+        matches = {
+            k: v for (k, v) in zip(self.images, self.tagImages)
         }
+
+        matches.update([(k, v) for (k, v) in zip(self.tagImages, self.images)])
 
         # assigns pairs of images to random tiles
         selected = []
         for i in range(10):
             randomInd = randint(0, len(self.images) - 1)
             animalImg = self.images[randomInd]
+            animalImgTag = self.tagImages[randomInd]
             selected.append(animalImg)
-            selected.append(animalImg)
+            selected.append(animalImgTag)
             del self.images[randomInd]
+            del self.tagImages[randomInd]
         shuffle(selected)
         self.flippedTiles = []
         NUM_COLS = 5
@@ -179,9 +232,9 @@ class MemGame(tk.Frame):
                     if (self.flippedTiles[-1].image == self.flippedTiles[-2].image): #check last two elements
                         self.riktig()
                         self.score += 1
-                    self.after(1000, self.checkTiles) # then performs another check
+                    self.after(1000, self.checkTiles) # then performs another check after a short delay
 
-    # checks the last two flipped tiles and flips them back down if they don't match
+    # checks the last two flipped tiles and resets them if they don't match
     def checkTiles(self):
         self.flippedThisTurn = 0
         if not(self.flippedTiles[-1].image == self.flippedTiles[-2].image):
@@ -189,7 +242,7 @@ class MemGame(tk.Frame):
             self.flippedTiles[-2].drawFaceDown()
             del self.flippedTiles[-2:]
 
-        # plays sound effect when completing the game
+        # plays sound effect when completing the game after a very short delay
         if (self.score == 10):
             self.after(100, self.gratulerer)
 

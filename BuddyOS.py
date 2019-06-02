@@ -193,7 +193,7 @@ class MemorySpill(tk.Frame):
         imgWifi.config(background="white")
         imgWifi.place(x=740, y=5)
 
-        from MemoryGameBackup import MemGame
+        from MemGameImg import MemGame
         x = MemGame(self)
         x.place(x=125, y=40)
 
