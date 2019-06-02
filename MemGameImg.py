@@ -85,7 +85,7 @@ class MemGame(tk.Frame):
 
         self.score = 0
 
-        # animals
+        # plain image PNGs
         photoDog = tk.PhotoImage(file="Dyr/dog.png")
         photoElephant = tk.PhotoImage(file="Dyr/elephant.png")
         photoFlamingo = tk.PhotoImage(file="Dyr/flamingo.png")
@@ -99,7 +99,7 @@ class MemGame(tk.Frame):
         photoZebra = tk.PhotoImage(file="Dyr/zebra.png")
         photoLion = tk.PhotoImage(file="Dyr/lion.png")
 
-        # tagged animals
+        # image + text PNGs
         photoDogTag = tk.PhotoImage(file="Dyr/dogtag.png")
         photoElephantTag = tk.PhotoImage(file="Dyr/elephanttag.png")
         photoFlamingoTag = tk.PhotoImage(file="Dyr/flamingotag.png")
@@ -113,7 +113,7 @@ class MemGame(tk.Frame):
         photoZebraTag = tk.PhotoImage(file="Dyr/zebratag.png")
         photoLionTag = tk.PhotoImage(file="Dyr/liontag.png")
 
-        # animal texts
+        # plain text PNGs
         photoDogText = tk.PhotoImage(file="Dyr/dogtext.png")
         photoElephantText = tk.PhotoImage(file="Dyr/elephanttext.png")
         photoFlamingoText = tk.PhotoImage(file="Dyr/flamingotext.png")
