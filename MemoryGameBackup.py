@@ -45,12 +45,13 @@ class PageMG(tk.Frame):
 
 
 class Tile(object):
-    def __init__(self, canvas, x, y, image, cardback):
+    def __init__(self, canvas, x, y, image, text, cardback):
         self.cardback = cardback
         self.canvas = canvas
         self.y = y
         self.x = x
         self.image = image
+        self.text = text
 
     # flips tile down
     def drawFaceDown(self):
@@ -59,10 +60,15 @@ class Tile(object):
         self.isFaceUp = False
 
     # flips tile up
-    def drawFaceUp(self):
-        self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill = "white")
-        self.canvas.create_image(self.x + 50, self.y + 50, image=self.image)
+    def drawFaceUp(self, tile_type):
+        self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill="white")
+        if (tile_type == self.image):
+            self.canvas.create_image(self.x + 50, self.y + 50, image=self.image)
+        if (tile_type == self.text):
+            self.canvas.create_text(self.x + 35, self.y + 35, text=self.text, width=70, fill="white",
+                                    font='Helvetica 12 bold')
         self.isFaceUp = True
+
 
     def isUnderMouse(self, event):
         if(event.x > self.x and event.x < self.x + 100):
@@ -110,7 +116,7 @@ class MemGame(tk.Frame):
         self.canvas = tk.Canvas(self, bg="white", width=550, height=480, highlightthickness=0, borderwidth=0)
         self.canvas.place(x=0, y=-30)
         self.tiles = []
-        self.images = [
+        self.image_tiles = [
             photoDog,
             photoElefant,
             photoFlamingo,
@@ -125,7 +131,7 @@ class MemGame(tk.Frame):
             photoLove
         ]
 
-        self.texts = {
+        self.text_tiles = [
             "Dog",
             "Elephant",
             "Flamingo",
@@ -138,15 +144,19 @@ class MemGame(tk.Frame):
             "Ostrich",
             "Zebra",
             "Lion"
-        }
+        ]
+
+        self.all_tiles = self.image_tiles + self.text_tiles
 
         selected = []
         for i in range(10):
-            randomInd = randint(0, len(self.images) - 1)
-            animalImg = self.images[randomInd]
+            randomInd = randint(0, len(self.image_tiles) - 1)
+            animalImg = self.image_tiles[randomInd]
+            animalText = self.text_tiles[randomInd]
             selected.append(animalImg)
-            selected.append(animalImg)
-            del self.images[randomInd]
+            selected.append(animalText)
+            del self.image_tiles[randomInd]
+            del self.text_tiles[randomInd]
         shuffle(selected)
         self.flippedTiles = []
         NUM_COLS = 5
@@ -156,7 +166,7 @@ class MemGame(tk.Frame):
 
         for x in range(0, NUM_COLS):
             for y in range(0, NUM_ROWS):
-                self.tiles.append(Tile(self.canvas, x * 108 + 10, y * 108 + 40, selected.pop(), photoCardback))
+                self.tiles.append(Tile(self.canvas, x * 108 + 10, y * 108 + 40, selected.pop(), animalText, photoCardback))
 
         for i in range(len(self.tiles)):
             self.tiles[i].drawFaceDown()
