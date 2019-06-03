@@ -42,9 +42,9 @@ class Meny(tk.Frame):
 
         self.configure(background="white")
 
-        photoKom = tk.PhotoImage(file="kommknapp.png")
-        photoLaer = tk.PhotoImage(file="laerknapp.png")
-        photoSpill = tk.PhotoImage(file="spillknapp.png")
+        photoKom = tk.PhotoImage(file="talkbtn.png")
+        photoLaer = tk.PhotoImage(file="learnbtn.png")
+        photoSpill = tk.PhotoImage(file="gamesbtn.png")
 
         imgKom = tk.Label(self, anchor="s", image=photoKom)
         imgLaer = tk.Label(self, anchor="s", image=photoLaer)
@@ -55,19 +55,25 @@ class Meny(tk.Frame):
         imgSpill.image = photoSpill
 
         labelTittel = tk.Label(self, text="MENU", font=LARGE_FONT)
-        buttonKom = tk.Button(self, image=photoKom, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(Fagvelger))
-        buttonLær = tk.Button(self, image=photoLaer, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(Snakk))
-        buttonSpill = tk.Button(self, image=photoSpill, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(SpillMeny))
+        buttonKom = tk.Button(self, image=photoKom, highlightthickness=0, bg="white",
+                              borderwidth=0, activebackground="white",
+                              command=lambda: controller.show_frame(Fagvelger))
+        buttonLær = tk.Button(self, image=photoLaer, highlightthickness=0, bg="white",
+                              borderwidth=0, activebackground="white",
+                              command=lambda: controller.show_frame(Snakk))
+        buttonSpill = tk.Button(self, image=photoSpill, highlightthickness=0, bg="white",
+                                borderwidth=0, activebackground="white",
+                                command=lambda: controller.show_frame(SpillMeny))
 
         labelTittel.configure(background="white")
         labelTittel.pack(pady=10, padx=10)
 
-        labelSnakk = tk.Label(self, text="Talk", bg="white", font=LARGE_FONT)
-        labelLaer = tk.Label(self, text="Learn", bg="white", font=LARGE_FONT)
-        labelSpill = tk.Label(self, text="Games", bg="white", font=LARGE_FONT)
-        labelSnakk.place(x=111, y=370)
-        labelLaer.place(x=352, y=370)
-        labelSpill.place(x=600, y=370)
+        labelLearn = tk.Label(self, text="Learn", bg="white", font=LARGE_FONT)
+        labelTalk = tk.Label(self, text="Talk", bg="white", font=LARGE_FONT)
+        labelGames = tk.Label(self, text="Games", bg="white", font=LARGE_FONT)
+        labelLearn.place(x=110, y=370)
+        labelTalk.place(x=365, y=370)
+        labelGames.place(x=600, y=370)
 
         buttonLær.place(x=50, y=150)
         buttonKom.place(x=300, y=150)
