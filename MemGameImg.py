@@ -157,22 +157,6 @@ class MemGame(tk.Frame):
             photoLion
         ]
 
-        # plain text PNGs
-        self.textImages = [
-            photoDogText,
-            photoElephantText,
-            photoFlamingoText,
-            photoHippoText,
-            photoCamelText,
-            photoCatText,
-            photoCrocodileText,
-            photoRhinocerosText,
-            photoTurtleText,
-            photoOstrichText,
-            photoZebraText,
-            photoLionText
-        ]
-
         # image + text PNGs
         self.tagImages = [
             photoDogTag,
@@ -189,6 +173,22 @@ class MemGame(tk.Frame):
             photoLionTag
         ]
 
+        # plain text PNGs
+        self.textImages = [
+            photoDogText,
+            photoElephantText,
+            photoFlamingoText,
+            photoHippoText,
+            photoCamelText,
+            photoCatText,
+            photoCrocodileText,
+            photoRhinocerosText,
+            photoTurtleText,
+            photoOstrichText,
+            photoZebraText,
+            photoLionText
+        ]
+
         # creating a dictionary that will be used for matching different plain images with text images of same animals
         self.all_tiles = self.images + self.textImages
         matches = {
@@ -201,9 +201,9 @@ class MemGame(tk.Frame):
         for i in range(10):
             randomInd = randint(0, len(self.images) - 1)
             animalImg = self.images[randomInd]
-            animalTextImg = self.textImages[randomInd]
+            animalImgText = self.textImages[randomInd]
             selected.append(animalImg)
-            selected.append(animalTextImg)
+            selected.append(animalImgText)
             del self.images[randomInd]
             del self.textImages[randomInd]
         shuffle(selected)
