@@ -44,7 +44,7 @@ class PageMG(tk.Frame):
         x.pack()
 
 
-class Tile(object):
+class Tile(object): # this class is used for creating the tiles
     def __init__(self, canvas, x, y, image, cardback):
         self.cardback = cardback
         self.canvas = canvas
@@ -81,21 +81,51 @@ class MemGame(tk.Frame):
         buttonRestart = tk.Button(self, activebackground="white",
                                   image=photoRestart, highlightthickness=0, borderwidth=0,
                                   command=lambda: self.restart())
-        buttonRestart.place(x=560, y=200)
+        buttonRestart.place(x=560, y=197)
 
-        # animals
+        self.score = 0
+
+        # plain image PNGs
         photoDog = tk.PhotoImage(file="Dyr/dog.png")
-        photoElefant = tk.PhotoImage(file="Dyr/elefant.png")
+        photoElephant = tk.PhotoImage(file="Dyr/elephant.png")
         photoFlamingo = tk.PhotoImage(file="Dyr/flamingo.png")
-        photoFlodhest = tk.PhotoImage(file="Dyr/flodhest.png")
-        photoKamel = tk.PhotoImage(file="Dyr/kamel.png")
-        photoKatt = tk.PhotoImage(file="Dyr/katt.png")
-        photoKrokodille = tk.PhotoImage(file="Dyr/krokodille.png")
-        photoNeshorn = tk.PhotoImage(file="Dyr/neshorn.png")
-        photoSkilpadde = tk.PhotoImage(file="Dyr/skilpadde.png")
-        photoStruts = tk.PhotoImage(file="Dyr/struts.png")
+        photoHippo = tk.PhotoImage(file="Dyr/hippo.png")
+        photoCamel = tk.PhotoImage(file="Dyr/camel.png")
+        photoCat = tk.PhotoImage(file="Dyr/cat.png")
+        photoCrocodile = tk.PhotoImage(file="Dyr/crocodile.png")
+        photoRhinoceros = tk.PhotoImage(file="Dyr/rhinoceros.png")
+        photoTurtle = tk.PhotoImage(file="Dyr/turtle.png")
+        photoOstrich = tk.PhotoImage(file="Dyr/ostrich.png")
         photoZebra = tk.PhotoImage(file="Dyr/zebra.png")
-        photoLove = tk.PhotoImage(file="Dyr/love.png")
+        photoLion = tk.PhotoImage(file="Dyr/lion.png")
+
+        # image + text PNGs
+        photoDogTag = tk.PhotoImage(file="Dyr/dogtag.png")
+        photoElephantTag = tk.PhotoImage(file="Dyr/elephanttag.png")
+        photoFlamingoTag = tk.PhotoImage(file="Dyr/flamingotag.png")
+        photoHippopotamusTag = tk.PhotoImage(file="Dyr/hippopotamustag.png")
+        photoCamelTag = tk.PhotoImage(file="Dyr/cameltag.png")
+        photoCatTag = tk.PhotoImage(file="Dyr/cattag.png")
+        photoCrocodileTag = tk.PhotoImage(file="Dyr/crocodiletag.png")
+        photoRhinocerosTag = tk.PhotoImage(file="Dyr/rhinocerostag.png")
+        photoTurtleTag = tk.PhotoImage(file="Dyr/turtletag.png")
+        photoOstrichTag = tk.PhotoImage(file="Dyr/ostrichtag.png")
+        photoZebraTag = tk.PhotoImage(file="Dyr/zebratag.png")
+        photoLionTag = tk.PhotoImage(file="Dyr/liontag.png")
+
+        # plain text PNGs
+        photoDogText = tk.PhotoImage(file="Dyr/dogtext.png")
+        photoElephantText = tk.PhotoImage(file="Dyr/elephanttext.png")
+        photoFlamingoText = tk.PhotoImage(file="Dyr/flamingotext.png")
+        photoHippoText = tk.PhotoImage(file="Dyr/hippotext.png")
+        photoCamelText = tk.PhotoImage(file="Dyr/cameltext.png")
+        photoCatText = tk.PhotoImage(file="Dyr/cattext.png")
+        photoCrocodileText = tk.PhotoImage(file="Dyr/crocodiletext.png")
+        photoRhinocerosText = tk.PhotoImage(file="Dyr/rhinocerostext.png")
+        photoTurtleText = tk.PhotoImage(file="Dyr/turtletext.png")
+        photoOstrichText = tk.PhotoImage(file="Dyr/ostrichtext.png")
+        photoZebraText = tk.PhotoImage(file="Dyr/zebratext.png")
+        photoLionText = tk.PhotoImage(file="Dyr/liontext.png")
 
         # cardback
         photoCardback = tk.PhotoImage(file="cardback.png")
@@ -110,36 +140,63 @@ class MemGame(tk.Frame):
         self.canvas = tk.Canvas(self, bg="white", width=550, height=480, highlightthickness=0, borderwidth=0)
         self.canvas.place(x=0, y=-30)
         self.tiles = []
+
+        # plain image PNGs
         self.images = [
             photoDog,
-            photoElefant,
+            photoElephant,
             photoFlamingo,
-            photoFlodhest,
-            photoKamel,
-            photoKatt,
-            photoKrokodille,
-            photoNeshorn,
-            photoSkilpadde,
-            photoStruts,
+            photoHippo,
+            photoCamel,
+            photoCat,
+            photoCrocodile,
+            photoRhinoceros,
+            photoTurtle,
+            photoOstrich,
             photoZebra,
-            photoLove
+            photoLion
         ]
 
-        self.texts = {
-            "Dog",
-            "Elephant",
-            "Flamingo",
-            "Hippopotamus",
-            "Camel",
-            "Cat",
-            "Crocodile",
-            "Rhinoceros",
-            "Turtle",
-            "Ostrich",
-            "Zebra",
-            "Lion"
-        }
+        # plain text PNGs
+        self.textImages = [
+            photoDogText,
+            photoElephantText,
+            photoFlamingoText,
+            photoHippoText,
+            photoCamelText,
+            photoCatText,
+            photoCrocodileText,
+            photoRhinocerosText,
+            photoTurtleText,
+            photoOstrichText,
+            photoZebraText,
+            photoLionText
+        ]
 
+        # image + text PNGs
+        self.tagImages = [
+            photoDogTag,
+            photoElephantTag,
+            photoFlamingoTag,
+            photoHippopotamusTag,
+            photoCamelTag,
+            photoCatTag,
+            photoCrocodileTag,
+            photoRhinocerosTag,
+            photoTurtleTag,
+            photoOstrichTag,
+            photoZebraTag,
+            photoLionTag
+        ]
+
+        # creating a dictionary that will be used for matching different plain images with text images of same animals
+        self.all_tiles = self.images + self.textImages
+        matches = {
+            k: v for (k, v) in zip(self.images, self.textImages)
+        }
+        matches.update([(k, v) for (k, v) in zip(self.textImages, self.images)])
+
+        # assigns pairs of images to random tiles
         selected = []
         for i in range(10):
             randomInd = randint(0, len(self.images) - 1)
@@ -151,8 +208,6 @@ class MemGame(tk.Frame):
         self.flippedTiles = []
         NUM_COLS = 5
         NUM_ROWS = 4
-
-        self.score = 0
 
         for x in range(0, NUM_COLS):
             for y in range(0, NUM_ROWS):
@@ -173,26 +228,26 @@ class MemGame(tk.Frame):
                     self.flippedTiles.append(tile)
                     self.flippedThisTurn += 1
 
-                # when two new tiles are flipped, checks if they match
+                # when two new tiles are flipped, plays sound effect and increases score if they match
                 if (self.flippedThisTurn == 2):
-                    if (self.flippedTiles[-1].image == self.flippedTiles[-2].image):
+                    if (self.flippedTiles[-1].image == self.flippedTiles[-2].image): #check last two elements
                         self.riktig()
                         self.score += 1
-                    self.after(1000, self.checkTiles)
+                    self.after(1000, self.checkTiles) # then performs another check after a short delay
 
-    # checks the last two flipped tiles and flips them back down if they don't match
+    # checks the last two flipped tiles and resets them if they don't match
     def checkTiles(self):
         self.flippedThisTurn = 0
-        if not(self.flippedTiles[-1].image == self.flippedTiles[-2].image): #check last two elements
+        if not(self.flippedTiles[-1].image == self.flippedTiles[-2].image):
             self.flippedTiles[-1].drawFaceDown()
             self.flippedTiles[-2].drawFaceDown()
             del self.flippedTiles[-2:]
 
-        # plays sound effect when completing the game
+        # plays sound effect when completing the game after a very short delay
         if (self.score == 10):
             self.after(100, self.gratulerer)
 
-    # flips all the tiles face down
+    # flips all the tiles face down and resets score
     def restart(self):
         for i in range(len(self.tiles)):
             self.tiles[i].drawFaceDown()

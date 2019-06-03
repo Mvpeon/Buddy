@@ -201,11 +201,11 @@ class MemGame(tk.Frame):
         for i in range(10):
             randomInd = randint(0, len(self.images) - 1)
             animalImg = self.images[randomInd]
-            animalImgTag = self.tagImages[randomInd]
+            animalTextImg = self.textImages[randomInd]
             selected.append(animalImg)
-            selected.append(animalImgTag)
+            selected.append(animalTextImg)
             del self.images[randomInd]
-            del self.tagImages[randomInd]
+            del self.textImages[randomInd]
         shuffle(selected)
         self.flippedTiles = []
         NUM_COLS = 5
