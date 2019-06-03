@@ -17,7 +17,7 @@ class BuddyOS(tk.Tk):
 
         self.frames = {}
 
-        for F in (Meny, SpillMeny, Snakk, MemorySpill, LoadingScreen, Quiz, Norsk, Fagvelger):
+        for F in (Language, Meny, SpillMeny, Snakk, MemoryP1, MemoryP2, MemoryMeny, Quiz, Norsk, Fagvelger):
             frame = F(container, self)
 
             self.frames[F] = frame
@@ -25,7 +25,7 @@ class BuddyOS(tk.Tk):
             frame.grid(row=0, column=0, sticky="nsew")
 
         self.geometry("800x480")
-        self.show_frame(LoadingScreen)
+        self.show_frame(Language)
 
 
     def show_frame(self, cont):
@@ -35,22 +35,6 @@ class BuddyOS(tk.Tk):
     def quit(self):
         exit()
 
-
-class LoadingScreen(tk.Frame):
-
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-
-        self.configure(background="white")
-
-        photoLoading = tk.PhotoImage(file="loading.png")
-        imgLoading = tk.Label(self, anchor="s", image=photoLoading)
-        imgLoading.image = photoLoading
-
-        button1 = tk.Button(self, text="MENY", command=lambda: controller.show_frame(Meny))
-        button1.configure(image=photoLoading, bg='white', width="800", height="480")
-        button1.pack()
-
 class Meny(tk.Frame):
 
     def __init__(self, parent, controller):
@@ -58,9 +42,9 @@ class Meny(tk.Frame):
 
         self.configure(background="white")
 
-        photoKom = tk.PhotoImage(file="kommknapp.png")
-        photoLaer = tk.PhotoImage(file="laerknapp.png")
-        photoSpill = tk.PhotoImage(file="spillknapp.png")
+        photoKom = tk.PhotoImage(file="talkbtn.png")
+        photoLaer = tk.PhotoImage(file="learnbtn.png")
+        photoSpill = tk.PhotoImage(file="gamesbtn.png")
 
         imgKom = tk.Label(self, anchor="s", image=photoKom)
         imgLaer = tk.Label(self, anchor="s", image=photoLaer)
@@ -70,23 +54,36 @@ class Meny(tk.Frame):
         imgLaer.image = photoLaer
         imgSpill.image = photoSpill
 
-        labelTittel = tk.Label(self, text="MENY", font=LARGE_FONT)
-        buttonKom = tk.Button(self, image=photoKom, command=lambda: controller.show_frame(Snakk))
-        buttonLær = tk.Button(self, image=photoLaer, command=lambda: controller.show_frame(Fagvelger))
-        buttonSpill = tk.Button(self, image=photoSpill, command=lambda: controller.show_frame(SpillMeny))
+        labelTittel = tk.Label(self, text="MENU", font=LARGE_FONT)
+        buttonKom = tk.Button(self, image=photoKom, highlightthickness=0, bg="white",
+                              borderwidth=0, activebackground="white",
+                              command=lambda: controller.show_frame(Fagvelger))
+        buttonLær = tk.Button(self, image=photoLaer, highlightthickness=0, bg="white",
+                              borderwidth=0, activebackground="white",
+                              command=lambda: controller.show_frame(Snakk))
+        buttonSpill = tk.Button(self, image=photoSpill, highlightthickness=0, bg="white",
+                                borderwidth=0, activebackground="white",
+                                command=lambda: controller.show_frame(SpillMeny))
 
         labelTittel.configure(background="white")
         labelTittel.pack(pady=10, padx=10)
 
-        buttonKom.place(x=110, y=150)
-        buttonLær.place(x=310, y=150)
-        buttonSpill.place(x=510, y=150)
+        labelLearn = tk.Label(self, text="Learn", bg="white", font=LARGE_FONT)
+        labelTalk = tk.Label(self, text="Talk", bg="white", font=LARGE_FONT)
+        labelGames = tk.Label(self, text="Games", bg="white", font=LARGE_FONT)
+        labelLearn.place(x=110, y=370)
+        labelTalk.place(x=365, y=370)
+        labelGames.place(x=600, y=370)
 
-        photoWifi = tk.PhotoImage(file="wifi.png")
-        imgWifi = tk.Label(self, anchor="s", image=photoWifi)
-        imgWifi.image = photoWifi  # keep a reference!
-        imgWifi.config(background="white")
-        imgWifi.place(x=740, y=5)
+        buttonLær.place(x=50, y=150)
+        buttonKom.place(x=300, y=150)
+        buttonSpill.place(x=550, y=150)
+
+        photoBatteri = tk.PhotoImage(file="batteri.png")
+        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
+        imgBatteri.image = photoBatteri  # keep a reference!
+        imgBatteri.config(background="white")
+        imgBatteri.place(x=700, y=5)
 
         photoExit = tk.PhotoImage(file="exit.png")
         imgExit = tk.Label(self, anchor="s", image=photoExit)
@@ -95,6 +92,38 @@ class Meny(tk.Frame):
                                  command=lambda: quit())
         buttonExit.place(x=10, y=10)
 
+class Language(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        self.configure(background="white")
+
+        photoGB = tk.PhotoImage(file="GB.png")
+        photoSpain = tk.PhotoImage(file="Spain.png")
+
+        imgGB = tk.Label(self, anchor="s", image=photoGB)
+        imgSpain = tk.Label(self, anchor="s", image=photoSpain)
+
+        imgGB.image = photoGB
+        imgSpain.image = photoSpain
+
+        labelTittel = tk.Label(self, text="CHOOSE A LANGUAGE", font=LARGE_FONT)
+        buttonGB = tk.Button(self, image=photoGB, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(Meny))
+        buttonSpain = tk.Button(self, image=photoSpain, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(Language))
+
+        labelTittel.configure(background="white")
+        labelTittel.pack(pady=10, padx=10)
+
+        buttonGB.place(x=265, y=80)
+        buttonSpain.place(x=265, y=280)
+
+        photoBatteri = tk.PhotoImage(file="batteri.png")
+        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
+        imgBatteri.image = photoBatteri  # keep a reference!
+        imgBatteri.config(background="white")
+        imgBatteri.place(x=700, y=5)
+
 class Fagvelger(tk.Frame):
 
     def __init__(self, parent, controller):
@@ -102,9 +131,8 @@ class Fagvelger(tk.Frame):
 
         self.configure(background="white")
 
-        photoNorsk = tk.PhotoImage(file="norsk.png")
-        photoSamfunnsfag = tk.PhotoImage(file="toad.png")
-        photoNaturfag = tk.PhotoImage(file="toad.png")
+        photoNorsk = tk.PhotoImage(file="greeting.png")
+        photoNaturfag = tk.PhotoImage(file="wat.png")
 
         imgNorsk = tk.Label(self, anchor="s", image=photoNorsk)
         imgNaturfag = tk.Label(self, anchor="s", image=photoNaturfag)
@@ -112,21 +140,26 @@ class Fagvelger(tk.Frame):
         imgNorsk.image = photoNorsk
         imgNaturfag.image = photoNaturfag
 
-        labelTittel = tk.Label(self, text="VELG FAG", font=LARGE_FONT)
-        buttonNorsk = tk.Button(self, image=photoNorsk, command=lambda: controller.show_frame(Norsk))
-        buttonNaturfag = tk.Button(self, image=photoNaturfag, command=lambda: controller.show_frame(Fagvelger))
+        labelTittel = tk.Label(self, text="CHOOSE SUBJECT", font=LARGE_FONT, bg="white")
+        labelTittel.pack(pady=10)
 
-        labelTittel.configure(background="white")
-        labelTittel.pack(pady=10, padx=10)
+        labelDev = tk.Label(self, text="(Under development)", font=MEDIUM_FONT, bg="white")
+        labelDev.place(x=465, y=405)
+
+        labelNorsk = tk.Label(self, text="Norwegian", font=MEDIUM_FONT, bg="white")
+        labelNorsk.place(x=185, y=405)
+
+        buttonNorsk = tk.Button(self, image=photoNorsk, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(Norsk))
+        buttonNaturfag = tk.Button(self, image=photoNaturfag, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(Fagvelger))
 
         buttonNorsk.place(x=120, y=150)
-        buttonNaturfag.place(x=450, y=150)
+        buttonNaturfag.place(x=470, y=180)
 
-        photoWifi = tk.PhotoImage(file="wifi.png")
-        imgWifi = tk.Label(self, anchor="s", image=photoWifi)
-        imgWifi.image = photoWifi  # keep a reference!
-        imgWifi.config(background="white")
-        imgWifi.place(x=740, y=5)
+        photoBatteri = tk.PhotoImage(file="batteri.png")
+        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
+        imgBatteri.image = photoBatteri  # keep a reference!
+        imgBatteri.config(background="white")
+        imgBatteri.place(x=700, y=5)
 
         photoReturn = tk.PhotoImage(file="returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
@@ -142,23 +175,27 @@ class SpillMeny(tk.Frame):
 
         self.configure(background="white")
 
-        labelTittel = tk.Label(self, text="SPILL", font=LARGE_FONT)
+        labelTittel = tk.Label(self, text="GAMES", font=LARGE_FONT)
         labelTittel.configure(background="white")
         labelTittel.pack(pady=10, padx=5)
 
-        photoMemory = tk.PhotoImage(file="memorytile.png")
+        labelDev = tk.Label(self, text="(Under development)", font=MEDIUM_FONT)
+        labelDev.configure(background="white")
+        labelDev.place(x=445, y=370)
+
+        photoMemory = tk.PhotoImage(file="memorygame.png")
         imgMemory = tk.Label(self, anchor="w", image=photoMemory)
         imgMemory.image = photoMemory
-        buttonMemory = tk.Button(self, command=lambda: controller.show_frame(MemorySpill))
-        buttonMemory.config(image=photoMemory)
-        buttonMemory.place(x=70, y=120, width=300, height=300)
+        buttonMemory = tk.Button(self, command=lambda: controller.show_frame(MemoryMeny))
+        buttonMemory.config(image=photoMemory, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
+        buttonMemory.place(x=150, y=150, width=200, height=200)
 
-        photoQuiz = tk.PhotoImage(file="quiz.png")
+        photoQuiz = tk.PhotoImage(file="wat.png")
         imgQuiz = tk.Label(self, anchor="w", image=photoQuiz)
         imgQuiz.image = photoQuiz
-        buttonQuiz = tk.Button(self, command=lambda: controller.show_frame(Quiz))
-        buttonQuiz.config(image=photoQuiz)
-        buttonQuiz.place(x=430, y=120, width=300, height=300)
+        buttonQuiz = tk.Button(self, command=lambda: controller.show_frame(SpillMeny))
+        buttonQuiz.config(image=photoQuiz, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
+        buttonQuiz.place(x=450, y=150, width=200, height=200)
 
         photoReturn = tk.PhotoImage(file="returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
@@ -167,13 +204,76 @@ class SpillMeny(tk.Frame):
                                  command=lambda: controller.show_frame(Meny))
         buttonReturn.place(x=10, y=10)
 
-        photoWifi = tk.PhotoImage(file="wifi.png")
-        imgWifi = tk.Label(self, anchor="s", image=photoWifi)
-        imgWifi.image = photoWifi  # keep a reference!
-        imgWifi.config(background="white")
-        imgWifi.place(x=740, y=5)
+        photoBatteri = tk.PhotoImage(file="batteri.png")
+        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
+        imgBatteri.image = photoBatteri  # keep a reference!
+        imgBatteri.config(background="white")
+        imgBatteri.place(x=700, y=5)
 
-class MemorySpill(tk.Frame):
+
+class MemoryMeny(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        self.configure(background="white")
+
+        labelTittel = tk.Label(self, text="MEMORY GAME", font=LARGE_FONT)
+        labelTittel.configure(background="white")
+        labelTittel.pack(pady=10, padx=5)
+
+        photoMemory = tk.PhotoImage(file="singleplayer.png")
+        imgMemory = tk.Label(self, anchor="w", image=photoMemory)
+        imgMemory.image = photoMemory
+        buttonMemory = tk.Button(self, command=lambda: controller.show_frame(MemoryP1))
+        buttonMemory.config(image=photoMemory, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
+        buttonMemory.place(x=150, y=150, width=200, height=200)
+
+        photoQuiz = tk.PhotoImage(file="multiplayer.png")
+        imgQuiz = tk.Label(self, anchor="w", image=photoQuiz)
+        imgQuiz.image = photoQuiz
+        buttonQuiz = tk.Button(self, command=lambda: controller.show_frame(MemoryP2))
+        buttonQuiz.config(image=photoQuiz, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
+        buttonQuiz.place(x=450, y=150, width=200, height=200)
+
+        photoReturn = tk.PhotoImage(file="returnknapp.png")
+        imgReturn = tk.Label(self, anchor="s", image=photoReturn)
+        imgReturn.image = photoReturn
+        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
+                                 command=lambda: controller.show_frame(SpillMeny))
+        buttonReturn.place(x=10, y=10)
+
+        photoBatteri = tk.PhotoImage(file="batteri.png")
+        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
+        imgBatteri.image = photoBatteri  # keep a reference!
+        imgBatteri.config(background="white")
+        imgBatteri.place(x=700, y=5)
+
+class MemoryP1(tk.Frame):
+
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        self.configure(background="white")
+
+        photoReturn = tk.PhotoImage(file="returnknapp.png")
+        imgReturn = tk.Label(self, anchor="s", image=photoReturn)
+        imgReturn.image = photoReturn
+        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, activebackground="white",
+                                 borderwidth=0, command=lambda: controller.show_frame(MemoryMeny))
+        buttonReturn.place(x=10, y=10)
+
+        photoBatteri = tk.PhotoImage(file="batteri.png")
+        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
+        imgBatteri.image = photoBatteri  # keep a reference!
+        imgBatteri.config(background="white")
+        imgBatteri.place(x=700, y=5)
+
+        from MemoryGameBackup import MemGame
+        x = MemGame(self)
+        x.place(x=125, y=40)
+
+class MemoryP2(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -187,13 +287,13 @@ class MemorySpill(tk.Frame):
                                  borderwidth=0, command=lambda: controller.show_frame(SpillMeny))
         buttonReturn.place(x=10, y=10)
 
-        photoWifi = tk.PhotoImage(file="wifi.png")
-        imgWifi = tk.Label(self, anchor="s", image=photoWifi)
-        imgWifi.image = photoWifi  # keep a reference!
-        imgWifi.config(background="white")
-        imgWifi.place(x=740, y=5)
+        photoBatteri = tk.PhotoImage(file="batteri.png")
+        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
+        imgBatteri.image = photoBatteri  # keep a reference!
+        imgBatteri.config(background="white")
+        imgBatteri.place(x=700, y=5)
 
-        from MemoryGameBackup import MemGame
+        from MemGameImg import MemGame
         x = MemGame(self)
         x.place(x=125, y=40)
 
@@ -204,7 +304,7 @@ class Snakk(tk.Frame):
 
         self.configure(background="white")
 
-        labelTittel = tk.Label(self, text="SNAKK", font=LARGE_FONT)
+        labelTittel = tk.Label(self, text="TALK", font=LARGE_FONT)
         labelTittel.pack(pady=10, padx=10)
         labelTittel.configure(background="white")
 
@@ -215,27 +315,42 @@ class Snakk(tk.Frame):
                                  command=lambda: controller.show_frame(Meny))
         buttonReturn.place(x=10, y=10)
 
+        hei_sound = pygame.mixer.Sound("hei.wav")
         heter_sound = pygame.mixer.Sound("heter.wav")
         spille_sound = pygame.mixer.Sound("spille.wav")
-        hei_sound = pygame.mixer.Sound("hei.wav")
 
-        buttonA = tk.Button(self, text="Hva heter du?", command=lambda: heter())
-        buttonB = tk.Button(self, text="Hei, jeg heter buddy!", command=lambda: hei())
-        buttonC = tk.Button(self, text="Vil du spille et spill?", command=lambda: spille())
+        photoHello = tk.PhotoImage(file="hello.png")
+        imgKnapp = tk.Label(self, anchor="s", image=photoHello)
+        imgKnapp.image = photoHello  # keep a reference!
+        imgKnapp.config(background="white")
 
-        buttonA.configure(background='purple', font=MEDIUM_FONT, height=2, width=20, fg='white')
-        buttonB.configure(background='purple', font=MEDIUM_FONT, height=2, width=20, fg='white')
-        buttonC.configure(background='purple', font=MEDIUM_FONT, height=2, width=20, fg='white')
+        photoName = tk.PhotoImage(file="name.png")
+        imgName = tk.Label(self, anchor="s", image=photoName)
+        imgName.image = photoName  # keep a reference!
+        imgName.config(background="white")
 
-        buttonA.place(x=275, y=150)
-        buttonB.place(x=275, y=230)
-        buttonC.place(x=275, y=310)
+        photoGame = tk.PhotoImage(file="game.png")
+        imgGame = tk.Label(self, anchor="s", image=photoGame)
+        imgGame.image = photoGame  # keep a reference!
+        imgGame.config(background="white")
 
-        photoWifi = tk.PhotoImage(file="wifi.png")
-        imgWifi = tk.Label(self, anchor="s", image=photoWifi)
-        imgWifi.image = photoWifi  # keep a reference!
-        imgWifi.config(background="white")
-        imgWifi.place(x=740, y=5)
+        buttonB = tk.Button(self, image=photoHello, highlightthickness=0, borderwidth=0, activebackground="white", text="Hei, jeg heter buddy!", command=lambda: hei())
+        buttonA = tk.Button(self, image=photoName, highlightthickness=0, borderwidth=0, activebackground="white", text="Hva heter du?", command=lambda: heter())
+        buttonC = tk.Button(self, image=photoGame, highlightthickness=0, borderwidth=0, activebackground="white", text="Vil du spille et spill?", command=lambda: spille())
+
+        buttonA.configure(background='white', font=MEDIUM_FONT, fg='white') #height=2, width=20,
+        buttonB.configure(background='white', font=MEDIUM_FONT, fg='white')
+        buttonC.configure(background='white', font=MEDIUM_FONT, fg='white')
+
+        buttonB.place(x=210, y=140)
+        buttonA.place(x=210, y=240)
+        buttonC.place(x=210, y=340)
+
+        photoBatteri = tk.PhotoImage(file="batteri.png")
+        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
+        imgBatteri.image = photoBatteri  # keep a reference!
+        imgBatteri.config(background="white")
+        imgBatteri.place(x=700, y=5)
 
         def heter():
             pygame.mixer.Sound.play(heter_sound)
@@ -263,13 +378,13 @@ class Norsk(tk.Frame):
                                  command=lambda: controller.show_frame(Fagvelger))
         buttonReturn.place(x=10, y=10)
 
-        photoWifi = tk.PhotoImage(file="wifi.png")
-        imgWifi = tk.Label(self, anchor="s", image=photoWifi)
-        imgWifi.image = photoWifi  # keep a reference!
-        imgWifi.config(background="white")
-        imgWifi.place(x=740, y=5)
+        photoBatteri = tk.PhotoImage(file="batteri.png")
+        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
+        imgBatteri.image = photoBatteri  # keep a reference!
+        imgBatteri.config(background="white")
+        imgBatteri.place(x=700, y=5)
 
-        labelTittel = tk.Label(self, text="SNAKK", font=LARGE_FONT)
+        labelTittel = tk.Label(self, text="NORWEGIAN", font=LARGE_FONT)
         labelTittel.pack(pady=10, padx=10)
         labelTittel.configure(background="white")
 
@@ -278,11 +393,11 @@ class Norsk(tk.Frame):
         labelVanskelighetsgrad.config(bg="white")
 
         labelHi = tk.Label(self, text="English: Hi, my name is Buddy and this is my friend. \nNorwegian: Hei, jeg heter Buddy og dette er min venn.", font=MEDIUM_FONT)
-        labelHi.place(x=180, y=50)
+        labelHi.place(x=180, y=55)
         labelHi.config(bg="white")
 
         photoIllustrasjon = tk.PhotoImage(file="greeting.png")
-        imgIllustrasjon = tk.Label(self, anchor="s", image=photoIllustrasjon)
+        imgIllustrasjon = tk.Label(self, anchor="s", image=photoIllustrasjon, highlightthickness=0, borderwidth=0)
         imgIllustrasjon.image = photoIllustrasjon
         imgIllustrasjon.place(x=273, y=120)
 
@@ -307,11 +422,11 @@ class Quiz(tk.Frame):
                                  command=lambda: controller.show_frame(SpillMeny))
         buttonReturn.place(x=10, y=10)
 
-        photoWifi = tk.PhotoImage(file="wifi.png")
-        imgWifi = tk.Label(self, anchor="s", image=photoWifi)
-        imgWifi.image = photoWifi  # keep a reference!
-        imgWifi.config(background="white")
-        imgWifi.place(x=740, y=5)
+        photoBatteri = tk.PhotoImage(file="batteri.png")
+        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
+        imgBatteri.image = photoBatteri  # keep a reference!
+        imgBatteri.config(background="white")
+        imgBatteri.place(x=700, y=5)
 
         self.configure(background="white")
 
