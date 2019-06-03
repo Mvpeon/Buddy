@@ -371,6 +371,8 @@ class Norsk(tk.Frame):
 
         self.configure(background="white")
 
+        riktig_sound = pygame.mixer.Sound("riktig.wav")
+
         photoReturn = tk.PhotoImage(file="returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
@@ -408,6 +410,11 @@ class Norsk(tk.Frame):
 
         def hei():
             pygame.mixer.Sound.play(hei_sound)
+            pygame.mixer.music.stop()
+            self.after(6000, riktig)
+
+        def riktig():
+            pygame.mixer.Sound.play(riktig_sound)
             pygame.mixer.music.stop()
 
 class Quiz(tk.Frame):
