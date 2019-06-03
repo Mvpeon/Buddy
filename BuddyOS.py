@@ -125,9 +125,8 @@ class Fagvelger(tk.Frame):
 
         self.configure(background="white")
 
-        photoNorsk = tk.PhotoImage(file="norsk.png")
-        photoSamfunnsfag = tk.PhotoImage(file="toad.png")
-        photoNaturfag = tk.PhotoImage(file="toad.png")
+        photoNorsk = tk.PhotoImage(file="greeting.png")
+        photoNaturfag = tk.PhotoImage(file="wat.png")
 
         imgNorsk = tk.Label(self, anchor="s", image=photoNorsk)
         imgNaturfag = tk.Label(self, anchor="s", image=photoNaturfag)
@@ -135,15 +134,20 @@ class Fagvelger(tk.Frame):
         imgNorsk.image = photoNorsk
         imgNaturfag.image = photoNaturfag
 
-        labelTittel = tk.Label(self, text="CHOOSE SUBJECT", font=LARGE_FONT)
-        buttonNorsk = tk.Button(self, image=photoNorsk, command=lambda: controller.show_frame(Norsk))
-        buttonNaturfag = tk.Button(self, image=photoNaturfag, command=lambda: controller.show_frame(Fagvelger))
+        labelTittel = tk.Label(self, text="CHOOSE SUBJECT", font=LARGE_FONT, bg="white")
+        labelTittel.pack(pady=10)
 
-        labelTittel.configure(background="white")
-        labelTittel.pack(pady=10, padx=10)
+        labelDev = tk.Label(self, text="(Under development)", font=MEDIUM_FONT, bg="white")
+        labelDev.place(x=465, y=405)
+
+        labelNorsk = tk.Label(self, text="Norwegian", font=MEDIUM_FONT, bg="white")
+        labelNorsk.place(x=185, y=405)
+
+        buttonNorsk = tk.Button(self, image=photoNorsk, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(Norsk))
+        buttonNaturfag = tk.Button(self, image=photoNaturfag, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(Fagvelger))
 
         buttonNorsk.place(x=120, y=150)
-        buttonNaturfag.place(x=450, y=150)
+        buttonNaturfag.place(x=470, y=180)
 
         photoBatteri = tk.PhotoImage(file="batteri.png")
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
@@ -180,7 +184,7 @@ class SpillMeny(tk.Frame):
         buttonMemory.config(image=photoMemory, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
         buttonMemory.place(x=150, y=150, width=200, height=200)
 
-        photoQuiz = tk.PhotoImage(file="quiz.png")
+        photoQuiz = tk.PhotoImage(file="wat.png")
         imgQuiz = tk.Label(self, anchor="w", image=photoQuiz)
         imgQuiz.image = photoQuiz
         buttonQuiz = tk.Button(self, command=lambda: controller.show_frame(SpillMeny))
@@ -294,7 +298,7 @@ class Snakk(tk.Frame):
 
         self.configure(background="white")
 
-        labelTittel = tk.Label(self, text="SNAKK", font=LARGE_FONT)
+        labelTittel = tk.Label(self, text="TALK", font=LARGE_FONT)
         labelTittel.pack(pady=10, padx=10)
         labelTittel.configure(background="white")
 
@@ -374,7 +378,7 @@ class Norsk(tk.Frame):
         imgBatteri.config(background="white")
         imgBatteri.place(x=700, y=5)
 
-        labelTittel = tk.Label(self, text="TALK", font=LARGE_FONT)
+        labelTittel = tk.Label(self, text="NORWEGIAN", font=LARGE_FONT)
         labelTittel.pack(pady=10, padx=10)
         labelTittel.configure(background="white")
 
@@ -383,11 +387,11 @@ class Norsk(tk.Frame):
         labelVanskelighetsgrad.config(bg="white")
 
         labelHi = tk.Label(self, text="English: Hi, my name is Buddy and this is my friend. \nNorwegian: Hei, jeg heter Buddy og dette er min venn.", font=MEDIUM_FONT)
-        labelHi.place(x=180, y=50)
+        labelHi.place(x=180, y=55)
         labelHi.config(bg="white")
 
         photoIllustrasjon = tk.PhotoImage(file="greeting.png")
-        imgIllustrasjon = tk.Label(self, anchor="s", image=photoIllustrasjon)
+        imgIllustrasjon = tk.Label(self, anchor="s", image=photoIllustrasjon, highlightthickness=0, borderwidth=0)
         imgIllustrasjon.image = photoIllustrasjon
         imgIllustrasjon.place(x=273, y=120)
 
