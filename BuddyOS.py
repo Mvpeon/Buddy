@@ -90,7 +90,14 @@ class Meny(tk.Frame):
         imgExit.image = photoExit
         buttonExit = tk.Button(self, image=photoExit, highlightthickness=0, borderwidth=0, activebackground="white",
                                  command=lambda: quit())
-        buttonExit.place(x=10, y=420)
+        buttonExit.place(x=80, y=15)
+
+        photoReturn = tk.PhotoImage(file="returnknapp.png")
+        imgReturn = tk.Label(self, anchor="s", image=photoReturn)
+        imgReturn.image = photoReturn
+        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
+                                 command=lambda: controller.show_frame(Language))
+        buttonReturn.place(x=10, y=10)
 
 class Language(tk.Frame):
 
@@ -115,10 +122,14 @@ class Language(tk.Frame):
         imgSyria.image = photoSyria
 
         labelTittel = tk.Label(self, text="CHOOSE A LANGUAGE", font=LARGE_FONT)
-        buttonGB = tk.Button(self, image=photoGB, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(Meny))
-        buttonSpain = tk.Button(self, image=photoSpain, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(Language))
-        buttonFrance = tk.Button(self, image=photoFrance, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(Language))
-        buttonSyria = tk.Button(self, image=photoSyria, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(Language))
+        buttonGB = tk.Button(self, image=photoGB, highlightthickness=0, borderwidth=0, activebackground="white",
+                             command=lambda: controller.show_frame(Meny))
+        buttonSpain = tk.Button(self, image=photoSpain, highlightthickness=0, borderwidth=0, activebackground="white",
+                                command=lambda: controller.show_frame(Language))
+        buttonFrance = tk.Button(self, image=photoFrance, highlightthickness=0, borderwidth=0, activebackground="white",
+                                 command=lambda: controller.show_frame(Language))
+        buttonSyria = tk.Button(self, image=photoSyria, highlightthickness=0, borderwidth=0, activebackground="white",
+                                command=lambda: controller.show_frame(Language))
 
         labelTittel.configure(background="white")
         labelTittel.pack(pady=10, padx=10)
@@ -159,8 +170,10 @@ class Fagvelger(tk.Frame):
         labelNorsk = tk.Label(self, text="Norwegian", font=LARGE_FONT, bg="white")
         labelNorsk.place(x=165, y=405)
 
-        buttonNorsk = tk.Button(self, image=photoNorsk, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(Norsk))
-        buttonNaturfag = tk.Button(self, image=photoNaturfag, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(Fagvelger))
+        buttonNorsk = tk.Button(self, image=photoNorsk, highlightthickness=0, borderwidth=0, activebackground="white",
+                                command=lambda: controller.show_frame(Norsk))
+        buttonNaturfag = tk.Button(self, image=photoNaturfag, highlightthickness=0, borderwidth=0, activebackground="white",
+                                   command=lambda: controller.show_frame(Fagvelger))
 
         buttonNorsk.place(x=120, y=150)
         buttonNaturfag.place(x=470, y=180)
@@ -356,9 +369,12 @@ class Translate(tk.Frame):
         imgGame.image = photoGame  # keep a reference!
         imgGame.config(background="white")
 
-        buttonB = tk.Button(self, image=photoHello, highlightthickness=0, borderwidth=0, activebackground="white", text="Hei, jeg heter buddy!", command=lambda: hei())
-        buttonA = tk.Button(self, image=photoName, highlightthickness=0, borderwidth=0, activebackground="white", text="Hva heter du?", command=lambda: heter())
-        buttonC = tk.Button(self, image=photoGame, highlightthickness=0, borderwidth=0, activebackground="white", text="Vil du spille et spill?", command=lambda: spille())
+        buttonB = tk.Button(self, image=photoHello, highlightthickness=0, borderwidth=0, activebackground="white", text="Hei, jeg heter buddy!",
+                            command=lambda: hei())
+        buttonA = tk.Button(self, image=photoName, highlightthickness=0, borderwidth=0, activebackground="white", text="Hva heter du?",
+                            command=lambda: heter())
+        buttonC = tk.Button(self, image=photoGame, highlightthickness=0, borderwidth=0, activebackground="white", text="Vil du spille et spill?",
+                            command=lambda: spille())
 
         buttonA.configure(background='white', font=MEDIUM_FONT, fg='white') #height=2, width=20,
         buttonB.configure(background='white', font=MEDIUM_FONT, fg='white')
