@@ -75,7 +75,7 @@ class MemGame(tk.Frame):
         super(MemGame, self).__init__(master)
 
         # restart button
-        photoRestart = tk.PhotoImage(file="restart.png")
+        photoRestart = tk.PhotoImage(file="Ressurser/GUI elementer/restart.png")
         imgRestart = tk.Label(self, anchor="s", image=photoRestart)
         imgRestart.image = photoRestart
         buttonRestart = tk.Button(self, activebackground="white",
@@ -86,26 +86,26 @@ class MemGame(tk.Frame):
         self.score = 0
 
         # plain image PNGs
-        photoDog = tk.PhotoImage(file="Dyr/dog.png")
-        photoElephant = tk.PhotoImage(file="Dyr/elephant.png")
-        photoFlamingo = tk.PhotoImage(file="Dyr/flamingo.png")
-        photoHippo = tk.PhotoImage(file="Dyr/hippo.png")
-        photoCamel = tk.PhotoImage(file="Dyr/camel.png")
-        photoCat = tk.PhotoImage(file="Dyr/cat.png")
-        photoCrocodile = tk.PhotoImage(file="Dyr/crocodile.png")
-        photoRhinoceros = tk.PhotoImage(file="Dyr/rhinoceros.png")
-        photoTurtle = tk.PhotoImage(file="Dyr/turtle.png")
-        photoOstrich = tk.PhotoImage(file="Dyr/ostrich.png")
-        photoZebra = tk.PhotoImage(file="Dyr/zebra.png")
-        photoLion = tk.PhotoImage(file="Dyr/lion.png")
+        photoDog = tk.PhotoImage(file="Ressurser/Dyr/dog.png")
+        photoElephant = tk.PhotoImage(file="Ressurser/Dyr/elephant.png")
+        photoFlamingo = tk.PhotoImage(file="Ressurser/Dyr/flamingo.png")
+        photoHippo = tk.PhotoImage(file="Ressurser/Dyr/hippo.png")
+        photoCamel = tk.PhotoImage(file="Ressurser/Dyr/camel.png")
+        photoCat = tk.PhotoImage(file="Ressurser/Dyr/cat.png")
+        photoCrocodile = tk.PhotoImage(file="Ressurser/Dyr/crocodile.png")
+        photoRhinoceros = tk.PhotoImage(file="Ressurser/Dyr/rhinoceros.png")
+        photoTurtle = tk.PhotoImage(file="Ressurser/Dyr/turtle.png")
+        photoOstrich = tk.PhotoImage(file="Ressurser/Dyr/ostrich.png")
+        photoZebra = tk.PhotoImage(file="Ressurser/Dyr/zebra.png")
+        photoLion = tk.PhotoImage(file="Ressurser/Dyr/lion.png")
 
         # plain text PNGs
-        photoDogText = tk.PhotoImage(file="Dyr/dogtext.png")
-        photoElephantText = tk.PhotoImage(file="Dyr/elephanttext.png")
-        photoFlamingoText = tk.PhotoImage(file="Dyr/flamingotext.png")
-        photoHippoText = tk.PhotoImage(file="Dyr/hippotext.png")
-        photoCamelText = tk.PhotoImage(file="Dyr/cameltext.png")
-        photoCatText = tk.PhotoImage(file="Dyr/cattext.png")
+        photoDogText = tk.PhotoImage(file="Ressurser/Dyr/dogtext.png")
+        photoElephantText = tk.PhotoImage(file="Ressurser/Dyr/elephanttext.png")
+        photoFlamingoText = tk.PhotoImage(file="Ressurser/Dyr/flamingotext.png")
+        photoHippoText = tk.PhotoImage(file="Ressurser/Dyr/hippotext.png")
+        photoCamelText = tk.PhotoImage(file="Ressurser/Dyr/cameltext.png")
+        photoCatText = tk.PhotoImage(file="Ressurser/Dyr/cattext.png")
         #photoCrocodileText = tk.PhotoImage(file="Dyr/crocodiletext.png")
         #photoRhinocerosText = tk.PhotoImage(file="Dyr/rhinocerostext.png")
         #photoTurtleText = tk.PhotoImage(file="Dyr/turtletext.png")
@@ -120,21 +120,21 @@ class MemGame(tk.Frame):
         #photoNorHippo = tk.PhotoImage(file="Dyr/N-hippo.png")
         #photoNorCamel = tk.PhotoImage(file="Dyr/N-camel.png")
         #photoNorCat = tk.PhotoImage(file="Dyr/N-cat.png")
-        photoNorCrocodile = tk.PhotoImage(file="Dyr/N-crocodile.png")
-        photoNorRhinoceros = tk.PhotoImage(file="Dyr/N-rhinoceros.png")
-        photoNorTurtle = tk.PhotoImage(file="Dyr/N-turtle.png")
-        photoNorOstrich = tk.PhotoImage(file="Dyr/N-ostrich.png")
-        photoNorZebra = tk.PhotoImage(file="Dyr/N-zebra.png")
-        photoNorLion = tk.PhotoImage(file="Dyr/N-lion.png")
+        photoNorCrocodile = tk.PhotoImage(file="Ressurser/Dyr/N-crocodile.png")
+        photoNorRhinoceros = tk.PhotoImage(file="Ressurser/Dyr/N-rhinoceros.png")
+        photoNorTurtle = tk.PhotoImage(file="Ressurser/Dyr/N-turtle.png")
+        photoNorOstrich = tk.PhotoImage(file="Ressurser/Dyr/N-ostrich.png")
+        photoNorZebra = tk.PhotoImage(file="Ressurser/Dyr/N-zebra.png")
+        photoNorLion = tk.PhotoImage(file="Ressurser/Dyr/N-lion.png")
 
         # cardback
-        photoCardback = tk.PhotoImage(file="cardback2P.png")
+        photoCardback = tk.PhotoImage(file="Ressurser/GUI elementer/cardback2P.png")
         self.cardback = photoCardback
 
         # sound effects
-        self.correct_sound = pygame.mixer.Sound("correct.wav")
-        self.click_sound = pygame.mixer.Sound("camerashutter.wav")
-        self.gratulerer_sound = pygame.mixer.Sound("cheer.wav")
+        self.correct_sound = pygame.mixer.Sound("Ressurser/Lyd/correct.wav")
+        self.click_sound = pygame.mixer.Sound("Ressurser/Lyd/camerashutter.wav")
+        self.gratulerer_sound = pygame.mixer.Sound("Ressurser/Lyd/cheer.wav")
 
         self.configure(width=650, height=480, bg="white")
         self.canvas = tk.Canvas(self, bg="white", width=550, height=480, highlightthickness=0, borderwidth=0)

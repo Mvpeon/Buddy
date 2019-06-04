@@ -42,9 +42,9 @@ class Meny(tk.Frame):
 
         self.configure(background="white")
 
-        photoKom = tk.PhotoImage(file="talkbtn.png")
-        photoLaer = tk.PhotoImage(file="learnbtn.png")
-        photoSpill = tk.PhotoImage(file="gamesbtn.png")
+        photoKom = tk.PhotoImage(file="Ressurser/GUI elementer/talkbtn.png")
+        photoLaer = tk.PhotoImage(file="Ressurser/GUI elementer/learnbtn.png")
+        photoSpill = tk.PhotoImage(file="Ressurser/GUI elementer/gamesbtn.png")
 
         imgKom = tk.Label(self, anchor="s", image=photoKom)
         imgLaer = tk.Label(self, anchor="s", image=photoLaer)
@@ -79,20 +79,20 @@ class Meny(tk.Frame):
         buttonKom.place(x=300, y=150)
         buttonSpill.place(x=550, y=150)
 
-        photoBatteri = tk.PhotoImage(file="batteri.png")
+        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
         imgBatteri.place(x=710, y=15)
 
-        photoExit = tk.PhotoImage(file="exit.png")
+        photoExit = tk.PhotoImage(file="Ressurser/GUI elementer/exit.png")
         imgExit = tk.Label(self, anchor="s", image=photoExit)
         imgExit.image = photoExit
         buttonExit = tk.Button(self, image=photoExit, highlightthickness=0, borderwidth=0, activebackground="white",
                                  command=lambda: quit())
         buttonExit.place(x=80, y=15)
 
-        photoReturn = tk.PhotoImage(file="returnknapp.png")
+        photoReturn = tk.PhotoImage(file="Ressurser/GUI elementer/returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
@@ -106,10 +106,10 @@ class Language(tk.Frame):
 
         self.configure(background="white")
 
-        photoGB = tk.PhotoImage(file="GB.png")
-        photoSpain = tk.PhotoImage(file="Spain.png")
-        photoFrance = tk.PhotoImage(file="France.png")
-        photoSyria = tk.PhotoImage(file="Syria.png")
+        photoGB = tk.PhotoImage(file="Ressurser/GUI elementer/GB.png")
+        photoSpain = tk.PhotoImage(file="Ressurser/GUI elementer/Spain.png")
+        photoFrance = tk.PhotoImage(file="Ressurser/GUI elementer/France.png")
+        photoSyria = tk.PhotoImage(file="Ressurser/GUI elementer/Syria.png")
 
         imgGB = tk.Label(self, anchor="s", image=photoGB)
         imgSpain = tk.Label(self, anchor="s", image=photoSpain)
@@ -139,7 +139,7 @@ class Language(tk.Frame):
         buttonFrance.place(x=430, y=80)
         buttonSyria.place(x=430, y=280)
 
-        photoBatteri = tk.PhotoImage(file="batteri.png")
+        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
@@ -152,8 +152,8 @@ class Fagvelger(tk.Frame):
 
         self.configure(background="white")
 
-        photoNorsk = tk.PhotoImage(file="greeting.png")
-        photoNaturfag = tk.PhotoImage(file="wat.png")
+        photoNorsk = tk.PhotoImage(file="Ressurser/GUI elementer/greeting.png")
+        photoNaturfag = tk.PhotoImage(file="Ressurser/GUI elementer/wat.png")
 
         imgNorsk = tk.Label(self, anchor="s", image=photoNorsk)
         imgNaturfag = tk.Label(self, anchor="s", image=photoNaturfag)
@@ -178,13 +178,13 @@ class Fagvelger(tk.Frame):
         buttonNorsk.place(x=120, y=150)
         buttonNaturfag.place(x=470, y=180)
 
-        photoBatteri = tk.PhotoImage(file="batteri.png")
+        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
         imgBatteri.place(x=710, y=15)
 
-        photoReturn = tk.PhotoImage(file="returnknapp.png")
+        photoReturn = tk.PhotoImage(file="Ressurser/GUI elementer/returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
@@ -210,28 +210,28 @@ class SpillMeny(tk.Frame):
         labelMemGame.configure(background="white")
         labelMemGame.place(x=142, y=370)
 
-        photoMemory = tk.PhotoImage(file="memorygame.png")
+        photoMemory = tk.PhotoImage(file="Ressurser/GUI elementer/memorygame.png")
         imgMemory = tk.Label(self, anchor="w", image=photoMemory)
         imgMemory.image = photoMemory
         buttonMemory = tk.Button(self, command=lambda: controller.show_frame(MemoryMeny))
         buttonMemory.config(image=photoMemory, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
         buttonMemory.place(x=150, y=150, width=200, height=200)
 
-        photoQuiz = tk.PhotoImage(file="wat.png")
+        photoQuiz = tk.PhotoImage(file="Ressurser/GUI elementer/wat.png")
         imgQuiz = tk.Label(self, anchor="w", image=photoQuiz)
         imgQuiz.image = photoQuiz
         buttonQuiz = tk.Button(self, command=lambda: controller.show_frame(SpillMeny))
         buttonQuiz.config(image=photoQuiz, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
         buttonQuiz.place(x=450, y=150, width=200, height=200)
 
-        photoReturn = tk.PhotoImage(file="returnknapp.png")
+        photoReturn = tk.PhotoImage(file="Ressurser/GUI elementer/returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0,  activebackground="white",
                                  command=lambda: controller.show_frame(Meny))
         buttonReturn.place(x=10, y=10)
 
-        photoBatteri = tk.PhotoImage(file="batteri.png")
+        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
@@ -249,28 +249,28 @@ class MemoryMeny(tk.Frame):
         labelTittel.configure(background="white")
         labelTittel.pack(pady=10, padx=5)
 
-        photoMemory = tk.PhotoImage(file="singleplayer.png")
+        photoMemory = tk.PhotoImage(file="Ressurser/GUI elementer/singleplayer.png")
         imgMemory = tk.Label(self, anchor="w", image=photoMemory)
         imgMemory.image = photoMemory
         buttonMemory = tk.Button(self, command=lambda: controller.show_frame(MemoryP1))
         buttonMemory.config(image=photoMemory, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
         buttonMemory.place(x=150, y=150, width=200, height=200)
 
-        photoQuiz = tk.PhotoImage(file="multiplayer.png")
+        photoQuiz = tk.PhotoImage(file="Ressurser/GUI elementer/multiplayer.png")
         imgQuiz = tk.Label(self, anchor="w", image=photoQuiz)
         imgQuiz.image = photoQuiz
         buttonQuiz = tk.Button(self, command=lambda: controller.show_frame(MemoryP2))
         buttonQuiz.config(image=photoQuiz, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
         buttonQuiz.place(x=450, y=150, width=200, height=200)
 
-        photoReturn = tk.PhotoImage(file="returnknapp.png")
+        photoReturn = tk.PhotoImage(file="Ressurser/GUI elementer/returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
                                  command=lambda: controller.show_frame(SpillMeny))
         buttonReturn.place(x=10, y=10)
 
-        photoBatteri = tk.PhotoImage(file="batteri.png")
+        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
@@ -291,7 +291,7 @@ class MemoryP1(tk.Frame):
 
         self.configure(background="white")
 
-        photoReturn = tk.PhotoImage(file="returnknapp.png")
+        photoReturn = tk.PhotoImage(file="Ressurser/GUI elementer/returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, activebackground="white",
@@ -302,7 +302,7 @@ class MemoryP1(tk.Frame):
         x = MemGame(self)
         x.place(x=125, y=20)
 
-        photoBatteri = tk.PhotoImage(file="batteri.png")
+        photoBatteri = tk.PhotoImage(file="Ressurser\GUI elementer/batteri.png")
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
@@ -315,7 +315,7 @@ class MemoryP2(tk.Frame):
 
         self.configure(background="white")
 
-        photoReturn = tk.PhotoImage(file="returnknapp.png")
+        photoReturn = tk.PhotoImage(file="Ressurser/GUI elementer/returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, activebackground="white",
@@ -326,7 +326,7 @@ class MemoryP2(tk.Frame):
         x = MemGame(self)
         x.place(x=125, y=20)
 
-        photoBatteri = tk.PhotoImage(file="batteri.png")
+        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
@@ -343,28 +343,28 @@ class Translate(tk.Frame):
         labelTittel.pack(pady=10, padx=10)
         labelTittel.configure(background="white")
 
-        photoReturn = tk.PhotoImage(file="returnknapp.png")
+        photoReturn = tk.PhotoImage(file="Ressurser/GUI elementer/returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
                                  command=lambda: controller.show_frame(Meny))
         buttonReturn.place(x=10, y=10)
 
-        hei_sound = pygame.mixer.Sound("hei.wav")
-        heter_sound = pygame.mixer.Sound("heter.wav")
-        spille_sound = pygame.mixer.Sound("spille.wav")
+        hei_sound = pygame.mixer.Sound("Ressurser/Lyd/hei.wav")
+        heter_sound = pygame.mixer.Sound("Ressurser/Lyd/heter.wav")
+        spille_sound = pygame.mixer.Sound("Ressurser/Lyd/spille.wav")
 
-        photoHello = tk.PhotoImage(file="hello.png")
+        photoHello = tk.PhotoImage(file="Ressurser/GUI elementer/hello.png")
         imgKnapp = tk.Label(self, anchor="s", image=photoHello)
         imgKnapp.image = photoHello  # keep a reference!
         imgKnapp.config(background="white")
 
-        photoName = tk.PhotoImage(file="name.png")
+        photoName = tk.PhotoImage(file="Ressurser/GUI elementer/name.png")
         imgName = tk.Label(self, anchor="s", image=photoName)
         imgName.image = photoName  # keep a reference!
         imgName.config(background="white")
 
-        photoGame = tk.PhotoImage(file="game.png")
+        photoGame = tk.PhotoImage(file="Ressurser/GUI elementer/game.png")
         imgGame = tk.Label(self, anchor="s", image=photoGame)
         imgGame.image = photoGame  # keep a reference!
         imgGame.config(background="white")
@@ -384,7 +384,7 @@ class Translate(tk.Frame):
         buttonA.place(x=210, y=240)
         buttonC.place(x=210, y=340)
 
-        photoBatteri = tk.PhotoImage(file="batteri.png")
+        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
@@ -409,16 +409,16 @@ class Norsk(tk.Frame):
 
         self.configure(background="white")
 
-        correct_sound = pygame.mixer.Sound("correct.wav")
+        correct_sound = pygame.mixer.Sound("Ressurser/Lyd/correct.wav")
 
-        photoReturn = tk.PhotoImage(file="returnknapp.png")
+        photoReturn = tk.PhotoImage(file="Ressurser/GUI elementer/returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
                                  command=lambda: controller.show_frame(Fagvelger))
         buttonReturn.place(x=10, y=10)
 
-        photoBatteri = tk.PhotoImage(file="batteri.png")
+        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
@@ -432,14 +432,14 @@ class Norsk(tk.Frame):
         labelHi.place(x=260, y=55)
         labelHi.config(bg="white")
 
-        photoIllustrasjon = tk.PhotoImage(file="greeting.png")
+        photoIllustrasjon = tk.PhotoImage(file="Ressurser/GUI elementer/greeting.png")
         imgIllustrasjon = tk.Label(self, anchor="s", image=photoIllustrasjon, highlightthickness=0, borderwidth=0)
         imgIllustrasjon.image = photoIllustrasjon
         imgIllustrasjon.place(x=273, y=120)
 
-        hei_sound = pygame.mixer.Sound("heijegheter.wav")
+        hei_sound = pygame.mixer.Sound("Ressurser/Lyd/heijegheter.wav")
 
-        photoKnapp = tk.PhotoImage(file="repeat.png")
+        photoKnapp = tk.PhotoImage(file="Ressurser/GUI elementer/repeat.png")
         imgKnapp = tk.Label(self, anchor="s", image=photoKnapp)
         imgKnapp.image = photoKnapp
         imgKnapp.config(background="white")
@@ -462,14 +462,14 @@ class Quiz(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
-        photoReturn = tk.PhotoImage(file="returnknapp.png")
+        photoReturn = tk.PhotoImage(file="Ressurser/GUI elementer/returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
                                  command=lambda: controller.show_frame(SpillMeny))
         buttonReturn.place(x=10, y=10)
 
-        photoBatteri = tk.PhotoImage(file="batteri.png")
+        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
