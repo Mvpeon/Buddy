@@ -142,7 +142,7 @@ class MemGame(tk.Frame):
         photoNorLion = tk.PhotoImage(file="Dyr/N-lion.png")
 
         # cardback
-        photoCardback = tk.PhotoImage(file="cardback.png")
+        photoCardback = tk.PhotoImage(file="cardback1P.png")
         self.cardback = photoCardback
 
         # sound effects
