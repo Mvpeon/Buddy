@@ -164,8 +164,8 @@ class Fagvelger(tk.Frame):
         labelTittel = tk.Label(self, text="CHOOSE SUBJECT", font=LARGE_FONT, bg="white")
         labelTittel.pack(pady=10)
 
-        labelDev = tk.Label(self, text="(Under development)", font=MEDIUM_FONT, bg="white")
-        labelDev.place(x=465, y=405)
+        labelDev = tk.Label(self, text="(Under development...)", font=MEDIUM_FONT, bg="white")
+        labelDev.place(x=455, y=412)
 
         labelNorsk = tk.Label(self, text="Norwegian", font=LARGE_FONT, bg="white")
         labelNorsk.place(x=165, y=405)
@@ -204,7 +204,7 @@ class SpillMeny(tk.Frame):
 
         labelDev = tk.Label(self, text="(Under development)", font=MEDIUM_FONT)
         labelDev.configure(background="white")
-        labelDev.place(x=445, y=370)
+        labelDev.place(x=445, y=377)
 
         labelMemGame = tk.Label(self, text="Memory Game", font=LARGE_FONT)
         labelMemGame.configure(background="white")
