@@ -164,19 +164,19 @@ class Fagvelger(tk.Frame):
         labelTittel = tk.Label(self, text="CHOOSE SUBJECT", font=LARGE_FONT, bg="white")
         labelTittel.pack(pady=10)
 
-        labelDev = tk.Label(self, text="(Under development...)", font=MEDIUM_FONT, bg="white")
-        labelDev.place(x=455, y=412)
+        labelDev = tk.Label(self, text="(Under development)", font=MEDIUM_FONT, bg="white")
+        labelDev.place(x=465, y=402)
 
         labelNorsk = tk.Label(self, text="Norwegian", font=LARGE_FONT, bg="white")
-        labelNorsk.place(x=165, y=405)
+        labelNorsk.place(x=165, y=395)
 
         buttonNorsk = tk.Button(self, image=photoNorsk, highlightthickness=0, borderwidth=0, activebackground="white",
                                 command=lambda: controller.show_frame(Norsk))
         buttonNaturfag = tk.Button(self, image=photoNaturfag, highlightthickness=0, borderwidth=0, activebackground="white",
                                    command=lambda: controller.show_frame(Fagvelger))
 
-        buttonNorsk.place(x=120, y=150)
-        buttonNaturfag.place(x=470, y=180)
+        buttonNorsk.place(x=120, y=140)
+        buttonNaturfag.place(x=470, y=170)
 
         photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)

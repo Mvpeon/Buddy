@@ -4,125 +4,6 @@
     <list default="true" id="78276dd5-762d-473a-bea5-85741f01c1bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BuddyOS.py" beforeDir="false" afterPath="$PROJECT_DIR$/BuddyOS.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/#camel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/#cat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/#crocodile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/#dog.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/#elephant.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/#flamingo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/#hippo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/#lion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/#ostrich.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/#rhinoceros.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/#turtle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/#zebra.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/N-camel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/N-cat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/N-crocodile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/N-dog.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/N-elephant.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/N-flamingo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/N-hippo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/N-lion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/N-ostrich.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/N-rhinoceros.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/N-turtle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/N-zebra.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/camel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/cameltag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/cameltext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/cat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/cattag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/cattext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/crocodile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/crocodiletag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/crocodiletext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/dog.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/dogtag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/dogtext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/elephant.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/elephanttag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/elephanttext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/flamingo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/flamingotag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/flamingotext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/hippo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/hippopotamustag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/hippotext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/lion.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/liontag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/liontext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/ostrich.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/ostrichtag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/ostrichtext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/rhinoceros.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/rhinocerostag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/rhinocerostext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/turtle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/turtletag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/turtletext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/zebra.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/zebratag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dyr/zebratext.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flat_restart_icon.svg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/France.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GB.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Memory1P.py" beforeDir="false" afterPath="$PROJECT_DIR$/Memory1P.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Spain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Syria.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/batteri.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camerashutter.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cardback1P.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cardback2P.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cardbackORIGINAL.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cardfront.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cardfrontORIGINAL.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cheer.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/correct.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gamesbtn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/giphy.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/greeting.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hei.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hei.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/heijegheter.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hellomy.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/heter.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibuddy.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jegheter.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/knapp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kommunikasjonsknapp-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/leardegknapp-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/learnbtn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/loading.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lydav-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lydpaa-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lydpaa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/memorygame.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/menu.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/multiplayer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mygif.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/name.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/repeat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/repeatafterme.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restart2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/returnknapp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/riktig.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/singleormulti.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/singleplayer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/slettmeg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spille.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spillknapp-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/subjects.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/talkbtn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/toad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wifi-01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wifi.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -132,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BuddyOS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5856">
-              <caret line="67" column="49" lean-forward="true" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
+            <state relative-caret-position="426">
+              <caret line="177" column="37" selection-start-line="177" selection-start-column="37" selection-end-line="177" selection-end-column="37" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -144,11 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Memory1P.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="222">
-              <caret line="77" column="66" selection-start-line="77" selection-start-column="66" selection-end-line="77" selection-end-column="66" />
+              <caret line="77" column="78" selection-start-line="77" selection-start-column="75" selection-end-line="77" selection-end-column="78" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -159,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Memory2P.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4216">
-              <caret line="251" column="44" selection-start-line="251" selection-start-column="44" selection-end-line="251" selection-end-column="44" />
+            <state relative-caret-position="222">
+              <caret line="135" column="78" selection-start-line="135" selection-start-column="75" selection-end-line="135" selection-end-column="78" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -171,22 +52,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/giftest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="11" column="31" selection-start-line="7" selection-end-line="11" selection-end-column="31" />
+            <state relative-caret-position="85">
+              <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MemoryGame.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1241">
-              <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -203,7 +72,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>geometry</find>
       <find>font</find>
       <find>colors</find>
       <find>text</find>
@@ -233,6 +101,7 @@
       <find>riktig</find>
       <find>png</find>
       <find>wav</find>
+      <find>devel</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -257,11 +126,11 @@
         <option value="$PROJECT_DIR$/MemoryGame.py" />
         <option value="$PROJECT_DIR$/MemoryGameBackup.py" />
         <option value="$PROJECT_DIR$/MemGameImg.py" />
-        <option value="$PROJECT_DIR$/Memory2P.py" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/Memory1P.py" />
+        <option value="$PROJECT_DIR$/Memory2P.py" />
         <option value="$PROJECT_DIR$/giftest.py" />
         <option value="$PROJECT_DIR$/BuddyOS.py" />
-        <option value="$PROJECT_DIR$/Memory1P.py" />
       </list>
     </option>
   </component>
@@ -403,8 +272,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.BuddyOS" />
-        <item itemvalue="Python.Memory1P" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.Memory1P" />
         <item itemvalue="Python.Memory2P" />
       </list>
     </recent_temporary>
@@ -527,7 +396,21 @@
       <option name="project" value="LOCAL" />
       <updated>1559668129330</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Sortert alle filene B-)">
+      <created>1559669318823</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1559669318823</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Update">
+      <created>1559670274786</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1559670274786</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -620,7 +503,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add MemoryGameBackup.py" />
     <MESSAGE value="MemoryGameBackup.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="MemoryGameBackup.py" />
+    <MESSAGE value="Sortert alle filene B-)" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/BuddyQuiz.py" />
@@ -651,26 +536,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Memory2P.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4216">
-          <caret line="251" column="44" selection-start-line="251" selection-start-column="44" selection-end-line="251" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/giftest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="31" selection-start-line="7" selection-end-line="11" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MemoryGame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1241">
@@ -681,10 +546,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BuddyOS.py">
+    <entry file="file://$PROJECT_DIR$/giftest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5856">
-          <caret line="67" column="49" lean-forward="true" selection-start-line="67" selection-start-column="49" selection-end-line="67" selection-end-column="49" />
+        <state relative-caret-position="85">
+          <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Memory2P.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="135" column="78" selection-start-line="135" selection-start-column="75" selection-end-line="135" selection-end-column="78" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -694,7 +569,17 @@
     <entry file="file://$PROJECT_DIR$/Memory1P.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
-          <caret line="77" column="66" selection-start-line="77" selection-start-column="66" selection-end-line="77" selection-end-column="66" />
+          <caret line="77" column="78" selection-start-line="77" selection-start-column="75" selection-end-line="77" selection-end-column="78" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BuddyOS.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="177" column="37" selection-start-line="177" selection-start-column="37" selection-end-line="177" selection-end-column="37" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
