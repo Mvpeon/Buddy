@@ -83,14 +83,14 @@ class Meny(tk.Frame):
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
-        imgBatteri.place(x=700, y=5)
+        imgBatteri.place(x=710, y=15)
 
         photoExit = tk.PhotoImage(file="exit.png")
         imgExit = tk.Label(self, anchor="s", image=photoExit)
         imgExit.image = photoExit
         buttonExit = tk.Button(self, image=photoExit, highlightthickness=0, borderwidth=0, activebackground="white",
                                  command=lambda: quit())
-        buttonExit.place(x=10, y=10)
+        buttonExit.place(x=10, y=420)
 
 class Language(tk.Frame):
 
@@ -101,28 +101,38 @@ class Language(tk.Frame):
 
         photoGB = tk.PhotoImage(file="GB.png")
         photoSpain = tk.PhotoImage(file="Spain.png")
+        photoFrance = tk.PhotoImage(file="France.png")
+        photoSyria = tk.PhotoImage(file="Syria.png")
 
         imgGB = tk.Label(self, anchor="s", image=photoGB)
         imgSpain = tk.Label(self, anchor="s", image=photoSpain)
+        imgFrance = tk.Label(self, anchor="s", image=photoFrance)
+        imgSyria = tk.Label(self, anchor="s", image=photoSyria)
 
         imgGB.image = photoGB
         imgSpain.image = photoSpain
+        imgFrance.image = photoFrance
+        imgSyria.image = photoSyria
 
         labelTittel = tk.Label(self, text="CHOOSE A LANGUAGE", font=LARGE_FONT)
         buttonGB = tk.Button(self, image=photoGB, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(Meny))
         buttonSpain = tk.Button(self, image=photoSpain, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(Language))
+        buttonFrance = tk.Button(self, image=photoFrance, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(Language))
+        buttonSyria = tk.Button(self, image=photoSyria, highlightthickness=0, borderwidth=0, activebackground="white", command=lambda: controller.show_frame(Language))
 
         labelTittel.configure(background="white")
         labelTittel.pack(pady=10, padx=10)
 
-        buttonGB.place(x=265, y=80)
-        buttonSpain.place(x=265, y=280)
+        buttonGB.place(x=100, y=80)
+        buttonSpain.place(x=100, y=280)
+        buttonFrance.place(x=430, y=80)
+        buttonSyria.place(x=430, y=280)
 
         photoBatteri = tk.PhotoImage(file="batteri.png")
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
-        imgBatteri.place(x=700, y=5)
+        imgBatteri.place(x=710, y=15)
 
 class Fagvelger(tk.Frame):
 
@@ -159,7 +169,7 @@ class Fagvelger(tk.Frame):
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
-        imgBatteri.place(x=700, y=5)
+        imgBatteri.place(x=710, y=15)
 
         photoReturn = tk.PhotoImage(file="returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
@@ -212,7 +222,7 @@ class SpillMeny(tk.Frame):
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
-        imgBatteri.place(x=700, y=5)
+        imgBatteri.place(x=710, y=15)
 
 
 class MemoryMeny(tk.Frame):
@@ -251,7 +261,7 @@ class MemoryMeny(tk.Frame):
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
-        imgBatteri.place(x=700, y=5)
+        imgBatteri.place(x=710, y=15)
 
         label1P = tk.Label(self, text="Single Player", font=LARGE_FONT)
         label1P.configure(background="white")
@@ -275,15 +285,15 @@ class MemoryP1(tk.Frame):
                                  borderwidth=0, command=lambda: controller.show_frame(MemoryMeny))
         buttonReturn.place(x=10, y=10)
 
+        from Memory1P import MemGame
+        x = MemGame(self)
+        x.place(x=125, y=20)
+
         photoBatteri = tk.PhotoImage(file="batteri.png")
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
-        imgBatteri.place(x=700, y=5)
-
-        from Memory1P import MemGame
-        x = MemGame(self)
-        x.place(x=125, y=40)
+        imgBatteri.place(x=710, y=15)
 
 class MemoryP2(tk.Frame):
 
@@ -299,15 +309,15 @@ class MemoryP2(tk.Frame):
                                  borderwidth=0, command=lambda: controller.show_frame(SpillMeny))
         buttonReturn.place(x=10, y=10)
 
+        from Memory2P import MemGame
+        x = MemGame(self)
+        x.place(x=125, y=20)
+
         photoBatteri = tk.PhotoImage(file="batteri.png")
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
-        imgBatteri.place(x=700, y=5)
-
-        from Memory2P import MemGame
-        x = MemGame(self)
-        x.place(x=125, y=40)
+        imgBatteri.place(x=710, y=15)
 
 class Translate(tk.Frame):
 
@@ -362,7 +372,7 @@ class Translate(tk.Frame):
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
-        imgBatteri.place(x=700, y=5)
+        imgBatteri.place(x=710, y=15)
 
         def heter():
             pygame.mixer.Sound.play(heter_sound)
@@ -396,7 +406,7 @@ class Norsk(tk.Frame):
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
-        imgBatteri.place(x=700, y=5)
+        imgBatteri.place(x=710, y=15)
 
         labelTittel = tk.Label(self, text="NORWEGIAN", font=LARGE_FONT)
         labelTittel.pack(pady=10, padx=10)
@@ -447,7 +457,7 @@ class Quiz(tk.Frame):
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
-        imgBatteri.place(x=700, y=5)
+        imgBatteri.place(x=710, y=15)
 
         self.configure(background="white")
 
