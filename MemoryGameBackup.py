@@ -156,7 +156,7 @@ class MemGame(tk.Frame):
             photoZebra,
             photoLion
         ]
-        print("Doing array stuffs")
+
         # plain text PNGs
         self.textImages = [
             photoDogText,
@@ -235,7 +235,9 @@ class MemGame(tk.Frame):
 
                 # when two new tiles are flipped, plays sound effect and increases score if they match
                 if (self.flippedThisTurn == 2):
-                    if (self.flippedTiles[-1].image == self.flippedTiles[-2].image): #check last two elements
+                    var1 = self.flippedTiles[-1].image
+                    var2 = self.flippedTiles[-2].image
+                    if (self.matches.get(var1) == var1 or self.matches.get(var1) == var2 or self.matches.get(var2) == var2): #check last two elements
                         self.riktig()
                         self.score += 1
                     self.after(1000, self.checkTiles) # then performs another check after a short delay
@@ -245,9 +247,6 @@ class MemGame(tk.Frame):
         self.flippedThisTurn = 0
         var1 = self.flippedTiles[-1].image
         var2 = self.flippedTiles[-2].image
-        print(var1)
-        print(var2)
-        #if not(self.flippedTiles[-1].image == self.flippedTiles[-2].image):
         if not (self.matches.get(var1) == var1 or self.matches.get(var1) == var2 or self.matches.get(var2) == var2):
             self.flippedTiles[-1].drawFaceDown()
             self.flippedTiles[-2].drawFaceDown()
