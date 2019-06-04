@@ -100,32 +100,46 @@ class MemGame(tk.Frame):
         photoLion = tk.PhotoImage(file="Dyr/lion.png")
 
         # image + text PNGs
-        photoDogTag = tk.PhotoImage(file="Dyr/dogtag.png")
-        photoElephantTag = tk.PhotoImage(file="Dyr/elephanttag.png")
-        photoFlamingoTag = tk.PhotoImage(file="Dyr/flamingotag.png")
-        photoHippopotamusTag = tk.PhotoImage(file="Dyr/hippopotamustag.png")
-        photoCamelTag = tk.PhotoImage(file="Dyr/cameltag.png")
-        photoCatTag = tk.PhotoImage(file="Dyr/cattag.png")
-        photoCrocodileTag = tk.PhotoImage(file="Dyr/crocodiletag.png")
-        photoRhinocerosTag = tk.PhotoImage(file="Dyr/rhinocerostag.png")
-        photoTurtleTag = tk.PhotoImage(file="Dyr/turtletag.png")
-        photoOstrichTag = tk.PhotoImage(file="Dyr/ostrichtag.png")
-        photoZebraTag = tk.PhotoImage(file="Dyr/zebratag.png")
-        photoLionTag = tk.PhotoImage(file="Dyr/liontag.png")
+        #photoDogTag = tk.PhotoImage(file="Dyr/dogtag.png")
+        #photoElephantTag = tk.PhotoImage(file="Dyr/elephanttag.png")
+        #photoFlamingoTag = tk.PhotoImage(file="Dyr/flamingotag.png")
+        #photoHippopotamusTag = tk.PhotoImage(file="Dyr/hippopotamustag.png")
+        #photoCamelTag = tk.PhotoImage(file="Dyr/cameltag.png")
+        #photoCatTag = tk.PhotoImage(file="Dyr/cattag.png")
+        #photoCrocodileTag = tk.PhotoImage(file="Dyr/crocodiletag.png")
+        #photoRhinocerosTag = tk.PhotoImage(file="Dyr/rhinocerostag.png")
+        #photoTurtleTag = tk.PhotoImage(file="Dyr/turtletag.png")
+        #photoOstrichTag = tk.PhotoImage(file="Dyr/ostrichtag.png")
+        #photoZebraTag = tk.PhotoImage(file="Dyr/zebratag.png")
+        #photoLionTag = tk.PhotoImage(file="Dyr/liontag.png")
 
         # plain text PNGs
-        photoDogText = tk.PhotoImage(file="Dyr/dogtext.png")
-        photoElephantText = tk.PhotoImage(file="Dyr/elephanttext.png")
-        photoFlamingoText = tk.PhotoImage(file="Dyr/flamingotext.png")
-        photoHippoText = tk.PhotoImage(file="Dyr/hippotext.png")
-        photoCamelText = tk.PhotoImage(file="Dyr/cameltext.png")
-        photoCatText = tk.PhotoImage(file="Dyr/cattext.png")
-        photoCrocodileText = tk.PhotoImage(file="Dyr/crocodiletext.png")
-        photoRhinocerosText = tk.PhotoImage(file="Dyr/rhinocerostext.png")
-        photoTurtleText = tk.PhotoImage(file="Dyr/turtletext.png")
-        photoOstrichText = tk.PhotoImage(file="Dyr/ostrichtext.png")
-        photoZebraText = tk.PhotoImage(file="Dyr/zebratext.png")
-        photoLionText = tk.PhotoImage(file="Dyr/liontext.png")
+        #photoDogText = tk.PhotoImage(file="Dyr/dogtext.png")
+        #photoElephantText = tk.PhotoImage(file="Dyr/elephanttext.png")
+        #photoFlamingoText = tk.PhotoImage(file="Dyr/flamingotext.png")
+        #photoHippoText = tk.PhotoImage(file="Dyr/hippotext.png")
+        #photoCamelText = tk.PhotoImage(file="Dyr/cameltext.png")
+        #photoCatText = tk.PhotoImage(file="Dyr/cattext.png")
+        #photoCrocodileText = tk.PhotoImage(file="Dyr/crocodiletext.png")
+        #photoRhinocerosText = tk.PhotoImage(file="Dyr/rhinocerostext.png")
+        #photoTurtleText = tk.PhotoImage(file="Dyr/turtletext.png")
+        #photoOstrichText = tk.PhotoImage(file="Dyr/ostrichtext.png")
+        #photoZebraText = tk.PhotoImage(file="Dyr/zebratext.png")
+        #photoLionText = tk.PhotoImage(file="Dyr/liontext.png")
+
+        # norwegian text tiles
+        photoNorDog = tk.PhotoImage(file="Dyr/N-dog.png")
+        photoNorElephant = tk.PhotoImage(file="Dyr/N-elephant.png")
+        photoNorFlamingo = tk.PhotoImage(file="Dyr/N-flamingo.png")
+        photoNorHippo = tk.PhotoImage(file="Dyr/N-hippo.png")
+        photoNorCamel = tk.PhotoImage(file="Dyr/N-camel.png")
+        photoNorCat = tk.PhotoImage(file="Dyr/N-cat.png")
+        photoNorCrocodile = tk.PhotoImage(file="Dyr/N-crocodile.png")
+        photoNorRhinoceros = tk.PhotoImage(file="Dyr/N-rhinoceros.png")
+        photoNorTurtle = tk.PhotoImage(file="Dyr/N-turtle.png")
+        photoNorOstrich = tk.PhotoImage(file="Dyr/N-ostrich.png")
+        photoNorZebra = tk.PhotoImage(file="Dyr/N-zebra.png")
+        photoNorLion = tk.PhotoImage(file="Dyr/N-lion.png")
 
         # cardback
         photoCardback = tk.PhotoImage(file="cardback.png")
@@ -158,35 +172,51 @@ class MemGame(tk.Frame):
         ]
 
         # plain text PNGs
-        self.textImages = [
-            photoDogText,
-            photoElephantText,
-            photoFlamingoText,
-            photoHippoText,
-            photoCamelText,
-            photoCatText,
-            photoCrocodileText,
-            photoRhinocerosText,
-            photoTurtleText,
-            photoOstrichText,
-            photoZebraText,
-            photoLionText
-        ]
+        #self.textImages = [
+        #    photoDogText,
+        #    photoElephantText,
+        #    photoFlamingoText,
+        #    photoHippoText,
+        #    photoCamelText,
+        #    photoCatText,
+        #    photoCrocodileText,
+        #    photoRhinocerosText,
+        #    photoTurtleText,
+        #    photoOstrichText,
+        #    photoZebraText,
+        #    photoLionText
+        #]
 
         # image + text PNGs
-        self.tagImages = [
-            photoDogTag,
-            photoElephantTag,
-            photoFlamingoTag,
-            photoHippopotamusTag,
-            photoCamelTag,
-            photoCatTag,
-            photoCrocodileTag,
-            photoRhinocerosTag,
-            photoTurtleTag,
-            photoOstrichTag,
-            photoZebraTag,
-            photoLionTag
+        #self.tagImages = [
+        #    photoDogTag,
+        #    photoElephantTag,
+        #    photoFlamingoTag,
+        #    photoHippopotamusTag,
+        #    photoCamelTag,
+        #    photoCatTag,
+        #    photoCrocodileTag,
+        #    photoRhinocerosTag,
+        #    photoTurtleTag,
+        #    photoOstrichTag,
+        #    photoZebraTag,
+        #    photoLionTag
+        #]
+
+        # norwegian text tiles
+        self.norImages = [
+            photoNorDog,
+            photoNorElephant,
+            photoNorFlamingo,
+            photoNorHippo,
+            photoNorCamel,
+            photoNorCat,
+            photoNorCrocodile,
+            photoNorRhinoceros,
+            photoNorTurtle,
+            photoNorOstrich,
+            photoNorZebra,
+            photoNorLion
         ]
 
         self.dict = {
@@ -194,21 +224,21 @@ class MemGame(tk.Frame):
         }
 
         # creating a dictionary that will be used for matching different plain images with text images of same animals
-        self.all_tiles = self.images + self.textImages
+        self.all_tiles = self.images + self.norImages
         self.matches = {
-            k: v for (k, v) in zip(self.images, self.textImages)
+            k: v for (k, v) in zip(self.images, self.norImages)
         }
-        self.matches.update([(k, v) for (k, v) in zip(self.textImages, self.images)])
+        self.matches.update([(k, v) for (k, v) in zip(self.norImages, self.images)])
 
         selected = []
         for i in range(10):
             randomInd = randint(0, len(self.images) - 1)
             animalImg = self.images[randomInd]
-            animalImgText = self.textImages[randomInd]
+            animalImgText = self.norImages[randomInd]
             selected.append(animalImg)
             selected.append(animalImgText)
             del self.images[randomInd]
-            del self.textImages[randomInd]
+            del self.norImages[randomInd]
         shuffle(selected)
         self.flippedTiles = []
         NUM_COLS = 5

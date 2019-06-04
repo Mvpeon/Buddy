@@ -281,7 +281,7 @@ class MemoryP1(tk.Frame):
         imgBatteri.config(background="white")
         imgBatteri.place(x=700, y=5)
 
-        from MemoryGameBackup import MemGame
+        from Memory1P import MemGame
         x = MemGame(self)
         x.place(x=125, y=40)
 
@@ -305,7 +305,7 @@ class MemoryP2(tk.Frame):
         imgBatteri.config(background="white")
         imgBatteri.place(x=700, y=5)
 
-        from MemGameImg import MemGame
+        from Memory2P import MemGame
         x = MemGame(self)
         x.place(x=125, y=40)
 
