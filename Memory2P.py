@@ -75,7 +75,7 @@ class MemGame(tk.Frame):
         super(MemGame, self).__init__(master)
 
         # restart button
-        photoRestart = tk.PhotoImage(file="restart.png")
+        photoRestart = tk.PhotoImage(file="Ressurser/GUI elementer/restart.png")
         imgRestart = tk.Label(self, anchor="s", image=photoRestart)
         imgRestart.image = photoRestart
         buttonRestart = tk.Button(self, activebackground="white",
@@ -86,55 +86,55 @@ class MemGame(tk.Frame):
         self.score = 0
 
         # plain image PNGs
-        photoDog = tk.PhotoImage(file="Dyr/dog.png")
-        photoElephant = tk.PhotoImage(file="Dyr/elephant.png")
-        photoFlamingo = tk.PhotoImage(file="Dyr/flamingo.png")
-        photoHippo = tk.PhotoImage(file="Dyr/hippo.png")
-        photoCamel = tk.PhotoImage(file="Dyr/camel.png")
-        photoCat = tk.PhotoImage(file="Dyr/cat.png")
-        photoCrocodile = tk.PhotoImage(file="Dyr/crocodile.png")
-        photoRhinoceros = tk.PhotoImage(file="Dyr/rhinoceros.png")
-        photoTurtle = tk.PhotoImage(file="Dyr/turtle.png")
-        photoOstrich = tk.PhotoImage(file="Dyr/ostrich.png")
-        photoZebra = tk.PhotoImage(file="Dyr/zebra.png")
-        photoLion = tk.PhotoImage(file="Dyr/lion.png")
-
-        # image + text PNGs
-        photoDogTag = tk.PhotoImage(file="Dyr/dogtag.png")
-        photoElephantTag = tk.PhotoImage(file="Dyr/elephanttag.png")
-        photoFlamingoTag = tk.PhotoImage(file="Dyr/flamingotag.png")
-        photoHippopotamusTag = tk.PhotoImage(file="Dyr/hippopotamustag.png")
-        photoCamelTag = tk.PhotoImage(file="Dyr/cameltag.png")
-        photoCatTag = tk.PhotoImage(file="Dyr/cattag.png")
-        photoCrocodileTag = tk.PhotoImage(file="Dyr/crocodiletag.png")
-        photoRhinocerosTag = tk.PhotoImage(file="Dyr/rhinocerostag.png")
-        photoTurtleTag = tk.PhotoImage(file="Dyr/turtletag.png")
-        photoOstrichTag = tk.PhotoImage(file="Dyr/ostrichtag.png")
-        photoZebraTag = tk.PhotoImage(file="Dyr/zebratag.png")
-        photoLionTag = tk.PhotoImage(file="Dyr/liontag.png")
+        photoDog = tk.PhotoImage(file="Ressurser/Dyr/dog.png")
+        photoElephant = tk.PhotoImage(file="Ressurser/Dyr/elephant.png")
+        photoFlamingo = tk.PhotoImage(file="Ressurser/Dyr/flamingo.png")
+        photoHippo = tk.PhotoImage(file="Ressurser/Dyr/hippo.png")
+        photoCamel = tk.PhotoImage(file="Ressurser/Dyr/camel.png")
+        photoCat = tk.PhotoImage(file="Ressurser/Dyr/cat.png")
+        photoCrocodile = tk.PhotoImage(file="Ressurser/Dyr/crocodile.png")
+        photoRhinoceros = tk.PhotoImage(file="Ressurser/Dyr/rhinoceros.png")
+        photoTurtle = tk.PhotoImage(file="Ressurser/Dyr/turtle.png")
+        photoOstrich = tk.PhotoImage(file="Ressurser/Dyr/ostrich.png")
+        photoZebra = tk.PhotoImage(file="Ressurser/Dyr/zebra.png")
+        photoLion = tk.PhotoImage(file="Ressurser/Dyr/lion.png")
 
         # plain text PNGs
-        photoDogText = tk.PhotoImage(file="Dyr/dogtext.png")
-        photoElephantText = tk.PhotoImage(file="Dyr/elephanttext.png")
-        photoFlamingoText = tk.PhotoImage(file="Dyr/flamingotext.png")
-        photoHippoText = tk.PhotoImage(file="Dyr/hippotext.png")
-        photoCamelText = tk.PhotoImage(file="Dyr/cameltext.png")
-        photoCatText = tk.PhotoImage(file="Dyr/cattext.png")
-        photoCrocodileText = tk.PhotoImage(file="Dyr/crocodiletext.png")
-        photoRhinocerosText = tk.PhotoImage(file="Dyr/rhinocerostext.png")
-        photoTurtleText = tk.PhotoImage(file="Dyr/turtletext.png")
-        photoOstrichText = tk.PhotoImage(file="Dyr/ostrichtext.png")
-        photoZebraText = tk.PhotoImage(file="Dyr/zebratext.png")
-        photoLionText = tk.PhotoImage(file="Dyr/liontext.png")
+        photoDogText = tk.PhotoImage(file="Ressurser/Dyr/dogtext.png")
+        photoElephantText = tk.PhotoImage(file="Ressurser/Dyr/elephanttext.png")
+        photoFlamingoText = tk.PhotoImage(file="Ressurser/Dyr/flamingotext.png")
+        photoHippoText = tk.PhotoImage(file="Ressurser/Dyr/hippotext.png")
+        photoCamelText = tk.PhotoImage(file="Ressurser/Dyr/cameltext.png")
+        photoCatText = tk.PhotoImage(file="Ressurser/Dyr/cattext.png")
+        #photoCrocodileText = tk.PhotoImage(file="Dyr/crocodiletext.png")
+        #photoRhinocerosText = tk.PhotoImage(file="Dyr/rhinocerostext.png")
+        #photoTurtleText = tk.PhotoImage(file="Dyr/turtletext.png")
+        #photoOstrichText = tk.PhotoImage(file="Dyr/ostrichtext.png")
+        #photoZebraText = tk.PhotoImage(file="Dyr/zebratext.png")
+        #photoLionText = tk.PhotoImage(file="Dyr/liontext.png")
+
+        # norwegian text tiles
+        #photoNorDog = tk.PhotoImage(file="Dyr/N-dog.png")
+        #photoNorElephant = tk.PhotoImage(file="Dyr/N-elephant.png")
+        #photoNorFlamingo = tk.PhotoImage(file="Dyr/N-flamingo.png")
+        #photoNorHippo = tk.PhotoImage(file="Dyr/N-hippo.png")
+        #photoNorCamel = tk.PhotoImage(file="Dyr/N-camel.png")
+        #photoNorCat = tk.PhotoImage(file="Dyr/N-cat.png")
+        photoNorCrocodile = tk.PhotoImage(file="Ressurser/Dyr/N-crocodile.png")
+        photoNorRhinoceros = tk.PhotoImage(file="Ressurser/Dyr/N-rhinoceros.png")
+        photoNorTurtle = tk.PhotoImage(file="Ressurser/Dyr/N-turtle.png")
+        photoNorOstrich = tk.PhotoImage(file="Ressurser/Dyr/N-ostrich.png")
+        photoNorZebra = tk.PhotoImage(file="Ressurser/Dyr/N-zebra.png")
+        photoNorLion = tk.PhotoImage(file="Ressurser/Dyr/N-lion.png")
 
         # cardback
-        photoCardback = tk.PhotoImage(file="cardback.png")
+        photoCardback = tk.PhotoImage(file="Ressurser/GUI elementer/cardback2P.png")
         self.cardback = photoCardback
 
         # sound effects
-        self.riktig_sound = pygame.mixer.Sound("riktig.wav")
-        self.click_sound = pygame.mixer.Sound("camerashutter.wav")
-        self.gratulerer_sound = pygame.mixer.Sound("cheer.wav")
+        self.correct_sound = pygame.mixer.Sound("Ressurser/Lyd/correct.wav")
+        self.click_sound = pygame.mixer.Sound("Ressurser/Lyd/camerashutter.wav")
+        self.gratulerer_sound = pygame.mixer.Sound("Ressurser/Lyd/cheer.wav")
 
         self.configure(width=650, height=480, bg="white")
         self.canvas = tk.Canvas(self, bg="white", width=550, height=480, highlightthickness=0, borderwidth=0)
@@ -165,45 +165,34 @@ class MemGame(tk.Frame):
             photoHippoText,
             photoCamelText,
             photoCatText,
-            photoCrocodileText,
-            photoRhinocerosText,
-            photoTurtleText,
-            photoOstrichText,
-            photoZebraText,
-            photoLionText
+            photoNorCrocodile,
+            photoNorRhinoceros,
+            photoNorTurtle,
+            photoNorOstrich,
+            photoNorZebra,
+            photoNorLion
         ]
 
-        # image + text PNGs
-        self.tagImages = [
-            photoDogTag,
-            photoElephantTag,
-            photoFlamingoTag,
-            photoHippopotamusTag,
-            photoCamelTag,
-            photoCatTag,
-            photoCrocodileTag,
-            photoRhinocerosTag,
-            photoTurtleTag,
-            photoOstrichTag,
-            photoZebraTag,
-            photoLionTag
-        ]
+        self.dict = {
+            "photoDogTag": photoDog,
+        }
 
         # creating a dictionary that will be used for matching different plain images with text images of same animals
         self.all_tiles = self.images + self.textImages
-        matches = {
+        self.matches = {
             k: v for (k, v) in zip(self.images, self.textImages)
         }
-        matches.update([(k, v) for (k, v) in zip(self.textImages, self.images)])
+        self.matches.update([(k, v) for (k, v) in zip(self.textImages, self.images)])
 
-        # assigns pairs of images to random tiles
         selected = []
         for i in range(10):
             randomInd = randint(0, len(self.images) - 1)
             animalImg = self.images[randomInd]
+            animalImgText = self.textImages[randomInd]
             selected.append(animalImg)
-            selected.append(animalImg)
+            selected.append(animalImgText)
             del self.images[randomInd]
+            del self.textImages[randomInd]
         shuffle(selected)
         self.flippedTiles = []
         NUM_COLS = 5
@@ -230,15 +219,19 @@ class MemGame(tk.Frame):
 
                 # when two new tiles are flipped, plays sound effect and increases score if they match
                 if (self.flippedThisTurn == 2):
-                    if (self.flippedTiles[-1].image == self.flippedTiles[-2].image): #check last two elements
-                        self.riktig()
+                    var1 = self.flippedTiles[-1].image
+                    var2 = self.flippedTiles[-2].image
+                    if (self.matches.get(var1) == var1 or self.matches.get(var1) == var2 or self.matches.get(var2) == var2): #check last two elements
+                        self.correct()
                         self.score += 1
                     self.after(1000, self.checkTiles) # then performs another check after a short delay
 
     # checks the last two flipped tiles and resets them if they don't match
     def checkTiles(self):
         self.flippedThisTurn = 0
-        if not(self.flippedTiles[-1].image == self.flippedTiles[-2].image):
+        var1 = self.flippedTiles[-1].image
+        var2 = self.flippedTiles[-2].image
+        if not (self.matches.get(var1) == var1 or self.matches.get(var1) == var2 or self.matches.get(var2) == var2):
             self.flippedTiles[-1].drawFaceDown()
             self.flippedTiles[-2].drawFaceDown()
             del self.flippedTiles[-2:]
@@ -255,8 +248,8 @@ class MemGame(tk.Frame):
             self.clickSound()
 
     # sound effect for finding two matching tiles
-    def riktig(self):
-        pygame.mixer.Sound.play(self.riktig_sound)
+    def correct(self):
+        pygame.mixer.Sound.play(self.correct_sound)
         pygame.mixer.music.stop()
 
     # sound effect for completing the game
