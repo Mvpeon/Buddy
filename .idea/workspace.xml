@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="78276dd5-762d-473a-bea5-85741f01c1bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuddyOS.py" beforeDir="false" afterPath="$PROJECT_DIR$/BuddyOS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MemoryGameBackup.py" beforeDir="false" afterPath="$PROJECT_DIR$/MemoryGameBackup.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BuddyOS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="413" column="51" selection-start-line="413" selection-start-column="51" selection-end-line="413" selection-end-column="51" />
+            <state relative-caret-position="-1284">
+              <caret line="189" column="19" selection-start-line="189" selection-start-column="13" selection-end-line="189" selection-end-column="19" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -37,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MemoryGameBackup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3230">
-              <caret line="193" column="19" selection-start-line="193" selection-start-column="19" selection-end-line="193" selection-end-column="19" />
+            <state relative-caret-position="3400">
+              <caret line="200" column="85" selection-start-line="200" selection-start-column="85" selection-end-line="200" selection-end-column="85" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -60,7 +60,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>place</find>
       <find>bind</find>
       <find>font_butt</find>
       <find>MemGame</find>
@@ -90,6 +89,7 @@
       <find>snakk</find>
       <find>Translate</find>
       <find>Talk</find>
+      <find>memory</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -111,10 +111,10 @@
         <option value="$PROJECT_DIR$/quizalt.py" />
         <option value="$PROJECT_DIR$/quiz.py" />
         <option value="$PROJECT_DIR$/MemGameAlt.py" />
-        <option value="$PROJECT_DIR$/MemoryGameBackup.py" />
         <option value="$PROJECT_DIR$/MemGameImg.py" />
         <option value="$PROJECT_DIR$/MemoryGame.py" />
         <option value="$PROJECT_DIR$/BuddyOS.py" />
+        <option value="$PROJECT_DIR$/MemoryGameBackup.py" />
       </list>
     </option>
   </component>
@@ -174,7 +174,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.BuddyOS">
+  <component name="RunManager" selected="Python.MemoryGameBackup">
     <configuration name="BuddyOS" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -289,10 +289,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.MemoryGameBackup" />
         <item itemvalue="Python.BuddyOS" />
         <item itemvalue="Python.MemoryGame" />
         <item itemvalue="Python.MemGameImg" />
-        <item itemvalue="Python.MemoryGameBackup" />
         <item itemvalue="Python.quiz" />
       </list>
     </recent_temporary>
@@ -359,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1559573533569</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="MemoryGameBackup.py">
+      <created>1559645033267</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1559645033267</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -376,7 +383,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.120290816" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -387,7 +393,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.592233" visible="true" weight="0.27620396" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.592233" weight="0.27620396" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49965683" weight="0.24504249" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -483,16 +489,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MemoryGameBackup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3230">
-          <caret line="193" column="19" selection-start-line="193" selection-start-column="19" selection-end-line="193" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MemoryGame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -515,8 +511,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BuddyOS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="413" column="51" selection-start-line="413" selection-start-column="51" selection-end-line="413" selection-end-column="51" />
+        <state relative-caret-position="-1284">
+          <caret line="189" column="19" selection-start-line="189" selection-start-column="13" selection-end-line="189" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MemoryGameBackup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3400">
+          <caret line="200" column="85" selection-start-line="200" selection-start-column="85" selection-end-line="200" selection-end-column="85" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>

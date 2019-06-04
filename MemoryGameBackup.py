@@ -156,7 +156,7 @@ class MemGame(tk.Frame):
             photoZebra,
             photoLion
         ]
-
+        print("Doing array stuffs")
         # plain text PNGs
         self.textImages = [
             photoDogText,
@@ -189,21 +189,26 @@ class MemGame(tk.Frame):
             photoLionTag
         ]
 
+        self.dict = {
+            "photoDogTag": photoDog,
+        }
+
         # creating a dictionary that will be used for matching different plain images with text images of same animals
         self.all_tiles = self.images + self.textImages
-        matches = {
+        self.matches = {
             k: v for (k, v) in zip(self.images, self.textImages)
         }
-        matches.update([(k, v) for (k, v) in zip(self.textImages, self.images)])
+        self.matches.update([(k, v) for (k, v) in zip(self.textImages, self.images)])
 
-        # assigns pairs of images to random tiles
         selected = []
         for i in range(10):
             randomInd = randint(0, len(self.images) - 1)
             animalImg = self.images[randomInd]
+            animalImgText = self.textImages[randomInd]
             selected.append(animalImg)
-            selected.append(animalImg)
+            selected.append(animalImgText)
             del self.images[randomInd]
+            del self.textImages[randomInd]
         shuffle(selected)
         self.flippedTiles = []
         NUM_COLS = 5
@@ -238,7 +243,12 @@ class MemGame(tk.Frame):
     # checks the last two flipped tiles and resets them if they don't match
     def checkTiles(self):
         self.flippedThisTurn = 0
-        if not(self.flippedTiles[-1].image == self.flippedTiles[-2].image):
+        var1 = self.flippedTiles[-1].image
+        var2 = self.flippedTiles[-2].image
+        print(var1)
+        print(var2)
+        #if not(self.flippedTiles[-1].image == self.flippedTiles[-2].image):
+        if not (self.matches.get(var1) == var1 or self.matches.get(var1) == var2 or self.matches.get(var2) == var2):
             self.flippedTiles[-1].drawFaceDown()
             self.flippedTiles[-2].drawFaceDown()
             del self.flippedTiles[-2:]
