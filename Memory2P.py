@@ -132,7 +132,7 @@ class MemGame(tk.Frame):
         self.cardback = photoCardback
 
         # sound effects
-        self.riktig_sound = pygame.mixer.Sound("riktig.wav")
+        self.correct_sound = pygame.mixer.Sound("correct.wav")
         self.click_sound = pygame.mixer.Sound("camerashutter.wav")
         self.gratulerer_sound = pygame.mixer.Sound("cheer.wav")
 
@@ -222,7 +222,7 @@ class MemGame(tk.Frame):
                     var1 = self.flippedTiles[-1].image
                     var2 = self.flippedTiles[-2].image
                     if (self.matches.get(var1) == var1 or self.matches.get(var1) == var2 or self.matches.get(var2) == var2): #check last two elements
-                        self.riktig()
+                        self.correct()
                         self.score += 1
                     self.after(1000, self.checkTiles) # then performs another check after a short delay
 
@@ -248,8 +248,8 @@ class MemGame(tk.Frame):
             self.clickSound()
 
     # sound effect for finding two matching tiles
-    def riktig(self):
-        pygame.mixer.Sound.play(self.riktig_sound)
+    def correct(self):
+        pygame.mixer.Sound.play(self.correct_sound)
         pygame.mixer.music.stop()
 
     # sound effect for completing the game
