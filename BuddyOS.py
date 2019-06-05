@@ -17,7 +17,7 @@ class BuddyOS(tk.Tk):
 
         self.frames = {}
 
-        for F in (Language, Meny, SpillMeny, Translate, MemoryP1, MemoryP2, MemoryMeny, Quiz, Norsk, Fagvelger):
+        for F in (Language, Meny, Games, Translate, MemoryP1, MemoryP2, MemoryMeny, Quiz, Norsk, Subjects):
             frame = F(container, self)
 
             self.frames[F] = frame
@@ -42,6 +42,10 @@ class Meny(tk.Frame):
 
         self.configure(background="white")
 
+        subjects_sound = pygame.mixer.Sound("Ressurser/Lyd/subjects.wav")
+        games_sound = pygame.mixer.Sound("Ressurser/Lyd/spille.wav")
+        translate_sound = pygame.mixer.Sound("Ressurser/Lyd/subjects.wav")
+
         photoKom = tk.PhotoImage(file="Ressurser/GUI elementer/talkbtn.png")
         photoLaer = tk.PhotoImage(file="Ressurser/GUI elementer/learnbtn.png")
         photoSpill = tk.PhotoImage(file="Ressurser/GUI elementer/gamesbtn.png")
@@ -55,15 +59,15 @@ class Meny(tk.Frame):
         imgSpill.image = photoSpill
 
         labelTittel = tk.Label(self, text="MENU", font=LARGE_FONT)
-        buttonKom = tk.Button(self, image=photoKom, highlightthickness=0, bg="white",
+        buttonTranslate = tk.Button(self, image=photoKom, highlightthickness=0, bg="white",
                               borderwidth=0, activebackground="white",
-                              command=lambda: controller.show_frame(Translate))
-        buttonLær = tk.Button(self, image=photoLaer, highlightthickness=0, bg="white",
+                              command=lambda: goTranslate())
+        buttonSubjects = tk.Button(self, image=photoLaer, highlightthickness=0, bg="white",
                               borderwidth=0, activebackground="white",
-                              command=lambda: controller.show_frame(Fagvelger))
-        buttonSpill = tk.Button(self, image=photoSpill, highlightthickness=0, bg="white",
+                              command=lambda: goSubjects())
+        buttonGames = tk.Button(self, image=photoSpill, highlightthickness=0, bg="white",
                                 borderwidth=0, activebackground="white",
-                                command=lambda: controller.show_frame(SpillMeny))
+                                command=lambda: goGames())
 
         labelTittel.configure(background="white")
         labelTittel.pack(pady=10, padx=10)
@@ -75,9 +79,9 @@ class Meny(tk.Frame):
         labelTranslate.place(x=325, y=370)
         labelGames.place(x=600, y=370)
 
-        buttonLær.place(x=50, y=150)
-        buttonKom.place(x=300, y=150)
-        buttonSpill.place(x=550, y=150)
+        buttonSubjects.place(x=50, y=150)
+        buttonTranslate.place(x=300, y=150)
+        buttonGames.place(x=550, y=150)
 
         photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
@@ -99,12 +103,29 @@ class Meny(tk.Frame):
                                  command=lambda: controller.show_frame(Language))
         buttonReturn.place(x=10, y=10)
 
+        def goSubjects():
+            pygame.mixer.Sound.play(subjects_sound)
+            pygame.mixer.music.stop()
+            controller.show_frame(Subjects)
+
+        def goTranslate():
+            #pygame.mixer.Sound.play(translate_sound)
+            #pygame.mixer.music.stop()
+            controller.show_frame(Translate)
+
+        def goGames():
+            #pygame.mixer.Sound.play(games_sound)
+            #pygame.mixer.music.stop()
+            controller.show_frame(Games)
+
 class Language(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
 
         self.configure(background="white")
+
+        buddy_sound = pygame.mixer.Sound("Ressurser/Lyd/hibuddy.wav")
 
         photoGB = tk.PhotoImage(file="Ressurser/GUI elementer/GB.png")
         photoSpain = tk.PhotoImage(file="Ressurser/GUI elementer/Spain.png")
@@ -122,7 +143,7 @@ class Language(tk.Frame):
         imgSyria.image = photoSyria
 
         buttonGB = tk.Button(self, image=photoGB, highlightthickness=0, borderwidth=0, activebackground="white",
-                             command=lambda: controller.show_frame(Meny))
+                             command=lambda: goMenu())
         buttonSpain = tk.Button(self, image=photoSpain, highlightthickness=0, borderwidth=0, activebackground="white",
                                 command=lambda: controller.show_frame(Language))
         buttonFrance = tk.Button(self, image=photoFrance, highlightthickness=0, borderwidth=0, activebackground="white",
@@ -140,8 +161,15 @@ class Language(tk.Frame):
         labelSpain.place(x=170, y=425)
         labelFrance = tk.Label(self, text="France", font=LARGE_FONT, bg="white")
         labelFrance.place(x=505, y=200)
-        labelSyria = tk.Label(self, text="سوريا", font=LARGE_FONT, bg="white")
+        labelSyria = tk.Label(self, text="سوريا", font=LARGE_FONT, bg="white",)
         labelSyria.place(x=520, y=425)
+
+        labelDevelopment1 = tk.Label(self, text="Under Development", font=MEDIUM_FONT, bg="black", fg="white")
+        labelDevelopment1.place(x=470, y=110)
+        labelDevelopment2 = tk.Label(self, text="Under Development", font=MEDIUM_FONT, bg="black", fg="white")
+        labelDevelopment2.place(x=130, y=325)
+        labelDevelopment3 = tk.Label(self, text="Under Development", font=MEDIUM_FONT, bg="black", fg="white")
+        labelDevelopment3.place(x=470, y=325)
 
         buttonGB.place(x=100, y=30)
         buttonSpain.place(x=100, y=255)
@@ -154,7 +182,13 @@ class Language(tk.Frame):
         imgBatteri.config(background="white")
         imgBatteri.place(x=710, y=15)
 
-class Fagvelger(tk.Frame):
+        def goMenu():
+            pygame.mixer.Sound.play(buddy_sound)
+            pygame.mixer.music.stop()
+            controller.show_frame(Meny)
+
+
+class Subjects(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -182,7 +216,7 @@ class Fagvelger(tk.Frame):
         buttonNorsk = tk.Button(self, image=photoNorsk, highlightthickness=0, borderwidth=0, activebackground="white",
                                 command=lambda: controller.show_frame(Norsk))
         buttonNaturfag = tk.Button(self, image=photoNaturfag, highlightthickness=0, borderwidth=0, activebackground="white",
-                                   command=lambda: controller.show_frame(Fagvelger))
+                                   command=lambda: controller.show_frame(Subjects))
 
         buttonNorsk.place(x=120, y=140)
         buttonNaturfag.place(x=470, y=170)
@@ -197,10 +231,18 @@ class Fagvelger(tk.Frame):
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
-                                 command=lambda: controller.show_frame(Meny))
+                                 command=lambda: returnToMenu())
         buttonReturn.place(x=10, y=10)
 
-class SpillMeny(tk.Frame):
+        menu_sound = pygame.mixer.Sound("Ressurser/Lyd/menu.wav")
+
+        def returnToMenu():
+            pygame.mixer.Sound.play(menu_sound)
+            pygame.mixer.music.stop()
+            controller.show_frame(Meny)
+
+
+class Games(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -222,14 +264,14 @@ class SpillMeny(tk.Frame):
         photoMemory = tk.PhotoImage(file="Ressurser/GUI elementer/memorygame.png")
         imgMemory = tk.Label(self, anchor="w", image=photoMemory)
         imgMemory.image = photoMemory
-        buttonMemory = tk.Button(self, command=lambda: controller.show_frame(MemoryMeny))
+        buttonMemory = tk.Button(self, command=lambda: goMemory())
         buttonMemory.config(image=photoMemory, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
         buttonMemory.place(x=150, y=150, width=200, height=200)
 
         photoQuiz = tk.PhotoImage(file="Ressurser/GUI elementer/wat.png")
         imgQuiz = tk.Label(self, anchor="w", image=photoQuiz)
         imgQuiz.image = photoQuiz
-        buttonQuiz = tk.Button(self, command=lambda: controller.show_frame(SpillMeny))
+        buttonQuiz = tk.Button(self, command=lambda: controller.show_frame(Games))
         buttonQuiz.config(image=photoQuiz, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
         buttonQuiz.place(x=450, y=150, width=200, height=200)
 
@@ -237,7 +279,7 @@ class SpillMeny(tk.Frame):
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0,  activebackground="white",
-                                 command=lambda: controller.show_frame(Meny))
+                                 command=lambda: returnToMenu())
         buttonReturn.place(x=10, y=10)
 
         photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
@@ -245,6 +287,19 @@ class SpillMeny(tk.Frame):
         imgBatteri.image = photoBatteri  # keep a reference!
         imgBatteri.config(background="white")
         imgBatteri.place(x=710, y=15)
+
+        menu_sound = pygame.mixer.Sound("Ressurser/Lyd/menu.wav")
+        memory_sound = pygame.mixer.Sound("Ressurser/Lyd/playingwith.wav")
+
+        def returnToMenu():
+            pygame.mixer.Sound.play(menu_sound)
+            pygame.mixer.music.stop()
+            controller.show_frame(Meny)
+
+        def goMemory():
+            pygame.mixer.Sound.play(memory_sound)
+            pygame.mixer.music.stop()
+            controller.show_frame(MemoryMeny)
 
 
 class MemoryMeny(tk.Frame):
@@ -276,7 +331,7 @@ class MemoryMeny(tk.Frame):
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
-                                 command=lambda: controller.show_frame(SpillMeny))
+                                 command=lambda: controller.show_frame(Games))
         buttonReturn.place(x=10, y=10)
 
         photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
@@ -328,7 +383,7 @@ class MemoryP2(tk.Frame):
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, activebackground="white",
-                                 borderwidth=0, command=lambda: controller.show_frame(SpillMeny))
+                                 borderwidth=0, command=lambda: controller.show_frame(Games))
         buttonReturn.place(x=10, y=10)
 
         from Memory2P import MemGame
@@ -356,7 +411,7 @@ class Translate(tk.Frame):
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
-                                 command=lambda: controller.show_frame(Meny))
+                                 command=lambda: returnToMenu())
         buttonReturn.place(x=10, y=10)
 
         hei_sound = pygame.mixer.Sound("Ressurser/Lyd/hei.wav")
@@ -399,6 +454,13 @@ class Translate(tk.Frame):
         imgBatteri.config(background="white")
         imgBatteri.place(x=710, y=15)
 
+        menu_sound = pygame.mixer.Sound("Ressurser/Lyd/menu.wav")
+
+        def returnToMenu():
+            pygame.mixer.Sound.play(menu_sound)
+            pygame.mixer.music.stop()
+            controller.show_frame(Meny)
+
         def heter():
             pygame.mixer.Sound.play(heter_sound)
             pygame.mixer.music.stop()
@@ -424,7 +486,7 @@ class Norsk(tk.Frame):
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
-                                 command=lambda: controller.show_frame(Fagvelger))
+                                 command=lambda: controller.show_frame(Subjects))
         buttonReturn.place(x=10, y=10)
 
         photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
@@ -475,7 +537,7 @@ class Quiz(tk.Frame):
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
         imgReturn.image = photoReturn
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
-                                 command=lambda: controller.show_frame(SpillMeny))
+                                 command=lambda: controller.show_frame(Games))
         buttonReturn.place(x=10, y=10)
 
         photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
