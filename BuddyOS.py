@@ -49,8 +49,6 @@ class Menu(tk.Frame):
         self.configure(background="white")
 
         subjects_sound = pygame.mixer.Sound("Ressurser/Lyd/subjects.wav")
-        games_sound = pygame.mixer.Sound("Ressurser/Lyd/spille.wav")
-        translate_sound = pygame.mixer.Sound("Ressurser/Lyd/subjects.wav")
 
         photoKom = tk.PhotoImage(file="Ressurser/GUI elementer/talkbtn.png")
         photoLaer = tk.PhotoImage(file="Ressurser/GUI elementer/learnbtn.png")
