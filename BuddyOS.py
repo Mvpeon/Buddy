@@ -121,7 +121,6 @@ class Language(tk.Frame):
         imgFrance.image = photoFrance
         imgSyria.image = photoSyria
 
-        labelTittel = tk.Label(self, text="CHOOSE A LANGUAGE", font=LARGE_FONT)
         buttonGB = tk.Button(self, image=photoGB, highlightthickness=0, borderwidth=0, activebackground="white",
                              command=lambda: controller.show_frame(Meny))
         buttonSpain = tk.Button(self, image=photoSpain, highlightthickness=0, borderwidth=0, activebackground="white",
@@ -131,13 +130,23 @@ class Language(tk.Frame):
         buttonSyria = tk.Button(self, image=photoSyria, highlightthickness=0, borderwidth=0, activebackground="white",
                                 command=lambda: controller.show_frame(Language))
 
-        labelTittel.configure(background="white")
-        labelTittel.pack(pady=10, padx=10)
+        #labelTittel = tk.Label(self, text="CHOOSE A LANGUAGE", font=LARGE_FONT)
+        #labelTittel.configure(background="white")
+        #labelTittel.pack(pady=10, padx=10)
 
-        buttonGB.place(x=100, y=80)
-        buttonSpain.place(x=100, y=280)
-        buttonFrance.place(x=430, y=80)
-        buttonSyria.place(x=430, y=280)
+        labelGB = tk.Label(self, text="United Kingdom", font=LARGE_FONT, bg="white")
+        labelGB.place(x=108, y=200)
+        labelSpain = tk.Label(self, text="España", font=LARGE_FONT, bg="white")
+        labelSpain.place(x=170, y=425)
+        labelFrance = tk.Label(self, text="France", font=LARGE_FONT, bg="white")
+        labelFrance.place(x=505, y=200)
+        labelSyria = tk.Label(self, text="سوريا", font=LARGE_FONT, bg="white")
+        labelSyria.place(x=520, y=425)
+
+        buttonGB.place(x=100, y=30)
+        buttonSpain.place(x=100, y=255)
+        buttonFrance.place(x=430, y=30)
+        buttonSyria.place(x=430, y=255)
 
         photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
