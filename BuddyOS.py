@@ -110,8 +110,8 @@ class Menu(tk.Frame):
         def goSubjects():
             global BeenToSubjects
             if (BeenToSubjects == False):
+                pygame.mixer.stop()
                 pygame.mixer.Sound.play(subjects_sound)
-                pygame.mixer.music.stop()
                 BeenToSubjects = True
             controller.show_frame(Subjects)
 
@@ -192,8 +192,8 @@ class Language(tk.Frame):
         def goMenu():
             global BeenToMenu
             if (BeenToMenu == False):
+                pygame.mixer.stop()
                 pygame.mixer.Sound.play(buddy_sound)
-                pygame.mixer.music.stop()
                 BeenToMenu = True
             controller.show_frame(Menu)
 
@@ -249,8 +249,8 @@ class Subjects(tk.Frame):
         def returnToMenu():
             global BeenBackToMenu
             if (BeenBackToMenu == False):
+                pygame.mixer.stop()
                 pygame.mixer.Sound.play(menu_sound)
-                pygame.mixer.music.stop()
                 BeenBackToMenu = True
             controller.show_frame(Menu)
 
@@ -307,16 +307,16 @@ class Games(tk.Frame):
         def returnToMenu():
             global BeenBackToMenu
             if (BeenBackToMenu == False):
+                pygame.mixer.stop()
                 pygame.mixer.Sound.play(menu_sound)
-                pygame.mixer.music.stop()
                 BeenBackToMenu = True
             controller.show_frame(Menu)
 
         def goMemory():
             global BeenToMemoryMenu
             if (BeenToMemoryMenu == False):
+                pygame.mixer.stop()
                 pygame.mixer.Sound.play(memory_sound)
-                pygame.mixer.music.stop()
                 BeenToMemoryMenu = True
             controller.show_frame(MemoryMenu)
 
@@ -478,22 +478,22 @@ class Translate(tk.Frame):
         def returnToMenu():
             global BeenBackToMenu
             if (BeenBackToMenu == False):
+                pygame.mixer.stop()
                 pygame.mixer.Sound.play(menu_sound)
-                pygame.mixer.music.stop()
                 BeenBackToMenu = True
             controller.show_frame(Menu)
 
         def heter():
+            pygame.mixer.stop()
             pygame.mixer.Sound.play(heter_sound)
-            pygame.mixer.music.stop()
 
         def spille():
+            pygame.mixer.stop()
             pygame.mixer.Sound.play(spille_sound)
-            pygame.mixer.music.stop()
 
         def hei():
+            pygame.mixer.stop()
             pygame.mixer.Sound.play(hei_sound)
-            pygame.mixer.music.stop()
 
 class Norwegian(tk.Frame):
 
@@ -542,13 +542,13 @@ class Norwegian(tk.Frame):
         buttonRepeat.place(x=200, y=390)
 
         def hei():
+            pygame.mixer.stop()
             pygame.mixer.Sound.play(hei_sound)
-            pygame.mixer.music.stop()
             self.after(4000, correct)
 
         def correct():
+            pygame.mixer.stop()
             pygame.mixer.Sound.play(correct_sound)
-            pygame.mixer.music.stop()
 
 app = BuddyOS()
 app.mainloop()

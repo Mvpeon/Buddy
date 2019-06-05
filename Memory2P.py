@@ -250,17 +250,14 @@ class MemGame(tk.Frame):
     # sound effect for finding two matching tiles
     def correct(self):
         pygame.mixer.Sound.play(self.correct_sound)
-        pygame.mixer.music.stop()
 
     # sound effect for completing the game
     def gratulerer(self):
         pygame.mixer.Sound.play(self.gratulerer_sound)
-        pygame.mixer.music.stop()
 
     # button click sound effect
     def clickSound(self):
         pygame.mixer.Sound.play(self.click_sound)
-        pygame.mixer.music.stop()
 
 if __name__ == '__main__':
     c = Controller()
