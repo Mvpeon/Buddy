@@ -547,7 +547,6 @@ class Norwegian(tk.Frame):
             self.after(4000, correct)
 
         def correct():
-            pygame.mixer.stop()
             pygame.mixer.Sound.play(correct_sound)
 
 app = BuddyOS()
