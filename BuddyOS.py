@@ -4,6 +4,12 @@ pygame.init()
 
 LARGE_FONT = ("Verdana", 22)
 MEDIUM_FONT = ("Verdana", 14)
+SMALL_FONT = ("Verdana", 10)
+
+BeenToSubjects = False
+BeenToMenu = False
+BeenBackToMenu = False
+BeenToMemoryMenu = False
 
 class BuddyOS(tk.Tk):
 
@@ -17,7 +23,7 @@ class BuddyOS(tk.Tk):
 
         self.frames = {}
 
-        for F in (Language, Meny, Games, Translate, MemoryP1, MemoryP2, MemoryMenu, Quiz, Norwegian, Subjects):
+        for F in (Language, Menu, Games, Translate, MemoryP1, MemoryP2, MemoryMenu, Norwegian, Subjects):
             frame = F(container, self)
 
             self.frames[F] = frame
@@ -35,7 +41,7 @@ class BuddyOS(tk.Tk):
     def quit(self):
         exit()
 
-class Meny(tk.Frame):
+class Menu(tk.Frame):
 
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
@@ -104,8 +110,11 @@ class Meny(tk.Frame):
         buttonReturn.place(x=10, y=10)
 
         def goSubjects():
-            pygame.mixer.Sound.play(subjects_sound)
-            pygame.mixer.music.stop()
+            global BeenToSubjects
+            if (BeenToSubjects == False):
+                pygame.mixer.Sound.play(subjects_sound)
+                pygame.mixer.music.stop()
+                BeenToSubjects = True
             controller.show_frame(Subjects)
 
         def goTranslate():
@@ -156,25 +165,25 @@ class Language(tk.Frame):
         #labelTittel.pack(pady=10, padx=10)
 
         labelGB = tk.Label(self, text="United Kingdom", font=LARGE_FONT, bg="white")
-        labelGB.place(x=108, y=200)
+        labelGB.place(x=108, y=180)
         labelSpain = tk.Label(self, text="España", font=LARGE_FONT, bg="white")
-        labelSpain.place(x=170, y=425)
+        labelSpain.place(x=170, y=418)
         labelFrance = tk.Label(self, text="France", font=LARGE_FONT, bg="white")
-        labelFrance.place(x=505, y=200)
+        labelFrance.place(x=505, y=180)
         labelSyria = tk.Label(self, text="سوريا", font=LARGE_FONT, bg="white",)
-        labelSyria.place(x=520, y=425)
+        labelSyria.place(x=520, y=418)
 
-        labelDevelopment1 = tk.Label(self, text="Under Development", font=MEDIUM_FONT, bg="black", fg="white")
-        labelDevelopment1.place(x=470, y=110)
-        labelDevelopment2 = tk.Label(self, text="Under Development", font=MEDIUM_FONT, bg="black", fg="white")
-        labelDevelopment2.place(x=130, y=325)
-        labelDevelopment3 = tk.Label(self, text="Under Development", font=MEDIUM_FONT, bg="black", fg="white")
-        labelDevelopment3.place(x=470, y=325)
+        labelDevelopment1 = tk.Label(self, text="Under Development", font=SMALL_FONT, bg="white")
+        labelDevelopment1.place(x=490, y=455)
+        labelDevelopment2 = tk.Label(self, text="Under Development", font=SMALL_FONT, bg="white")
+        labelDevelopment2.place(x=490, y=215)
+        labelDevelopment3 = tk.Label(self, text="Under Development", font=SMALL_FONT, bg="white")
+        labelDevelopment3.place(x=155, y=455)
 
-        buttonGB.place(x=100, y=30)
-        buttonSpain.place(x=100, y=255)
-        buttonFrance.place(x=430, y=30)
-        buttonSyria.place(x=430, y=255)
+        buttonGB.place(x=100, y=10)
+        buttonSpain.place(x=100, y=250)
+        buttonFrance.place(x=430, y=10)
+        buttonSyria.place(x=430, y=250)
 
         photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
         imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
@@ -183,9 +192,12 @@ class Language(tk.Frame):
         imgBatteri.place(x=710, y=15)
 
         def goMenu():
-            pygame.mixer.Sound.play(buddy_sound)
-            pygame.mixer.music.stop()
-            controller.show_frame(Meny)
+            global BeenToMenu
+            if (BeenToMenu == False):
+                pygame.mixer.Sound.play(buddy_sound)
+                pygame.mixer.music.stop()
+                BeenToMenu = True
+            controller.show_frame(Menu)
 
 
 class Subjects(tk.Frame):
@@ -237,9 +249,12 @@ class Subjects(tk.Frame):
         menu_sound = pygame.mixer.Sound("Ressurser/Lyd/menu.wav")
 
         def returnToMenu():
-            pygame.mixer.Sound.play(menu_sound)
-            pygame.mixer.music.stop()
-            controller.show_frame(Meny)
+            global BeenBackToMenu
+            if (BeenBackToMenu == False):
+                pygame.mixer.Sound.play(menu_sound)
+                pygame.mixer.music.stop()
+                BeenBackToMenu = True
+            controller.show_frame(Menu)
 
 
 class Games(tk.Frame):
@@ -268,12 +283,12 @@ class Games(tk.Frame):
         buttonMemory.config(image=photoMemory, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
         buttonMemory.place(x=150, y=150, width=200, height=200)
 
-        photoQuiz = tk.PhotoImage(file="Ressurser/GUI elementer/wut.png")
-        imgQuiz = tk.Label(self, anchor="w", image=photoQuiz)
-        imgQuiz.image = photoQuiz
-        buttonQuiz = tk.Button(self, command=lambda: controller.show_frame(Games))
-        buttonQuiz.config(image=photoQuiz, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
-        buttonQuiz.place(x=450, y=150, width=200, height=200)
+        photoWhat = tk.PhotoImage(file="Ressurser/GUI elementer/wut.png")
+        imgWhat = tk.Label(self, anchor="w", image=photoWhat)
+        imgWhat.image = photoWhat
+        buttonWhat = tk.Button(self, command=lambda: controller.show_frame(Games))
+        buttonWhat.config(image=photoWhat, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
+        buttonWhat.place(x=450, y=150, width=200, height=200)
 
         photoReturn = tk.PhotoImage(file="Ressurser/GUI elementer/returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
@@ -292,13 +307,19 @@ class Games(tk.Frame):
         memory_sound = pygame.mixer.Sound("Ressurser/Lyd/playingwith.wav")
 
         def returnToMenu():
-            pygame.mixer.Sound.play(menu_sound)
-            pygame.mixer.music.stop()
-            controller.show_frame(Meny)
+            global BeenBackToMenu
+            if (BeenBackToMenu == False):
+                pygame.mixer.Sound.play(menu_sound)
+                pygame.mixer.music.stop()
+                BeenBackToMenu = True
+            controller.show_frame(Menu)
 
         def goMemory():
-            pygame.mixer.Sound.play(memory_sound)
-            pygame.mixer.music.stop()
+            global BeenToMemoryMenu
+            if (BeenToMemoryMenu == False):
+                pygame.mixer.Sound.play(memory_sound)
+                pygame.mixer.music.stop()
+                BeenToMemoryMenu = True
             controller.show_frame(MemoryMenu)
 
 
@@ -320,12 +341,12 @@ class MemoryMenu(tk.Frame):
         buttonMemory.config(image=photoMemory, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
         buttonMemory.place(x=150, y=150, width=200, height=200)
 
-        photoQuiz = tk.PhotoImage(file="Ressurser/GUI elementer/multiplayer.png")
-        imgQuiz = tk.Label(self, anchor="w", image=photoQuiz)
-        imgQuiz.image = photoQuiz
-        buttonQuiz = tk.Button(self, command=lambda: controller.show_frame(MemoryP2))
-        buttonQuiz.config(image=photoQuiz, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
-        buttonQuiz.place(x=450, y=150, width=200, height=200)
+        photoWhat = tk.PhotoImage(file="Ressurser/GUI elementer/multiplayer.png")
+        imgWhat = tk.Label(self, anchor="w", image=photoWhat)
+        imgWhat.image = photoWhat
+        buttonWhat = tk.Button(self, command=lambda: controller.show_frame(MemoryP2))
+        buttonWhat.config(image=photoWhat, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
+        buttonWhat.place(x=450, y=150, width=200, height=200)
 
         photoReturn = tk.PhotoImage(file="Ressurser/GUI elementer/returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
@@ -457,9 +478,12 @@ class Translate(tk.Frame):
         menu_sound = pygame.mixer.Sound("Ressurser/Lyd/menu.wav")
 
         def returnToMenu():
-            pygame.mixer.Sound.play(menu_sound)
-            pygame.mixer.music.stop()
-            controller.show_frame(Meny)
+            global BeenBackToMenu
+            if (BeenBackToMenu == False):
+                pygame.mixer.Sound.play(menu_sound)
+                pygame.mixer.music.stop()
+                BeenBackToMenu = True
+            controller.show_frame(Menu)
 
         def heter():
             pygame.mixer.Sound.play(heter_sound)
@@ -527,28 +551,6 @@ class Norwegian(tk.Frame):
         def correct():
             pygame.mixer.Sound.play(correct_sound)
             pygame.mixer.music.stop()
-
-class Quiz(tk.Frame):
-
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-
-        photoReturn = tk.PhotoImage(file="Ressurser/GUI elementer/returnknapp.png")
-        imgReturn = tk.Label(self, anchor="s", image=photoReturn)
-        imgReturn.image = photoReturn
-        buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
-                                 command=lambda: controller.show_frame(Games))
-        buttonReturn.place(x=10, y=10)
-
-        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
-        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
-        imgBatteri.image = photoBatteri  # keep a reference!
-        imgBatteri.config(background="white")
-        imgBatteri.place(x=710, y=15)
-
-        self.configure(background="white")
-
-        # quiz spill
 
 app = BuddyOS()
 app.mainloop()
