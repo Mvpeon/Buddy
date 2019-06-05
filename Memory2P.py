@@ -54,7 +54,7 @@ class Tile(object): # this class is used for creating the tiles
 
     # flips tile down
     def drawFaceDown(self):
-        self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill = "white")
+        self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill = "#E7F6FF")
         self.canvas.create_image(self.x + 50, self.y + 50, image=self.cardback)
         self.isFaceUp = False
 
