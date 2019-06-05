@@ -538,7 +538,7 @@ class Norwegian(tk.Frame):
         imgKnapp.config(background="white")
 
         buttonRepeat = tk.Button(self, image=photoKnapp, highlightthickness=0, borderwidth=0, activebackground="white",
-                            text="Hei, jeg heter buddy!", command=lambda: hei())
+                            text="Hei, jeg heter buddy!", bg="white", command=lambda: hei())
         buttonRepeat.place(x=200, y=390)
 
         def hei():
