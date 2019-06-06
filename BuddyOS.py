@@ -521,14 +521,20 @@ class Norwegian(tk.Frame):
         labelTittel.pack(pady=10, padx=10)
         labelTittel.configure(background="white")
 
-        labelHi = tk.Label(self, text="English: Hi, my name is... \nNorwegian: Hei, jeg heter...", font=MEDIUM_FONT)
-        labelHi.place(x=260, y=55)
+        labelHi = tk.Label(self, text="       English: Hi, my name is... \nNorwegian: Hei, jeg heter...", font=MEDIUM_FONT)
+        labelHi.place(x=220, y=100)
         labelHi.config(bg="white")
 
-        photoIllustrasjon = tk.PhotoImage(file="Ressurser/GUI elementer/buddytalking.png")
-        imgIllustrasjon = tk.Label(self, anchor="s", image=photoIllustrasjon, highlightthickness=0, borderwidth=0, bg="white")
-        imgIllustrasjon.image = photoIllustrasjon
-        imgIllustrasjon.place(x=300, y=120)
+        photoBuddy = tk.PhotoImage(file="Ressurser/GUI elementer/buddytalkingsmall.png")
+        imgBuddy = tk.Label(self, anchor="s", image=photoBuddy, highlightthickness=0, borderwidth=0, bg="white")
+        imgBuddy.image = photoBuddy
+        imgBuddy.place(x=330, y=200)
+
+        photoOrangeMan = tk.PhotoImage(file="Ressurser/GUI elementer/orangetalking.png")
+        imgOrangeMan = tk.Label(self, anchor="s", image=photoOrangeMan, highlightthickness=0, borderwidth=0,
+                                   bg="white")
+        imgOrangeMan.image = photoOrangeMan
+        imgOrangeMan.place(x=-200, y=200)
 
         hei_sound = pygame.mixer.Sound("Ressurser/Lyd/heijegheter.wav")
 
@@ -538,16 +544,24 @@ class Norwegian(tk.Frame):
         imgKnapp.config(background="white")
 
         buttonRepeat = tk.Button(self, image=photoKnapp, highlightthickness=0, borderwidth=0, activebackground="white",
-                            text="Hei, jeg heter buddy!", bg="white", command=lambda: hei())
+                            text="Hei, jeg heter buddy!", bg="white", command=lambda: repeatAfterMe())
         buttonRepeat.place(x=200, y=390)
+
+        def repeatAfterMe():
+            hei()
+            self.after(2000, showOrangeMan())
+            self.after(3000, correct)
+
+        def correct():
+            pygame.mixer.Sound.play(correct_sound)
+
+        def showOrangeMan():
+            imgBuddy.place(x=-200, y=200)
+            imgOrangeMan.place(x=330, y=200)
 
         def hei():
             pygame.mixer.stop()
             pygame.mixer.Sound.play(hei_sound)
-            self.after(4000, correct)
-
-        def correct():
-            pygame.mixer.Sound.play(correct_sound)
 
 app = BuddyOS()
 app.mainloop()
