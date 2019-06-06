@@ -83,6 +83,11 @@ class MemGame(tk.Frame):
                                   command=lambda: self.restart())
         buttonRestart.place(x=560, y=197)
 
+        self.photoArrow = tk.PhotoImage(file="Ressurser/GUI elementer/arrow.png")
+        self.imgArrow = tk.Label(self, anchor="s", image=self.photoArrow, bg="white")
+        self.imgArrow.image = self.photoArrow
+        self.imgArrow.place(x=0, y=0)  # x=560, y=250
+
         self.score = 0
 
         # plain image PNGs
@@ -238,6 +243,7 @@ class MemGame(tk.Frame):
 
         # plays sound effect when completing the game after a very short delay
         if (self.score == 10):
+            self.imgArrow.place(x=560, y=250)
             self.after(100, self.gratulerer)
 
     # flips all the tiles face down and resets score
@@ -246,6 +252,7 @@ class MemGame(tk.Frame):
             self.tiles[i].drawFaceDown()
             self.score = 0
             self.clickSound()
+            self.imgArrow.place(x=0, y=0)
 
     # sound effect for finding two matching tiles
     def correct(self):
