@@ -54,7 +54,7 @@ class Tile(object): # this class is used for creating the tiles
 
     # flips tile down
     def drawFaceDown(self):
-        self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill = "white")
+        self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill = "#FFF4EB")
         self.canvas.create_image(self.x + 50, self.y + 50, image=self.cardback)
         self.isFaceUp = False
 
@@ -84,6 +84,11 @@ class MemGame(tk.Frame):
         buttonRestart.place(x=560, y=197)
 
         self.score = 0
+
+        self.photoArrow = tk.PhotoImage(file="Ressurser/GUI elementer/arrow.png")
+        self.imgArrow = tk.Label(self, anchor="s", image=self.photoArrow, bg="white")
+        self.imgArrow.image = self.photoArrow
+        self.imgArrow.place(x=0, y=0) #x=560, y=250
 
         # plain image PNGs
         photoDog = tk.PhotoImage(file="Ressurser/Dyr/dog.png")
@@ -284,6 +289,7 @@ class MemGame(tk.Frame):
 
         # plays sound effect when completing the game after a very short delay
         if (self.score == 10):
+            self.imgArrow.place(x=560, y=250)
             self.after(100, self.gratulerer)
 
     # flips all the tiles face down and resets score
@@ -292,21 +298,19 @@ class MemGame(tk.Frame):
             self.tiles[i].drawFaceDown()
             self.score = 0
             self.clickSound()
+            self.imgArrow.place(x=0, y=0)
 
     # sound effect for finding two matching tiles
     def correct(self):
         pygame.mixer.Sound.play(self.correct_sound)
-        pygame.mixer.music.stop()
 
     # sound effect for completing the game
     def gratulerer(self):
         pygame.mixer.Sound.play(self.gratulerer_sound)
-        pygame.mixer.music.stop()
 
     # button click sound effect
     def clickSound(self):
         pygame.mixer.Sound.play(self.click_sound)
-        pygame.mixer.music.stop()
 
 if __name__ == '__main__':
     c = Controller()

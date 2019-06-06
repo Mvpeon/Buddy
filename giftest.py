@@ -3,7 +3,7 @@ import time
 import os
 root = Tk()
 
-frames = [PhotoImage(file='giphy.gif',format = 'gif -index %i' %(i)) for i in range(59)]
+frames = [PhotoImage(file='Ressurser/GUI elementer/giphy.gif',format = 'gif -index %i' %(i)) for i in range(59)]
 
 def update(ind):
     frame = frames[ind]
