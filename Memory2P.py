@@ -2,6 +2,7 @@ import tkinter as tk
 from random import randint
 from random import shuffle
 import pygame
+from PIL import Image, ImageTk
 pygame.init()
 
 class Controller(tk.Tk):
@@ -54,7 +55,7 @@ class Tile(object): # this class is used for creating the tiles
 
     # flips tile down
     def drawFaceDown(self):
-        self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill = "#E7F6FF")
+        self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill = "#bedbfa")
         self.canvas.create_image(self.x + 50, self.y + 50, image=self.cardback)
         self.isFaceUp = False
 
