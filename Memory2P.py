@@ -2,7 +2,6 @@ import tkinter as tk
 from random import randint
 from random import shuffle
 import pygame
-from PIL import Image, ImageTk
 pygame.init()
 
 class Controller(tk.Tk):
