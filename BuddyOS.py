@@ -52,30 +52,30 @@ class Common(tk.Frame):
         imgBatteri = tk.Label(anchor="s", image=photoBatteri)
         imgBatteri.image = photoBatteri
         imgBatteri.config(background="white")
-        imgBatteri.place(x=710, y=15)
+        imgBatteri.place(x=670, y=15)
 
         photoOptions = tk.PhotoImage(file="Ressurser/GUI elementer/innstillinger.png")
         imgOptions = tk.Label(anchor="s", image=photoOptions)
         imgOptions.image = photoOptions
         buttonOptions = tk.Button(image=photoOptions, highlightthickness=0, borderwidth=0, activebackground="white",
                              bg="white", command=lambda: toggleOptions())
-        buttonOptions.place(x=745, y=425)
+        buttonOptions.place(x=750, y=5)
 
-        canvas = tk.Canvas(width=150, height=100, bg="white")
+        canvas = tk.Canvas(width=150, height=75, bg="white")
         labelExit = tk.Label(canvas, text="Exit Program", bg="white")
-        labelExit.place(x=10, y=27)
+        labelExit.place(x=10, y=30)
 
         photoExit = tk.PhotoImage(file="Ressurser/GUI elementer/exit.png")
         imgExit = tk.Label(canvas, anchor="s", image=photoExit)
         imgExit.image = photoExit
         buttonExit = tk.Button(canvas, image=photoExit, highlightthickness=0, borderwidth=0, activebackground="white",
                                command=lambda: quit())
-        buttonExit.place(x=100, y=15)
+        buttonExit.place(x=90, y=15)
 
         def toggleOptions():
             global OptionsIsOpen
             if (OptionsIsOpen == False):
-                canvas.place(x=635, y=315)
+                canvas.place(x=640, y=60)
                 OptionsIsOpen = True
             else:
                 canvas.place(x=800, y=0)
@@ -88,12 +88,6 @@ class Menu(tk.Frame):
         tk.Frame.__init__(self, parent)
 
         self.configure(background="white")
-
-        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
-        imgBatteri = tk.Label(anchor="s", image=photoBatteri)
-        imgBatteri.image = photoBatteri
-        imgBatteri.config(background="white")
-        imgBatteri.place(x=710, y=15)
 
         subjects_sound = pygame.mixer.Sound("Ressurser/Lyd/subjects.wav")
 
@@ -193,25 +187,25 @@ class Language(tk.Frame):
                                 command=lambda: controller.show_frame(Language))
 
         labelGB = tk.Label(self, text="United Kingdom", font=LARGE_FONT, bg="white")
-        labelGB.place(x=108, y=180)
+        labelGB.place(x=128, y=180)
         labelSpain = tk.Label(self, text="España", font=LARGE_FONT, bg="white")
-        labelSpain.place(x=170, y=418)
+        labelSpain.place(x=190, y=418)
         labelFrance = tk.Label(self, text="France", font=LARGE_FONT, bg="white")
-        labelFrance.place(x=505, y=180)
+        labelFrance.place(x=485, y=180)
         labelSyria = tk.Label(self, text="سوريا", font=LARGE_FONT, bg="white",)
-        labelSyria.place(x=520, y=418)
+        labelSyria.place(x=500, y=418)
 
         labelDevelopment1 = tk.Label(self, text="Under Development", font=SMALL_FONT, bg="white")
-        labelDevelopment1.place(x=490, y=455)
+        labelDevelopment1.place(x=470, y=455)
         labelDevelopment2 = tk.Label(self, text="Under Development", font=SMALL_FONT, bg="white")
-        labelDevelopment2.place(x=490, y=215)
+        labelDevelopment2.place(x=470, y=215)
         labelDevelopment3 = tk.Label(self, text="Under Development", font=SMALL_FONT, bg="white")
-        labelDevelopment3.place(x=155, y=455)
+        labelDevelopment3.place(x=175, y=455)
 
-        buttonGB.place(x=100, y=10)
-        buttonSpain.place(x=100, y=250)
-        buttonFrance.place(x=430, y=10)
-        buttonSyria.place(x=430, y=250)
+        buttonGB.place(x=120, y=10)
+        buttonSpain.place(x=120, y=250)
+        buttonFrance.place(x=410, y=10)
+        buttonSyria.place(x=410, y=250)
 
         def goMenu():
             global BeenToMenu
@@ -391,7 +385,7 @@ class MemoryP1(tk.Frame):
 
         from Memory1P import MemGame
         x = MemGame(self)
-        x.place(x=125, y=20)
+        x.place(x=120, y=20)
 
 class MemoryP2(tk.Frame):
 
@@ -409,7 +403,7 @@ class MemoryP2(tk.Frame):
 
         from Memory2P import MemGame
         x = MemGame(self)
-        x.place(x=125, y=20)
+        x.place(x=120, y=20)
 
 class Translate(tk.Frame):
 
