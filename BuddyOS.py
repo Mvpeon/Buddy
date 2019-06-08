@@ -487,6 +487,8 @@ class Norwegian(tk.Frame):
         self.configure(background="white")
 
         correct_sound = pygame.mixer.Sound("Ressurser/Lyd/correct.wav")
+        repeat_sound = pygame.mixer.Sound("Ressurser/Lyd/repeat.wav")
+        hei_sound = pygame.mixer.Sound("Ressurser/Lyd/heijegheter.wav")
 
         photoReturn = tk.PhotoImage(file="Ressurser/GUI elementer/returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
@@ -514,8 +516,6 @@ class Norwegian(tk.Frame):
         imgOrangeMan.image = photoOrangeMan
         imgOrangeMan.place(x=-200, y=200)
 
-        hei_sound = pygame.mixer.Sound("Ressurser/Lyd/heijegheter.wav")
-
         photoKnapp = tk.PhotoImage(file="Ressurser/GUI elementer/repeat.png")
         imgKnapp = tk.Label(self, anchor="s", image=photoKnapp)
         imgKnapp.image = photoKnapp
@@ -526,9 +526,10 @@ class Norwegian(tk.Frame):
         buttonRepeat.place(x=200, y=390)
 
         def repeatAfterMe():
-            hei()
-            self.after(2000, showOrangeMan())
-            self.after(3000, correct)
+            repeat()
+            self.after(2000, hei)
+            self.after(4000, showOrangeMan)
+            self.after(6000, correct)
 
         def correct():
             pygame.mixer.Sound.play(correct_sound)
@@ -538,8 +539,11 @@ class Norwegian(tk.Frame):
             imgOrangeMan.place(x=330, y=200)
 
         def hei():
-            pygame.mixer.stop()
             pygame.mixer.Sound.play(hei_sound)
+
+        def repeat():
+            pygame.mixer.stop()
+            pygame.mixer.Sound.play(repeat_sound)
 
 
 
