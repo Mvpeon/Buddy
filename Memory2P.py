@@ -199,7 +199,7 @@ class MemGame(tk.Frame):
     # event for clicking on a tile
     def mouseClicked(self, event):
         for tile in self.tiles:
-            if tile.isUnderMouse(event) and (self.flippedThisTurn < 2):
+            if tile.isUnderMouse(event):
                 if (not (tile.isFaceUp)):
                     self.clickSound()
                     tile.drawFaceUp()
