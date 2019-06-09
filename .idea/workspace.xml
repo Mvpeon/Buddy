@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/Memory1P.py" beforeDir="false" afterPath="$PROJECT_DIR$/Memory1P.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Memory2P.py" beforeDir="false" afterPath="$PROJECT_DIR$/Memory2P.py" afterDir="false" />
     </list>
+    <ignored path="C:\!Skole\Git\Buddy\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +18,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BuddyOS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-261">
-              <caret line="146" column="8" lean-forward="true" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="29" />
+            <state relative-caret-position="1224">
+              <caret line="72" column="36" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Memory1P.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-301">
+              <caret line="108" column="64" selection-start-line="108" selection-start-column="64" selection-end-line="108" selection-end-column="64" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -27,36 +40,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Memory1P.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="292" column="44" selection-start-line="292" selection-start-column="44" selection-end-line="292" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Memory2P.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="245" column="45" selection-start-line="245" selection-start-column="45" selection-end-line="245" selection-end-column="45" />
+            <state relative-caret-position="405">
+              <caret line="225" column="27" selection-start-line="225" selection-start-column="27" selection-end-line="225" selection-end-column="27" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/giftest.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,10 +62,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>after</find>
-      <find>hei</find>
-      <find>norsk</find>
-      <find>snakk</find>
       <find>Translate</find>
       <find>Talk</find>
       <find>memory</find>
@@ -103,6 +88,10 @@
       <find>grid</find>
       <find>import</find>
       <find>tk</find>
+      <find>exit</find>
+      <find>batter</find>
+      <find>pack</find>
+      <find>flippedTi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -129,11 +118,11 @@
         <option value="$PROJECT_DIR$/MemGameImg.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/giftest.py" />
-        <option value="$PROJECT_DIR$/BuddyOS.py" />
         <option value="$PROJECT_DIR$/stackoverflowquestion.py" />
         <option value="$PROJECT_DIR$/stackoverflowtest.py" />
-        <option value="$PROJECT_DIR$/Memory2P.py" />
+        <option value="$PROJECT_DIR$/BuddyOS.py" />
         <option value="$PROJECT_DIR$/Memory1P.py" />
+        <option value="$PROJECT_DIR$/Memory2P.py" />
       </list>
     </option>
   </component>
@@ -143,16 +132,18 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="476" />
-    <option name="width" value="1239" />
-    <option name="height" value="1160" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="475" />
+    <option name="width" value="1240" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
@@ -181,7 +172,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Memory1P">
+  <component name="RunManager" selected="Python.BuddyOS">
     <configuration name="BuddyOS" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -245,7 +236,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="giftest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -257,7 +248,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\!Skole\Git\Buddy\giftest.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/giftest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="quiz" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/quiz.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -270,14 +282,16 @@
       <item itemvalue="Python.BuddyOS" />
       <item itemvalue="Python.Memory1P" />
       <item itemvalue="Python.Memory2P" />
-      <item itemvalue="Python.test" />
+      <item itemvalue="Python.giftest" />
+      <item itemvalue="Python.quiz" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Memory1P" />
-        <item itemvalue="Python.Memory2P" />
         <item itemvalue="Python.BuddyOS" />
-        <item itemvalue="Python.test" />
+        <item itemvalue="Python.Memory2P" />
+        <item itemvalue="Python.Memory1P" />
+        <item itemvalue="Python.quiz" />
+        <item itemvalue="Python.giftest" />
       </list>
     </recent_temporary>
   </component>
@@ -476,7 +490,49 @@
       <option name="project" value="LOCAL" />
       <updated>1559755771279</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Update">
+      <created>1559900388880</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1559900388896</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Update">
+      <created>1559900468125</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1559900468125</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Update">
+      <created>1559913356980</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1559913356980</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Update">
+      <created>1559984147261</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1559984147261</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Update">
+      <created>1560009016004</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1560009016004</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Update">
+      <created>1560089128314</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1560089128314</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -492,10 +548,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="476" y="0" width="1239" height="1160" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.120290816" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15700738" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -504,15 +560,16 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32976654" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.592233" visible="true" weight="0.27529183" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.592233" visible="true" weight="0.2729885" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49965683" weight="0.24504249" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4990086" weight="0.32782102" />
-      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49902913" weight="0.32976654" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49902913" weight="0.3492218" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4976867" weight="0.32782102" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5009709" side_tool="true" weight="0.32976654" />
       <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.49834764" weight="0.3286119" />
+      <window_info anchor="bottom" id="Messages" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -575,16 +632,7 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/BuddyQuiz.py" />
-    <entry file="file://$PROJECT_DIR$/gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2686">
-          <caret line="160" column="28" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/gui.py" />
     <entry file="file://$PROJECT_DIR$/whatever.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/tkinter/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -592,16 +640,6 @@
     <entry file="file://$PROJECT_DIR$/alternativMG.py" />
     <entry file="file://$PROJECT_DIR$/hei.py" />
     <entry file="file://$PROJECT_DIR$/quizalt.py" />
-    <entry file="file://$PROJECT_DIR$/quiz.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="87" column="49" lean-forward="true" selection-start-line="87" selection-start-column="49" selection-end-line="87" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MemoryGame.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1241">
@@ -613,33 +651,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/stackoverflowquestion.py" />
-    <entry file="file://$PROJECT_DIR$/stackoverflowtest.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/giftest.py">
+    <entry file="file://$PROJECT_DIR$/stackoverflowtest.py" />
+    <entry file="file://$PROJECT_DIR$/giftest.py" />
+    <entry file="file://$PROJECT_DIR$/quiz.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="91">
+          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BuddyOS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-261">
-          <caret line="146" column="8" lean-forward="true" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Memory2P.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="245" column="45" selection-start-line="245" selection-start-column="45" selection-end-line="245" selection-end-column="45" />
+        <state relative-caret-position="1224">
+          <caret line="72" column="36" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="36" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -648,8 +672,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Memory1P.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="292" column="44" selection-start-line="292" selection-start-column="44" selection-end-line="292" selection-end-column="44" />
+        <state relative-caret-position="-301">
+          <caret line="108" column="64" selection-start-line="108" selection-start-column="64" selection-end-line="108" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Memory2P.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="225" column="27" selection-start-line="225" selection-start-column="27" selection-end-line="225" selection-end-column="27" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>

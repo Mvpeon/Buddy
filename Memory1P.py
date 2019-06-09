@@ -54,7 +54,7 @@ class Tile(object): # this class is used for creating the tiles
 
     # flips tile down
     def drawFaceDown(self):
-        self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill = "#FFF4EB")
+        self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill = "#fadebe")
         self.canvas.create_image(self.x + 50, self.y + 50, image=self.cardback)
         self.isFaceUp = False
 
@@ -83,12 +83,16 @@ class MemGame(tk.Frame):
                                   command=lambda: self.restart())
         buttonRestart.place(x=560, y=197)
 
-        self.score = 0
-
         self.photoArrow = tk.PhotoImage(file="Ressurser/GUI elementer/arrow.png")
         self.imgArrow = tk.Label(self, anchor="s", image=self.photoArrow, bg="white")
         self.imgArrow.image = self.photoArrow
         self.imgArrow.place(x=0, y=0) #x=560, y=250
+
+        self.configure(width=650, height=480, bg="white")
+        self.canvas = tk.Canvas(self, bg="white", width=550, height=480, highlightthickness=0, borderwidth=0)
+        self.canvas.place(x=0, y=-30)
+        self.tiles = []
+        self.score = 0
 
         # plain image PNGs
         photoDog = tk.PhotoImage(file="Ressurser/Dyr/dog.png")
@@ -103,34 +107,6 @@ class MemGame(tk.Frame):
         photoOstrich = tk.PhotoImage(file="Ressurser/Dyr/ostrich.png")
         photoZebra = tk.PhotoImage(file="Ressurser/Dyr/zebra.png")
         photoLion = tk.PhotoImage(file="Ressurser/Dyr/lion.png")
-
-        # image + text PNGs
-        #photoDogTag = tk.PhotoImage(file="Dyr/dogtag.png")
-        #photoElephantTag = tk.PhotoImage(file="Dyr/elephanttag.png")
-        #photoFlamingoTag = tk.PhotoImage(file="Dyr/flamingotag.png")
-        #photoHippopotamusTag = tk.PhotoImage(file="Dyr/hippopotamustag.png")
-        #photoCamelTag = tk.PhotoImage(file="Dyr/cameltag.png")
-        #photoCatTag = tk.PhotoImage(file="Dyr/cattag.png")
-        #photoCrocodileTag = tk.PhotoImage(file="Dyr/crocodiletag.png")
-        #photoRhinocerosTag = tk.PhotoImage(file="Dyr/rhinocerostag.png")
-        #photoTurtleTag = tk.PhotoImage(file="Dyr/turtletag.png")
-        #photoOstrichTag = tk.PhotoImage(file="Dyr/ostrichtag.png")
-        #photoZebraTag = tk.PhotoImage(file="Dyr/zebratag.png")
-        #photoLionTag = tk.PhotoImage(file="Dyr/liontag.png")
-
-        # plain text PNGs
-        #photoDogText = tk.PhotoImage(file="Dyr/dogtext.png")
-        #photoElephantText = tk.PhotoImage(file="Dyr/elephanttext.png")
-        #photoFlamingoText = tk.PhotoImage(file="Dyr/flamingotext.png")
-        #photoHippoText = tk.PhotoImage(file="Dyr/hippotext.png")
-        #photoCamelText = tk.PhotoImage(file="Dyr/cameltext.png")
-        #photoCatText = tk.PhotoImage(file="Dyr/cattext.png")
-        #photoCrocodileText = tk.PhotoImage(file="Dyr/crocodiletext.png")
-        #photoRhinocerosText = tk.PhotoImage(file="Dyr/rhinocerostext.png")
-        #photoTurtleText = tk.PhotoImage(file="Dyr/turtletext.png")
-        #photoOstrichText = tk.PhotoImage(file="Dyr/ostrichtext.png")
-        #photoZebraText = tk.PhotoImage(file="Dyr/zebratext.png")
-        #photoLionText = tk.PhotoImage(file="Dyr/liontext.png")
 
         # norwegian text tiles
         photoNorDog = tk.PhotoImage(file="Ressurser/Dyr/N-dog.png")
@@ -155,11 +131,6 @@ class MemGame(tk.Frame):
         self.click_sound = pygame.mixer.Sound("Ressurser/Lyd/camerashutter.wav")
         self.gratulerer_sound = pygame.mixer.Sound("Ressurser/Lyd/cheer.wav")
 
-        self.configure(width=650, height=480, bg="white")
-        self.canvas = tk.Canvas(self, bg="white", width=550, height=480, highlightthickness=0, borderwidth=0)
-        self.canvas.place(x=0, y=-30)
-        self.tiles = []
-
         # plain image PNGs
         self.images = [
             photoDog,
@@ -176,38 +147,6 @@ class MemGame(tk.Frame):
             photoLion
         ]
 
-        # plain text PNGs
-        #self.textImages = [
-        #    photoDogText,
-        #    photoElephantText,
-        #    photoFlamingoText,
-        #    photoHippoText,
-        #    photoCamelText,
-        #    photoCatText,
-        #    photoCrocodileText,
-        #    photoRhinocerosText,
-        #    photoTurtleText,
-        #    photoOstrichText,
-        #    photoZebraText,
-        #    photoLionText
-        #]
-
-        # image + text PNGs
-        #self.tagImages = [
-        #    photoDogTag,
-        #    photoElephantTag,
-        #    photoFlamingoTag,
-        #    photoHippopotamusTag,
-        #    photoCamelTag,
-        #    photoCatTag,
-        #    photoCrocodileTag,
-        #    photoRhinocerosTag,
-        #    photoTurtleTag,
-        #    photoOstrichTag,
-        #    photoZebraTag,
-        #    photoLionTag
-        #]
-
         # norwegian text tiles
         self.norImages = [
             photoNorDog,
@@ -223,10 +162,6 @@ class MemGame(tk.Frame):
             photoNorZebra,
             photoNorLion
         ]
-
-        self.dict = {
-            "photoDogTag": photoDog,
-        }
 
         # creating a dictionary that will be used for matching different plain images with text images of same animals
         self.all_tiles = self.images + self.norImages
@@ -268,37 +203,37 @@ class MemGame(tk.Frame):
                     self.flippedTiles.append(tile)
                     self.flippedThisTurn += 1
 
-                # when two new tiles are flipped, plays sound effect and increases score if they match
+                # performs a check when two new tiles are flipped
                 if (self.flippedThisTurn == 2):
-                    var1 = self.flippedTiles[-1].image
-                    var2 = self.flippedTiles[-2].image
-                    if (self.matches.get(var1) == var1 or self.matches.get(var1) == var2 or self.matches.get(var2) == var2): #check last two elements
-                        self.correct()
-                        self.score += 1
-                    self.after(1000, self.checkTiles) # then performs another check after a short delay
+                    self.checkTiles()
 
-    # checks the last two flipped tiles and resets them if they don't match
+    # method for checking tiles
     def checkTiles(self):
-        self.flippedThisTurn = 0
         var1 = self.flippedTiles[-1].image
         var2 = self.flippedTiles[-2].image
-        if not (self.matches.get(var1) == var1 or self.matches.get(var1) == var2 or self.matches.get(var2) == var2):
-            self.flippedTiles[-1].drawFaceDown()
-            self.flippedTiles[-2].drawFaceDown()
+        if (self.matches.get(var1) == var1 or self.matches.get(var1) == var2 or self.matches.get(var2) == var2):
+            self.correct()
+            self.score += 1
             del self.flippedTiles[-2:]
+        else:
+            self.after(1000, self.flippedTiles[-1].drawFaceDown)
+            self.after(1000, self.flippedTiles[-2].drawFaceDown)
+        self.flippedThisTurn = 0
 
-        # plays sound effect when completing the game after a very short delay
+        # plays sound effect when completing the game after a short delay
         if (self.score == 10):
             self.imgArrow.place(x=560, y=250)
-            self.after(100, self.gratulerer)
+            self.after(700, self.gratulerer)
 
-    # flips all the tiles face down and resets score
+    # resets the game
     def restart(self):
         for i in range(len(self.tiles)):
             self.tiles[i].drawFaceDown()
-            self.score = 0
-            self.clickSound()
-            self.imgArrow.place(x=0, y=0)
+        self.score = 0
+        self.clickSound()
+        self.imgArrow.place(x=0, y=0)
+        self.flippedTiles = []
+        self.flippedThisTurn = 0
 
     # sound effect for finding two matching tiles
     def correct(self):

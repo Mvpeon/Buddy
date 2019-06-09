@@ -10,6 +10,8 @@ BeenToSubjects = False
 BeenToMenu = False
 BeenBackToMenu = False
 BeenToMemoryMenu = False
+OptionsIsOpen = False
+
 
 class BuddyOS(tk.Tk):
 
@@ -20,10 +22,11 @@ class BuddyOS(tk.Tk):
         container.pack(side="top", fill="both", expand=True)
         container.grid_rowconfigure(0, weight=1)
         container.grid_columnconfigure(0, weight=1)
+        self.winfo_toplevel().title("Beep Boop")
 
         self.frames = {}
 
-        for F in (Language, Menu, Games, Translate, MemoryP1, MemoryP2, MemoryMenu, Norwegian, Subjects):
+        for F in (Language, Menu, Games, Translate, MemoryP1, MemoryP2, MemoryMenu, Norwegian, Subjects, Common):
             frame = F(container, self)
 
             self.frames[F] = frame
@@ -33,13 +36,51 @@ class BuddyOS(tk.Tk):
         self.geometry("800x480")
         self.show_frame(Language)
 
-
     def show_frame(self, cont):
         frame = self.frames[cont]
         frame.tkraise()
 
     def quit(self):
         exit()
+
+
+class Common(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+
+        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
+        imgBatteri = tk.Label(anchor="s", image=photoBatteri)
+        imgBatteri.image = photoBatteri
+        imgBatteri.config(background="white")
+        imgBatteri.place(x=670, y=15)
+
+        photoOptions = tk.PhotoImage(file="Ressurser/GUI elementer/innstillinger.png")
+        imgOptions = tk.Label(anchor="s", image=photoOptions)
+        imgOptions.image = photoOptions
+        buttonOptions = tk.Button(image=photoOptions, highlightthickness=0, borderwidth=0, activebackground="white",
+                             bg="white", command=lambda: toggleOptions())
+        buttonOptions.place(x=750, y=5)
+
+        canvas = tk.Canvas(width=150, height=75, bg="white")
+        labelExit = tk.Label(canvas, text="Exit Program", bg="white")
+        labelExit.place(x=10, y=30)
+
+        photoExit = tk.PhotoImage(file="Ressurser/GUI elementer/exit.png")
+        imgExit = tk.Label(canvas, anchor="s", image=photoExit)
+        imgExit.image = photoExit
+        buttonExit = tk.Button(canvas, image=photoExit, highlightthickness=0, borderwidth=0, activebackground="white",
+                               command=lambda: quit())
+        buttonExit.place(x=90, y=15)
+
+        def toggleOptions():
+            global OptionsIsOpen
+            if (OptionsIsOpen == False):
+                canvas.place(x=640, y=60)
+                OptionsIsOpen = True
+            else:
+                canvas.place(x=800, y=0)
+                OptionsIsOpen = False
+
 
 class Menu(tk.Frame):
 
@@ -86,19 +127,6 @@ class Menu(tk.Frame):
         buttonSubjects.place(x=50, y=150)
         buttonTranslate.place(x=300, y=150)
         buttonGames.place(x=550, y=150)
-
-        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
-        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
-        imgBatteri.image = photoBatteri  # keep a reference!
-        imgBatteri.config(background="white")
-        imgBatteri.place(x=710, y=15)
-
-        photoExit = tk.PhotoImage(file="Ressurser/GUI elementer/exit.png")
-        imgExit = tk.Label(self, anchor="s", image=photoExit)
-        imgExit.image = photoExit
-        buttonExit = tk.Button(self, image=photoExit, highlightthickness=0, borderwidth=0, activebackground="white",
-                                 command=lambda: quit())
-        buttonExit.place(x=80, y=15)
 
         photoReturn = tk.PhotoImage(file="Ressurser/GUI elementer/returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
@@ -158,36 +186,26 @@ class Language(tk.Frame):
         buttonSyria = tk.Button(self, image=photoSyria, highlightthickness=0, borderwidth=0, activebackground="white",
                                 command=lambda: controller.show_frame(Language))
 
-        #labelTittel = tk.Label(self, text="CHOOSE A LANGUAGE", font=LARGE_FONT)
-        #labelTittel.configure(background="white")
-        #labelTittel.pack(pady=10, padx=10)
-
         labelGB = tk.Label(self, text="United Kingdom", font=LARGE_FONT, bg="white")
-        labelGB.place(x=108, y=180)
+        labelGB.place(x=128, y=180)
         labelSpain = tk.Label(self, text="España", font=LARGE_FONT, bg="white")
-        labelSpain.place(x=170, y=418)
+        labelSpain.place(x=190, y=418)
         labelFrance = tk.Label(self, text="France", font=LARGE_FONT, bg="white")
-        labelFrance.place(x=505, y=180)
+        labelFrance.place(x=485, y=180)
         labelSyria = tk.Label(self, text="سوريا", font=LARGE_FONT, bg="white",)
-        labelSyria.place(x=520, y=418)
+        labelSyria.place(x=500, y=418)
 
         labelDevelopment1 = tk.Label(self, text="Under Development", font=SMALL_FONT, bg="white")
-        labelDevelopment1.place(x=490, y=455)
+        labelDevelopment1.place(x=470, y=455)
         labelDevelopment2 = tk.Label(self, text="Under Development", font=SMALL_FONT, bg="white")
-        labelDevelopment2.place(x=490, y=215)
+        labelDevelopment2.place(x=470, y=215)
         labelDevelopment3 = tk.Label(self, text="Under Development", font=SMALL_FONT, bg="white")
-        labelDevelopment3.place(x=155, y=455)
+        labelDevelopment3.place(x=175, y=455)
 
-        buttonGB.place(x=100, y=10)
-        buttonSpain.place(x=100, y=250)
-        buttonFrance.place(x=430, y=10)
-        buttonSyria.place(x=430, y=250)
-
-        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
-        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
-        imgBatteri.image = photoBatteri  # keep a reference!
-        imgBatteri.config(background="white")
-        imgBatteri.place(x=710, y=15)
+        buttonGB.place(x=120, y=10)
+        buttonSpain.place(x=120, y=250)
+        buttonFrance.place(x=410, y=10)
+        buttonSyria.place(x=410, y=250)
 
         def goMenu():
             global BeenToMenu
@@ -196,6 +214,8 @@ class Language(tk.Frame):
                 pygame.mixer.Sound.play(buddy_sound)
                 BeenToMenu = True
             controller.show_frame(Menu)
+
+
 
 
 class Subjects(tk.Frame):
@@ -230,12 +250,6 @@ class Subjects(tk.Frame):
 
         buttonNorsk.place(x=120, y=120)
         buttonNaturfag.place(x=470, y=180)
-
-        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
-        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
-        imgBatteri.image = photoBatteri  # keep a reference!
-        imgBatteri.config(background="white")
-        imgBatteri.place(x=710, y=15)
 
         photoReturn = tk.PhotoImage(file="Ressurser/GUI elementer/returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
@@ -295,12 +309,6 @@ class Games(tk.Frame):
                                  command=lambda: returnToMenu())
         buttonReturn.place(x=10, y=10)
 
-        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
-        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
-        imgBatteri.image = photoBatteri  # keep a reference!
-        imgBatteri.config(background="white")
-        imgBatteri.place(x=710, y=15)
-
         menu_sound = pygame.mixer.Sound("Ressurser/Lyd/menu.wav")
         memory_sound = pygame.mixer.Sound("Ressurser/Lyd/playingwith.wav")
 
@@ -353,12 +361,6 @@ class MemoryMenu(tk.Frame):
                                  command=lambda: controller.show_frame(Games))
         buttonReturn.place(x=10, y=10)
 
-        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
-        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
-        imgBatteri.image = photoBatteri  # keep a reference!
-        imgBatteri.config(background="white")
-        imgBatteri.place(x=710, y=15)
-
         label1P = tk.Label(self, text="Single Player", font=LARGE_FONT)
         label1P.configure(background="white")
         label1P.place(x=145, y=370)
@@ -383,13 +385,7 @@ class MemoryP1(tk.Frame):
 
         from Memory1P import MemGame
         x = MemGame(self)
-        x.place(x=125, y=20)
-
-        photoBatteri = tk.PhotoImage(file="Ressurser\GUI elementer/batteri.png")
-        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
-        imgBatteri.image = photoBatteri  # keep a reference!
-        imgBatteri.config(background="white")
-        imgBatteri.place(x=710, y=15)
+        x.place(x=120, y=20)
 
 class MemoryP2(tk.Frame):
 
@@ -407,13 +403,7 @@ class MemoryP2(tk.Frame):
 
         from Memory2P import MemGame
         x = MemGame(self)
-        x.place(x=125, y=20)
-
-        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
-        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
-        imgBatteri.image = photoBatteri  # keep a reference!
-        imgBatteri.config(background="white")
-        imgBatteri.place(x=710, y=15)
+        x.place(x=120, y=20)
 
 class Translate(tk.Frame):
 
@@ -467,12 +457,6 @@ class Translate(tk.Frame):
         buttonA.place(x=210, y=240)
         buttonC.place(x=210, y=340)
 
-        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
-        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
-        imgBatteri.image = photoBatteri  # keep a reference!
-        imgBatteri.config(background="white")
-        imgBatteri.place(x=710, y=15)
-
         menu_sound = pygame.mixer.Sound("Ressurser/Lyd/menu.wav")
 
         def returnToMenu():
@@ -503,6 +487,8 @@ class Norwegian(tk.Frame):
         self.configure(background="white")
 
         correct_sound = pygame.mixer.Sound("Ressurser/Lyd/correct.wav")
+        repeat_sound = pygame.mixer.Sound("Ressurser/Lyd/repeat.wav")
+        hei_sound = pygame.mixer.Sound("Ressurser/Lyd/heijegheter.wav")
 
         photoReturn = tk.PhotoImage(file="Ressurser/GUI elementer/returnknapp.png")
         imgReturn = tk.Label(self, anchor="s", image=photoReturn)
@@ -510,12 +496,6 @@ class Norwegian(tk.Frame):
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, borderwidth=0, activebackground="white",
                                  command=lambda: controller.show_frame(Subjects))
         buttonReturn.place(x=10, y=10)
-
-        photoBatteri = tk.PhotoImage(file="Ressurser/GUI elementer/batteri.png")
-        imgBatteri = tk.Label(self, anchor="s", image=photoBatteri)
-        imgBatteri.image = photoBatteri  # keep a reference!
-        imgBatteri.config(background="white")
-        imgBatteri.place(x=710, y=15)
 
         labelTittel = tk.Label(self, text="NORWEGIAN", font=LARGE_FONT)
         labelTittel.pack(pady=10, padx=10)
@@ -536,8 +516,6 @@ class Norwegian(tk.Frame):
         imgOrangeMan.image = photoOrangeMan
         imgOrangeMan.place(x=-200, y=200)
 
-        hei_sound = pygame.mixer.Sound("Ressurser/Lyd/heijegheter.wav")
-
         photoKnapp = tk.PhotoImage(file="Ressurser/GUI elementer/repeat.png")
         imgKnapp = tk.Label(self, anchor="s", image=photoKnapp)
         imgKnapp.image = photoKnapp
@@ -548,9 +526,10 @@ class Norwegian(tk.Frame):
         buttonRepeat.place(x=200, y=390)
 
         def repeatAfterMe():
-            hei()
-            self.after(2000, showOrangeMan())
-            self.after(3000, correct)
+            repeat()
+            self.after(2000, hei)
+            self.after(4000, showOrangeMan)
+            self.after(6000, correct)
 
         def correct():
             pygame.mixer.Sound.play(correct_sound)
@@ -560,8 +539,13 @@ class Norwegian(tk.Frame):
             imgOrangeMan.place(x=330, y=200)
 
         def hei():
-            pygame.mixer.stop()
             pygame.mixer.Sound.play(hei_sound)
+
+        def repeat():
+            pygame.mixer.stop()
+            pygame.mixer.Sound.play(repeat_sound)
+
+
 
 app = BuddyOS()
 app.mainloop()
