@@ -88,6 +88,10 @@ class MemGame(tk.Frame):
         self.imgArrow.image = self.photoArrow
         self.imgArrow.place(x=0, y=0)  # x=560, y=250
 
+        self.configure(width=650, height=480, bg="white")
+        self.canvas = tk.Canvas(self, bg="white", width=550, height=480, highlightthickness=0, borderwidth=0)
+        self.canvas.place(x=0, y=-30)
+        self.tiles = []
         self.score = 0
 
         # plain image PNGs
@@ -129,11 +133,6 @@ class MemGame(tk.Frame):
         self.click_sound = pygame.mixer.Sound("Ressurser/Lyd/camerashutter.wav")
         self.gratulerer_sound = pygame.mixer.Sound("Ressurser/Lyd/cheer.wav")
 
-        self.configure(width=650, height=480, bg="white")
-        self.canvas = tk.Canvas(self, bg="white", width=550, height=480, highlightthickness=0, borderwidth=0)
-        self.canvas.place(x=0, y=-30)
-        self.tiles = []
-
         # plain image PNGs
         self.images = [
             photoDog,
@@ -165,10 +164,6 @@ class MemGame(tk.Frame):
             photoNorZebra,
             photoNorLion
         ]
-
-        self.dict = {
-            "photoDogTag": photoDog,
-        }
 
         # creating a dictionary that will be used for matching different plain images with text images of same animals
         self.all_tiles = self.images + self.textImages
@@ -204,43 +199,43 @@ class MemGame(tk.Frame):
     def mouseClicked(self, event):
         for tile in self.tiles:
             if tile.isUnderMouse(event) and (self.flippedThisTurn < 2):
-                if (not(tile.isFaceUp)):
+                if (not (tile.isFaceUp)):
                     self.clickSound()
                     tile.drawFaceUp()
                     self.flippedTiles.append(tile)
                     self.flippedThisTurn += 1
 
-                # when two new tiles are flipped, plays sound effect and increases score if they match
+                # performs a check when two new tiles are flipped
                 if (self.flippedThisTurn == 2):
-                    var1 = self.flippedTiles[-1].image
-                    var2 = self.flippedTiles[-2].image
-                    if (self.matches.get(var1) == var1 or self.matches.get(var1) == var2 or self.matches.get(var2) == var2): #check last two elements
-                        self.correct()
-                        self.score += 1
-                    self.after(1000, self.checkTiles) # then performs another check after a short delay
+                    self.checkTiles()
 
-    # checks the last two flipped tiles and resets them if they don't match
+    # method for checking tiles
     def checkTiles(self):
-        self.flippedThisTurn = 0
         var1 = self.flippedTiles[-1].image
         var2 = self.flippedTiles[-2].image
-        if not (self.matches.get(var1) == var1 or self.matches.get(var1) == var2 or self.matches.get(var2) == var2):
-            self.flippedTiles[-1].drawFaceDown()
-            self.flippedTiles[-2].drawFaceDown()
+        if (self.matches.get(var1) == var1 or self.matches.get(var1) == var2 or self.matches.get(var2) == var2):
+            self.correct()
+            self.score += 1
             del self.flippedTiles[-2:]
+        else:
+            self.after(1000, self.flippedTiles[-1].drawFaceDown)
+            self.after(1000, self.flippedTiles[-2].drawFaceDown)
+        self.flippedThisTurn = 0
 
-        # plays sound effect when completing the game after a very short delay
+        # plays sound effect when completing the game after a short delay
         if (self.score == 10):
             self.imgArrow.place(x=560, y=250)
-            self.after(100, self.gratulerer)
+            self.after(700, self.gratulerer)
 
-    # flips all the tiles face down and resets score
+    # resets the game
     def restart(self):
         for i in range(len(self.tiles)):
             self.tiles[i].drawFaceDown()
-            self.score = 0
-            self.clickSound()
-            self.imgArrow.place(x=0, y=0)
+        self.score = 0
+        self.clickSound()
+        self.imgArrow.place(x=0, y=0)
+        self.flippedTiles = []
+        self.flippedThisTurn = 0
 
     # sound effect for finding two matching tiles
     def correct(self):
