@@ -336,6 +336,8 @@ class MemoryMenu(tk.Frame):
 
         self.configure(background="white")
 
+        memorystart_sound = pygame.mixer.Sound("Ressurser/Lyd/memorystart.wav")
+
         labelTittel = tk.Label(self, text="MEMORY GAME", font=LARGE_FONT)
         labelTittel.configure(background="white")
         labelTittel.pack(pady=10, padx=5)
@@ -343,14 +345,14 @@ class MemoryMenu(tk.Frame):
         photoMemory = tk.PhotoImage(file="Ressurser/GUI elementer/singleplayer.png")
         imgMemory = tk.Label(self, anchor="w", image=photoMemory)
         imgMemory.image = photoMemory
-        buttonMemory = tk.Button(self, command=lambda: controller.show_frame(MemoryP1))
+        buttonMemory = tk.Button(self, command=lambda: singleplayer())
         buttonMemory.config(image=photoMemory, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
         buttonMemory.place(x=150, y=150, width=200, height=200)
 
         photoWhat = tk.PhotoImage(file="Ressurser/GUI elementer/multiplayer.png")
         imgWhat = tk.Label(self, anchor="w", image=photoWhat)
         imgWhat.image = photoWhat
-        buttonWhat = tk.Button(self, command=lambda: controller.show_frame(MemoryP2))
+        buttonWhat = tk.Button(self, command=lambda: multiplayer())
         buttonWhat.config(image=photoWhat, background="white", highlightthickness=0, borderwidth=0, activebackground="white")
         buttonWhat.place(x=450, y=150, width=200, height=200)
 
@@ -369,6 +371,16 @@ class MemoryMenu(tk.Frame):
         label2P.configure(background="white")
         label2P.place(x=460, y=370)
 
+        def singleplayer():
+            controller.show_frame(MemoryP1)
+            pygame.mixer.stop()
+            pygame.mixer.Sound.play(memorystart_sound)
+
+        def multiplayer():
+            controller.show_frame(MemoryP2)
+            pygame.mixer.stop()
+            pygame.mixer.Sound.play(memorystart_sound)
+
 class MemoryP1(tk.Frame):
 
     def __init__(self, parent, controller):
@@ -381,11 +393,13 @@ class MemoryP1(tk.Frame):
         imgReturn.image = photoReturn
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, activebackground="white",
                                  borderwidth=0, command=lambda: controller.show_frame(MemoryMenu))
-        buttonReturn.place(x=10, y=10)
 
         from Memory1P import MemGame
         x = MemGame(self)
         x.place(x=120, y=20)
+        buttonReturn.place(x=10, y=10)
+
+
 
 class MemoryP2(tk.Frame):
 
@@ -399,11 +413,11 @@ class MemoryP2(tk.Frame):
         imgReturn.image = photoReturn
         buttonReturn = tk.Button(self, image=photoReturn, highlightthickness=0, activebackground="white",
                                  borderwidth=0, command=lambda: controller.show_frame(Games))
-        buttonReturn.place(x=10, y=10)
 
         from Memory2P import MemGame
         x = MemGame(self)
         x.place(x=120, y=20)
+        buttonReturn.place(x=10, y=10)
 
 class Translate(tk.Frame):
 

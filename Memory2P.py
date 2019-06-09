@@ -132,6 +132,7 @@ class MemGame(tk.Frame):
         self.correct_sound = pygame.mixer.Sound("Ressurser/Lyd/correct.wav")
         self.click_sound = pygame.mixer.Sound("Ressurser/Lyd/camerashutter.wav")
         self.gratulerer_sound = pygame.mixer.Sound("Ressurser/Lyd/cheer.wav")
+        self.memorystart_sound = pygame.mixer.Sound("Ressurser/Lyd/memorystart.wav")
 
         # plain image PNGs
         self.images = [
@@ -236,6 +237,8 @@ class MemGame(tk.Frame):
         self.imgArrow.place(x=0, y=0)
         self.flippedTiles = []
         self.flippedThisTurn = 0
+        pygame.mixer.stop()
+        pygame.mixer.Sound.play(self.memorystart_sound)
 
     # sound effect for finding two matching tiles
     def correct(self):

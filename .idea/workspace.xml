@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="78276dd5-762d-473a-bea5-85741f01c1bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BuddyOS.py" beforeDir="false" afterPath="$PROJECT_DIR$/BuddyOS.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Memory1P.py" beforeDir="false" afterPath="$PROJECT_DIR$/Memory1P.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Memory2P.py" beforeDir="false" afterPath="$PROJECT_DIR$/Memory2P.py" afterDir="false" />
     </list>
@@ -18,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BuddyOS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
-              <caret line="72" column="36" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="36" />
+            <state relative-caret-position="272">
+              <caret line="381" column="54" lean-forward="true" selection-start-line="380" selection-start-column="12" selection-end-line="381" selection-end-column="54" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -30,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Memory1P.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-301">
-              <caret line="108" column="64" selection-start-line="108" selection-start-column="64" selection-end-line="108" selection-end-column="64" />
+            <state relative-caret-position="423">
+              <caret line="132" column="8" selection-start-line="132" selection-start-column="8" selection-end-line="132" selection-end-column="84" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -42,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Memory2P.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="225" column="27" selection-start-line="225" selection-start-column="27" selection-end-line="225" selection-end-column="27" />
+            <state relative-caret-position="133">
+              <caret line="134" column="84" selection-start-line="134" selection-start-column="84" selection-end-line="134" selection-end-column="84" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -62,8 +63,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Translate</find>
-      <find>Talk</find>
       <find>memory</find>
       <find>textIma</find>
       <find>batteri</find>
@@ -92,6 +91,8 @@
       <find>batter</find>
       <find>pack</find>
       <find>flippedTi</find>
+      <find>soun</find>
+      <find>sound</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -142,8 +143,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
@@ -288,8 +289,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.BuddyOS" />
-        <item itemvalue="Python.Memory2P" />
         <item itemvalue="Python.Memory1P" />
+        <item itemvalue="Python.Memory2P" />
         <item itemvalue="Python.quiz" />
         <item itemvalue="Python.giftest" />
       </list>
@@ -532,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1560089128314</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Update">
+      <created>1560095104283</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1560095104283</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -662,8 +670,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BuddyOS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="72" column="36" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="36" />
+        <state relative-caret-position="272">
+          <caret line="381" column="54" lean-forward="true" selection-start-line="380" selection-start-column="12" selection-end-line="381" selection-end-column="54" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -672,8 +680,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Memory1P.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-301">
-          <caret line="108" column="64" selection-start-line="108" selection-start-column="64" selection-end-line="108" selection-end-column="64" />
+        <state relative-caret-position="423">
+          <caret line="132" column="8" selection-start-line="132" selection-start-column="8" selection-end-line="132" selection-end-column="84" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -682,8 +690,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Memory2P.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="225" column="27" selection-start-line="225" selection-start-column="27" selection-end-line="225" selection-end-column="27" />
+        <state relative-caret-position="133">
+          <caret line="134" column="84" selection-start-line="134" selection-start-column="84" selection-end-line="134" selection-end-column="84" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
