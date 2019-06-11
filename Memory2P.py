@@ -2,7 +2,9 @@ import tkinter as tk
 from random import randint
 from random import shuffle
 import pygame
+
 pygame.init()
+
 
 class Controller(tk.Tk):
     def __init__(self, *args, **kwargs):
@@ -44,7 +46,7 @@ class PageMG(tk.Frame):
         x.pack()
 
 
-class Tile(object): # this class is used for creating the tiles
+class Tile(object):  # this class is used for creating the tiles
     def __init__(self, canvas, x, y, image, cardback):
         self.cardback = cardback
         self.canvas = canvas
@@ -54,13 +56,13 @@ class Tile(object): # this class is used for creating the tiles
 
     # flips tile down
     def draw_face_down(self):
-        self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill = "#bedbfa")
+        self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill="#bedbfa")
         self.canvas.create_image(self.x + 50, self.y + 50, image=self.cardback)
         self.is_face_up = False
 
     # flips tile up
     def draw_face_up(self):
-        self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill = "white")
+        self.canvas.create_rectangle(self.x, self.y, self.x + 100, self.y + 100, fill="white")
         self.canvas.create_image(self.x + 50, self.y + 50, image=self.image)
         self.is_face_up = True
 
@@ -79,8 +81,8 @@ class MemGame(tk.Frame):
         img_restart = tk.Label(self, anchor="s", image=photo_restart)
         img_restart.image = photo_restart
         button_restart = tk.Button(self, activebackground="white",
-                                  image=photo_restart, highlightthickness=0, borderwidth=0,
-                                  command=lambda: self.restart())
+                                   image=photo_restart, highlightthickness=0, borderwidth=0,
+                                   command=lambda: self.restart())
         button_restart.place(x=560, y=197)
 
         self.photoArrow = tk.PhotoImage(file="Ressurser/GUI elementer/arrow.png")
@@ -201,7 +203,7 @@ class MemGame(tk.Frame):
         for tile in self.tiles:
             if tile.is_under_mouse(event):
                 if not tile.is_face_up:
-                    self.clickSound()
+                    self.click_sound()
                     tile.draw_face_up()
                     self.flippedTiles.append(tile)
                     self.flippedThisTurn += 1
@@ -233,7 +235,7 @@ class MemGame(tk.Frame):
         for i in range(len(self.tiles)):
             self.tiles[i].draw_face_down()
         self.score = 0
-        self.clickSound()
+        self.click_sound()
         self.imgArrow.place(x=0, y=0)
         self.flippedTiles = []
         self.flippedThisTurn = 0
@@ -249,8 +251,9 @@ class MemGame(tk.Frame):
         pygame.mixer.Sound.play(self.gratulerer_sound)
 
     # button click sound effect
-    def clickSound(self):
+    def click_sound(self):
         pygame.mixer.Sound.play(self.click_sound)
+
 
 if __name__ == '__main__':
     c = Controller()
