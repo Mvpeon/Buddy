@@ -34,7 +34,7 @@ class Controller(tk.Tk):
         self.geometry("800x480")
 
     def show_frame(self, page_name):
-        '''Show a frame for the given page name'''
+        # how a frame for the given page name
         frame = self.frames[page_name]
         frame.tkraise()
 
