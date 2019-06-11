@@ -203,7 +203,7 @@ class MemGame(tk.Frame):
         for tile in self.tiles:
             if tile.is_under_mouse(event):
                 if not tile.is_face_up:
-                    self.click_sound()
+                    self.play_click_sound()
                     tile.draw_face_up()
                     self.flippedTiles.append(tile)
                     self.flippedThisTurn += 1
@@ -235,7 +235,7 @@ class MemGame(tk.Frame):
         for i in range(len(self.tiles)):
             self.tiles[i].draw_face_down()
         self.score = 0
-        self.click_sound()
+        self.play_click_sound()
         self.imgArrow.place(x=0, y=0)
         self.flippedTiles = []
         self.flippedThisTurn = 0
@@ -251,7 +251,7 @@ class MemGame(tk.Frame):
         pygame.mixer.Sound.play(self.gratulerer_sound)
 
     # button click sound effect
-    def click_sound(self):
+    def play_click_sound(self):
         pygame.mixer.Sound.play(self.click_sound)
 
 
