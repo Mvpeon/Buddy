@@ -62,7 +62,7 @@ class Common(tk.Frame):
                                    bg="white", command=lambda: toggle_options())
         button_options.place(x=750, y=5)
 
-        canvas = tk.Canvas(width=150, height=75, bg="white")
+        canvas = tk.Canvas(width=150, height=140, bg="white")
         label_exit = tk.Label(canvas, text="Exit Program", bg="white")
         label_exit.place(x=10, y=30)
 
@@ -72,6 +72,16 @@ class Common(tk.Frame):
         button_exit = tk.Button(canvas, image=photo_exit, highlightthickness=0, borderwidth=0, activebackground="white",
                                 command=lambda: quit())
         button_exit.place(x=90, y=15)
+
+        photo_lyd = tk.PhotoImage(file="Ressurser/GUI elementer/lydpaa.png")
+        img_lyd = tk.Label(canvas, anchor="s", image=photo_lyd)
+        img_lyd.image = photo_lyd
+        button_lyd = tk.Button(canvas, image=photo_lyd, highlightthickness=0, borderwidth=0, activebackground="white",
+                               bg="white", command=lambda: None)
+        button_lyd.place(x=95, y=95)
+
+        label_mute = tk.Label(canvas, text="Mute Sound", bg="white")
+        label_mute.place(x=10, y=100)
 
         def toggle_options():
             global OptionsIsOpen
