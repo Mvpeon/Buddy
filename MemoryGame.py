@@ -122,8 +122,8 @@ class MemGame(tk.Frame):
 
     def checkTiles(self):
         if not(self.flippedTiles[-1].text == self.flippedTiles[-2].text): #check last two elements
-            self.flippedTiles[-1].drawFaceDown()
-            self.flippedTiles[-2].drawFaceDown()
+            self.flippedTiles[-1].draw_face_down()
+            self.flippedTiles[-2].draw_face_down()
             del self.flippedTiles[-2:]
 
 

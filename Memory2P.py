@@ -219,8 +219,8 @@ class MemGame(tk.Frame):
             self.score += 1
             del self.flippedTiles[-2:]
         else:
-            self.after(1000, self.flippedTiles[-1].drawFaceDown)
-            self.after(1000, self.flippedTiles[-2].drawFaceDown)
+            self.after(1000, self.flippedTiles[-1].draw_face_down)
+            self.after(1000, self.flippedTiles[-2].draw_face_down)
         self.flippedThisTurn = 0
 
         # plays sound effect when completing the game after a short delay
